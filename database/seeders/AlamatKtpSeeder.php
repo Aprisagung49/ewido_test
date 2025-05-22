@@ -14,7 +14,7 @@ class AlamatKtpSeeder extends Seeder
     public function run(): void
     {
         AlamatKtp::create([
-            'applicant_id' => 1,
+            'pelamar_id' => 1,
             'alamat1' => 'Jalan Sindangsari 3',
             'kota1' => 'Bandung',
             'kecamatan1' => 'Antapani',
@@ -22,7 +22,7 @@ class AlamatKtpSeeder extends Seeder
             'provinsi1' => 'Jawa Barat',
         ]);
         AlamatKtp::create([
-            'applicant_id' => 2,
+            'pelamar_id' => 2,
             'alamat1' => 'Jalan Jatihandap',
             'kota1' => 'Bandung',
             'kecamatan1' => 'Mandalajati',
@@ -30,7 +30,7 @@ class AlamatKtpSeeder extends Seeder
             'provinsi1' => 'Jawa Barat',
         ]);
         AlamatKtp::create([
-            'applicant_id' => 3,
+            'pelamar_id' => 3,
             'alamat1' => 'Jalan Paas',
             'kota1' => 'Garut',
             'kecamatan1' => 'Pass',
@@ -38,7 +38,7 @@ class AlamatKtpSeeder extends Seeder
             'provinsi1' => 'Jawa Barat',
         ]);
         AlamatKtp::create([
-            'applicant_id' => 4,
+            'pelamar_id' => 4,
             'alamat1' => 'Jalan Simpang Jeruk',
             'kota1' => 'TasikMalaya',
             'kecamatan1' => 'Tasik',

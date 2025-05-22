@@ -15,17 +15,17 @@ return new class extends Migration
             $table->id();
             $table->string('job_name');
             $table->string('slug');
-            $table->foreignId('departement_id')->constrained(
+            $table->foreignId('departement_id')->nullable()->constrained(
                 table: 'departements', indexName: 'jobs_departement_id'
             );
-            $table->string('job_type');
-            $table->integer('quota');
-            $table->string('job_location');
-            $table->string('status_education');
-            $table->string('age');
-            $table->string('ipk');
+            $table->string('job_type')->nullable();
+            $table->integer('quota')->nullable();
+            $table->string('job_location')->nullable();
+            $table->string('status_education')->nullable();
+            $table->string('age')->nullable();
+            $table->string('ipk')->nullable();
             // $table->text('job_deskripsi');
-            $table->boolean('job_status');
+            $table->boolean('job_status')->nullable();
             $table->timestamps();
         });
     }

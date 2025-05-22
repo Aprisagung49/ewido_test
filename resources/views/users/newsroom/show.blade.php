@@ -69,7 +69,7 @@
                     </address>
                 </div>
                 <div class="mx-auto mt-10 w-3/5 border-t border-gray-300 pt-10"></div>
-                <section class="bg-gray-100 py-4">
+                <section class="bg-gray-0 py-4">
                     <div class="text-center mb-6">
                         <h2 class="text-3xl font-bold">Newsroom</h2>
                         <p class="text-gray-500">The latest news and updates, direct from EWINDO</p>
@@ -77,7 +77,7 @@
                     <div class="text-center">
                         <a href="/newsroom">
                             <button
-                                class="py-2 px-6 rounded-full hover:bg-yellow-600 bg-yellow-500 text-white font-semibold">Read
+                                class="cursor-pointer py-2 px-6 rounded-full hover:bg-yellow-600 bg-yellow-500 text-white font-semibold">Read
                                 More</button>
                         </a>
                     </div>

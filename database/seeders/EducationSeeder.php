@@ -14,7 +14,7 @@ class EducationSeeder extends Seeder
     public function run(): void
     {
         Education::create([
-            'applicant_id' => 1,
+            'pelamar_id' => 1,
             'last_education' => 'S1',
             'name_school' => 'UNIBI',
             'jurusan' => 'Teknik Informatika',
@@ -22,7 +22,7 @@ class EducationSeeder extends Seeder
             'nilai_ipk' => '3,70'
         ]);
         Education::create([
-            'applicant_id' => 2,
+            'pelamar_id' => 2,
             'last_education' => 'SMK',
             'name_school' => 'SMK PU NEGERI',
             'jurusan' => 'TKJ',
@@ -30,7 +30,7 @@ class EducationSeeder extends Seeder
             'nilai_ipk' => '8.00'
         ]);
         Education::create([
-            'applicant_id' => 3,
+            'pelamar_id' => 3,
             'last_education' => 'S2',
             'name_school' => 'ITB',
             'jurusan' => 'Web Cyber Security',
@@ -38,7 +38,7 @@ class EducationSeeder extends Seeder
             'nilai_ipk' => '3,80'
         ]);
         Education::create([
-            'applicant_id' => 4,
+            'pelamar_id' => 4,
             'last_education' => 'S1',
             'name_school' => 'UPI',
             'jurusan' => 'Fotography',

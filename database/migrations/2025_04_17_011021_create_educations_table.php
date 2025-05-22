@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('educations', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('applicant_id')->unique();
+            $table->unsignedBigInteger('pelamar_id')->unique();
             $table->string('last_education');
             $table->string('name_school');
             $table->string('jurusan');
             $table->year('tahun_kelulusan');
             $table->string('nilai_ipk');
             $table->timestamps();
-            $table->foreign('applicant_id')->references('id')->on('applicants')->onDelete('cascade');
+            $table->foreign('pelamar_id')->references('id')->on('pelamars')->onDelete('cascade');
         });
     }
 

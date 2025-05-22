@@ -3,6 +3,46 @@
         Manager Applicant
     </x-slot:heading>
 
+    {{-- KEADAAN KETIKA NEWSROOM BERHASIL DI POST --}}
+    @if (session('success'))
+        <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+            <!-- Backdrop -->
+            <div class="fixed inset-0 bg-gray-500/75 transition-opacity" aria-hidden="true"></div>
+
+            <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+                <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                    <div
+                        class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-md">
+                        <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                            <div class="sm:flex sm:items-start">
+                                <div
+                                    class="mx-auto flex size-12 shrink-0 items-center justify-center rounded-full bg-green-100 sm:mx-0 sm:size-10">
+                                    <svg class="size-6 text-green-600" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                </div>
+                                <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                                    <h3 class="text-base font-semibold text-gray-900" id="modal-title">Sukses!!!
+                                    </h3>
+                                    <div class="mt-2">
+                                        <p class="text-sm text-gray-500">{{ session('success') }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                            <button onclick="document.querySelector('[aria-labelledby=modal-title]').remove()"
+                                type="button"
+                                class="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-green-500 sm:ml-3 sm:w-auto">Tutup</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
     <main class="h-screen">
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             <div
@@ -13,7 +53,8 @@
                         {{ $job->job_name }}
                     </h2>
                     <p class="text-sm text-gray-700 flex items-center gap-2 mt-1 mb-6">
-                        <i class="fa-solid fa-building text-gray-500"></i> {{ $job->departement->departement_name }}
+                        <i class="fa-solid fa-building text-gray-500"></i>
+                        {{ optional($job->departement)->departement_name }}
                     </p>
                     <p class="text-sm text-gray-700 font-semibold flex items-center gap-2 mt-3">
                         <i class="fa-solid fa-list-check text-yellow-500"></i> Requirements
@@ -51,21 +92,26 @@
                 <div
                     class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
                     <div class="w-full md:w-1/2">
-                        <form class="flex items-center">
-                            <label for="simple-search" class="sr-only">Search</label>
+                        <form action="{{ route('nama.route.admin.job') }}" method="GET"
+                            class="flex items-center w-full">
+                            <label for="search" class="sr-only">Search</label>
                             <div class="relative w-full">
                                 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                     <svg aria-hidden="true" class="w-5 h-5 text-gray-500" fill="currentColor"
-                                        viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"
                                             d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
                                             clip-rule="evenodd" />
                                     </svg>
                                 </div>
-                                <input type="text" id="simple-search"
+                                <input type="search" name="search" value="{{ request('search') }}" id="search"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2"
-                                    placeholder="Search" required="" />
+                                    placeholder="Search nama pelamar" />
                             </div>
+                            <button type="submit"
+                                class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-4 py-2 rounded-r-lg ml-2">
+                                Search
+                            </button>
                         </form>
                     </div>
                     <div
@@ -135,7 +181,7 @@
 
 
                 <div class="relative overflow-x-auto shadow-md rounded-lg mx-4">
-                    @if ($applicants->count() > 0)
+                    @if ($pelamars->count() > 0)
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500">
                             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                                 <tr>
@@ -171,49 +217,58 @@
                             <tbody>
 
 
-                                @foreach ($applicants as $applicant)
+                                @foreach ($pelamars as $pelamar)
+                                    <form id="form-markread-{{ $pelamar->id }}"
+                                        action="/admin/job/applicantshow/{{ $pelamar->id }}/mark-read"
+                                        method="POST" style="display:none;">
+                                        @csrf
+                                    </form>
                                     <tr class="bg-white border-b border-gray-200 hover:bg-gray-50 cursor-pointer"
-                                        onclick="window.location='/admin/job/applicantshow/{{ $applicant->id }}';">
+                                        onclick="event.preventDefault(); document.getElementById('form-markread-{{ $pelamar->id }}').submit();">
                                         <th scope="row" class="px-6 py-4">
                                             {{ $loop->iteration }}
                                         </th>
                                         <th scope="row"
                                             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                            {{ $applicant->nama }}
+                                            {{ $pelamar->nama }}
                                         </th>
                                         <td class="px-6 py-4">
-                                            {{ $applicant->created_at->format('d M Y') }}
+                                            {{ $pelamar->created_at->format('d M Y') }}
                                         </td>
                                         <td class="px-6 py-4">
                                             27
                                         </td>
                                         <td class="px-6 py-4">
-                                            {{ $applicant->education->last_education }}
+                                            {{ $pelamar->education->last_education }}
                                         </td>
                                         <td class="px-6 py-4">
-                                            {{ $applicant->education->jurusan }}
+                                            {{ $pelamar->education->jurusan }}
                                         </td>
                                         <td class="px-6 py-4">
-                                            {{ $applicant->alamatKtp->kota1 }}
+                                            {{ $pelamar->alamatKtp->kota1 }}
                                         </td>
                                         <td class="px-6 py-4">
                                             <span
                                                 class="
                                             text-white text-xs font-medium me-2 px-3 py-1 rounded-full
-                                            {{ $applicant->status === 'accepted'
+                                            {{ $pelamar->status === 'accepted'
                                                 ? 'bg-green-500'
-                                                : ($applicant->status === 'pending'
+                                                : ($pelamar->status === 'pending'
                                                     ? 'bg-gray-500'
-                                                    : ($applicant->status === 'rejected'
+                                                    : ($pelamar->status === 'rejected'
                                                         ? 'bg-red-500'
                                                         : 'bg-gray-300')) }}
                                         ">
-                                                {{ ucfirst($applicant->status) }}
+                                                {{ ucfirst($pelamar->status) }}
                                             </span>
                                         </td>
                                         <td class="px-6 py-4 text-center">
-                                            <i class="fa-solid fa-eye text-yellow-500 mr-2"></i>
-                                            <i class="fa-solid fa-print text-yellow-500"></i>
+                                            @if ($pelamar->is_read)
+                                                <i class="fa-solid fa-eye text-yellow-500 mr-2"></i>
+                                            @endif
+                                            @if ($pelamar->is_print)
+                                                <i class="fa-solid fa-print text-yellow-500 mr-2"></i>
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach

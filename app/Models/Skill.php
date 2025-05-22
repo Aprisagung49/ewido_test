@@ -8,21 +8,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Skill extends Model
 {
     use HasFactory;
-
-    protected $table = 'skills'; // Nama tabel
-    
+    protected $table = 'skills';
     protected $fillable = [
-        'applicant_id',
+        'pelamar_id',
         'keahlian',
     ];
+    
 
     protected $casts = [
-        'keahlian' => 'array', // otomatis decode JSON ke array saat dipanggil
+        'keahlian' => 'array', 
     ];
 
-    // Relasi ke Applicant (jika mau)
-    public function applicant()
+    public function pelamar()
     {
-        return $this->belongsTo(Applicant::class);
+        return $this->belongsTo(Pelamar::class);
     }
 }

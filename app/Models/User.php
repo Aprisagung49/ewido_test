@@ -23,6 +23,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'admin_id'
     ];
 
     /**
@@ -57,5 +58,9 @@ class User extends Authenticatable
         return $this->hasMany(Job::class);
     }
 
+    public function admin()
+{
+    return $this->belongsTo(Admin::class);
+}
     
 }

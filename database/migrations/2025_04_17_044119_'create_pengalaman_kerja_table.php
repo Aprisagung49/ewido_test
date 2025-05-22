@@ -13,17 +13,16 @@ return new class extends Migration
     {
         Schema::create('experiences', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('applicant_id');
+            $table->unsignedBigInteger('pelamar_id');
             $table->string('nama_perusahaan');
             $table->string('jabatan');
             $table->string('jenis_pekerjaan');
-            $table->text('deskripsi_pekerjaan')->nullable();
-            $table->date('tanggal_mulai');
-            $table->date('tanggal_selesai')->nullable(); // boleh nullable kalau masih bekerja
+            $table->string('tanggal_mulai',4);
+            $table->string('tanggal_selesai',4)->nullable(); // boleh nullable kalau masih bekerja
             $table->string('gaji_terakhir');
             $table->timestamps();
         
-            $table->foreign('applicant_id')->references('id')->on('applicants')->onDelete('cascade');
+            $table->foreign('pelamar_id')->references('id')->on('pelamars')->onDelete('cascade');
         });
     }
 

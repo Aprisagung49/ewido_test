@@ -71,7 +71,7 @@
                                     <div class="mb-6">
                                         <h3 class="text-2xl font-bold text-gray-900">{{ $job->job_name }}</h3>
                                         <span
-                                            class="text-sm text-gray-600">{{ $job->departement->departement_name }}</span>
+                                            class="text-sm text-gray-600">{{ optional($job->departement)->departement_name }}</span>
                                     </div>
 
                                     <!-- Job Details Grid -->
@@ -116,13 +116,18 @@
                                                 <path stroke-linecap="round" stroke-linejoin="round"
                                                     d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                                             </svg>
+
                                             <div class="flex-grow flex flex-col ml-4">
-                                                <span class="text-xl font-bold">10</span>
+
+                                                <span class="text-xl font-bold">{{ $job->pelamars_count }}</span>
+
                                                 <div class="flex items-center justify-between">
                                                     <span class="text-gray-500">Pendaftar</span>
                                                 </div>
+
                                             </div>
                                         </div>
+
                                         <div class="border-l border-yellow-500 h-24"></div>
                                         <div class="flex items-center bg-white rounded px-10">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -133,7 +138,8 @@
                                                     clip-rule="evenodd" />
                                             </svg>
                                             <div class="flex-grow flex flex-col ml-4">
-                                                <span class="text-xl font-bold">4</span>
+                                                <span
+                                                    class="text-xl font-bold">{{ $job->pelamars_is_read_count }}</span>
                                                 <div class="flex items-center justify-between">
                                                     <span class="text-gray-500">Dilihat</span>
                                                 </div>

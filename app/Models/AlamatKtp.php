@@ -12,7 +12,7 @@ class AlamatKtp extends Model
     protected $table = 'alamat_ktp';
 
     protected $fillable = [
-        'applicant_id',
+        'pelamar_id',
         'alamat1',
         'kota1',
         'kecamatan1',
@@ -20,8 +20,8 @@ class AlamatKtp extends Model
         'provinsi1'
     ];
 
-    public function applicant()
+    public function pelamar()
     {
-        return $this->belongsTo(Applicant::class);
+        return $this->belongsTo(Pelamar::class);
     }
 }

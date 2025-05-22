@@ -16,6 +16,16 @@ class Job extends Model
     protected $casts = ['job_status' => 'boolean'];
 
 
+    public function pelamars_is_read()
+{
+    return $this->hasMany(Pelamar::class, 'job_id')->where('is_read', 1);
+}
+
+    public function pelamars()
+{
+    return $this->hasMany(Pelamar::class);
+}
+
     public function tag(string $name): void
     {
         $tag = Tag::firstOrCreate(['tag_name' => $name]);
@@ -44,7 +54,7 @@ class Job extends Model
 
     public function applicants()
     {
-        return $this->hasMany(Applicant::class); // Relasi ke applicants
+        return $this->hasMany(Pelamar::class); // Relasi ke applicants
     }
 
 

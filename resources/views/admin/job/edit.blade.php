@@ -17,7 +17,7 @@
                                 <label for="job_name"
                                     class="@error('job_name') is-invalid @enderror block text-sm/6 font-medium text-gray-900">Job
                                     Position
-                                    <span class="text-red-500">*</span></label>
+                                    <span class="text-red-500">* Wajib Diisi</span></label>
                                 <div class="mt-2">
                                     <input id="job_name" name="job_name" type="text" autocomplete="job_name"
                                         class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
@@ -49,7 +49,7 @@
                                             <label for="quota"
                                                 class="@error('quota') is-invalid @enderror block text-sm/6 font-medium text-gray-900">
                                                 Quota
-                                                <span class="text-red-500">*</span></label>
+                                                <span class="text-red-500">Optional</span></label>
                                             <div class="mt-2">
                                                 <input id="quota" name="quota" type="text" autocomplete="quota"
                                                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
@@ -66,7 +66,7 @@
                                             <label for="age"
                                                 class="@error('age') is-invalid @enderror block text-sm/6 font-medium text-gray-900">
                                                 Maximal Umur
-                                                <span class="text-red-500">*</span></label>
+                                                <span class="text-red-500">Optional</span></label>
                                             <div class="mt-2">
                                                 <input id="age" name="age" type="text" autocomplete="age"
                                                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
@@ -83,7 +83,7 @@
                                             <label for="ipk"
                                                 class="@error('ipk') is-invalid @enderror block text-sm/6 font-medium text-gray-900">
                                                 Maximal Nilai IPK
-                                                <span class="text-red-500">*</span></label>
+                                                <span class="text-red-500">Optional</span></label>
                                             <div class="mt-2">
                                                 <input id="ipk" name="ipk" type="text" autocomplete="ipk"
                                                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
@@ -99,7 +99,7 @@
                                         <div class="sm:col-span-3">
                                             <label for="job_type" class="block text-sm/6 font-medium text-gray-900">Job
                                                 Type
-                                                <span class="text-red-500">*</span></label>
+                                                <span class="text-red-500">Optional</span></label>
                                             <div class="mt-2 grid grid-cols-1">
                                                 <select name="job_type">
                                                     <option selected disabled>Choose</option>
@@ -119,7 +119,7 @@
                                         <div class="sm:col-span-3">
                                             <label for="job_location"
                                                 class="block text-sm/6 font-medium text-gray-900">Job Location
-                                                <span class="text-red-500">*</span></label>
+                                                <span class="text-red-500">Optional</span></label>
                                             <div class="mt-2 grid grid-cols-1">
                                                 <select name="job_location">
                                                     <option selected disabled>Choose</option>
@@ -137,7 +137,7 @@
                                         <div class="sm:col-span-3">
                                             <label for="departement_id"
                                                 class="block text-sm/6 font-medium text-gray-900">Departement
-                                                <span class="text-red-500">*</span></label>
+                                                <span class="text-red-500">Optional</span></label>
                                             <div class="mt-2 grid grid-cols-1">
                                                 <select id="departement_id" name="departement_id"
                                                     autocomplete="departement_id"
@@ -160,7 +160,7 @@
                                         <div class="sm:col-span-3">
                                             <label for="status_education"
                                                 class="block text-sm/6 font-medium text-gray-900">Minimal Pendidikan
-                                                <span class="text-red-500">*</span></label>
+                                                <span class="text-red-500">Optional</span></label>
                                             <div class="mt-2 grid grid-cols-1">
                                                 <select name="status_education">
                                                     <option selected disabled>Choose</option>
@@ -201,7 +201,7 @@
                                                     <label for="tags (Comma Separated)"
                                                         class=" block text-sm/6 font-medium text-gray-900">Job
                                                         Requirements
-                                                        <span class="text-red-500">*</span></label>
+                                                        <span class="text-red-500">Optional</span></label>
                                                     <div class="mt-2">
                                                         <input id="tags" name="tags"
                                                             placeholder="laracasts, video, education" type="text"
@@ -217,7 +217,7 @@
                                                     <label for="job_status"
                                                         class="block text-sm/6 font-medium text-gray-900">Status
                                                         Job
-                                                        <span class="text-red-500">*</span></label>
+                                                        <span class="text-red-500">* Wajib Diisi</span></label>
                                                     <div class="mt-2 grid grid-cols-1">
                                                         <select name="job_status">
                                                             <option selected disabled>Choose</option>

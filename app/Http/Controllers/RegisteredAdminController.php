@@ -30,17 +30,18 @@ class RegisteredAdminController extends Controller
      */
     public function store(Request $request)
     {
-        $attributes = request()->validate([
+        $attributes = $request->validate([
             'name' => ['required'],
             'email' => ['required', 'email'],
-            'password' => ['required', Password::min(8) , 'confirmed'] // will match input with name attribute of "password_confirmation"
+            'password' => ['required', Password::min(8) , 'confirmed'], // will match input with name attribute of "password_confirmation"
+            'admin_id' => ['required', 'exists:admins,id'],
         ]);
 
         $user = User::create($attributes);
 
         Auth::login($user);
 
-        return redirect('/login');
+        return redirect('/login')->with('success', 'Berhasil Membuat Akun Admin');;
     }
 
     /**

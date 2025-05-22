@@ -101,7 +101,6 @@ class NewsroomController extends Controller
         }
 
        
-
         $validateData['user_id'] = Auth::user()->id;
         $validateData['image'] = json_encode($uploadedFiles);
 

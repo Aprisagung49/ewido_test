@@ -4,28 +4,39 @@ namespace Database\Seeders;
 
 use App\Models\Job;
 use App\Models\User;
+use App\Models\Admin;
 use App\Models\Skill;
-use App\Models\Newsroom;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Pelamar;
+use App\Models\Newsroom;
 use App\Models\AlamatKtp;
 use App\Models\Applicant;
 use App\Models\Education;
 use App\Models\Experience;
+use App\Models\Certificate;
 use App\Models\Departement;
+use App\Models\ProductGroup;
 use App\Models\AlamatDomisili;
+use App\Models\JobInformation;
 use Database\Seeders\JobSeeder;
 use Illuminate\Database\Seeder;
 use App\Models\Newsroomcategory;
+use App\Models\RiwayatKesehatan;
 use Database\Seeders\UserSeeder;
 use Database\Seeders\SkillSeeder;
+use Database\Seeders\PelamarSeeder;
 use Database\Seeders\AlamatKtpSeeder;
 use Database\Seeders\ApplicantSeeder;
 use Database\Seeders\EducationSeeder;
 use Database\Seeders\ExperienceSeeder;
+use Database\Seeders\CertificateSeeder;
 use Database\Seeders\DepartementSeeder;
+use Database\Seeders\ProductGroupSeeder;
 use Database\Seeders\AlamatDomisiliSeeder;
+use Database\Seeders\JobInformationSeeder;
 use Database\Seeders\NewsroomcategorySeeder;
+use Database\Seeders\RiwayatKesehatanSeeder;
 
 
 class DatabaseSeeder extends Seeder
@@ -37,19 +48,26 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        $this->call([NewsroomcategorySeeder::class, UserSeeder::class, NewsroomSeeder::class, DepartementSeeder::class, JobSeeder::class, ApplicantSeeder::class, EducationSeeder::class, AlamatKtpSeeder::class, AlamatDomisiliSeeder::class, ExperienceSeeder::class, SkillSeeder::class]);
+        $this->call([NewsroomcategorySeeder::class, UserSeeder::class, NewsroomSeeder::class, DepartementSeeder::class, JobSeeder::class, PelamarSeeder::class, EducationSeeder::class, AlamatKtpSeeder::class, AlamatDomisiliSeeder::class, ExperienceSeeder::class, SkillSeeder::class, RiwayatKesehatanSeeder::class, JobInformationSeeder::class, ProductGroupSeeder::class, CertificateSeeder::class, AdminSeeder::class]);
         Newsroom::factory()->recycle([
             Newsroom::all(),
             Newsroomcategory::all(),
             Departement::all(),
             User::all(),
             Job::all(),
-            Applicant::all(),
+            Pelamar::all(),
             Education::all(),
             AlamatKtp::all(),
             AlamatDomisili::all(),
             Experience::all(),
-            Skill::all()
+            Skill::all(),
+            RiwayatKesehatan::all(),
+            JobInformation::all(),
+            ProductGroup::all(),
+            Certificate::all(),
+            Admin::all()
+            
+
         ])->create();
     }
 }

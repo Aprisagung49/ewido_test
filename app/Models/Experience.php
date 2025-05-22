@@ -12,18 +12,17 @@ class Experience extends Model
     protected $table = 'experiences';
 
     protected $fillable = [
-        'applicant_id',
+        'pelamar_id',
         'nama_perusahaan',
         'jabatan',
         'jenis_pekerjaan',
-        'deskripsi_pekerjaan',
         'tanggal_mulai',
         'tanggal_selesai',
         'gaji_terakhir'
     ];
 
-    public function applicant()
+    public function pelamar()
     {
-        return $this->belongsTo(Applicant::class);
+        return $this->belongsTo(Pelamar::class);
     }
 }

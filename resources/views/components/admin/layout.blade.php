@@ -12,11 +12,29 @@
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
                                 <x-admin.nav-link href="/admin" :active="request()->is('admin')">Dashboard</x-admin.nav-link>
-                                <x-admin.nav-link href="/admin/products" :active="request()->is('admin/products*')">Products</x-admin.nav-link>
-                                <x-admin.nav-link href="/admin/newsroom" :active="request()->is('admin/newsroom*')">Press
-                                    Manager</x-admin.nav-link>
-                                <x-admin.nav-link href="/admin/job" :active="request()->is('admin/job*')">HR
-                                    Manager</x-admin.nav-link>
+                                @can('admin_product')
+                                    <x-admin.nav-link href="/admin/products" :active="request()->is('admin/products*')">
+                                        Products
+                                    </x-admin.nav-link>
+                                @endcan
+
+                                @can('admin_newsroom')
+                                    <x-admin.nav-link href="/admin/newsroom" :active="request()->is('admin/newsroom*')">
+                                        Press Manager
+                                    </x-admin.nav-link>
+                                @endcan
+
+                                @can('admin_career')
+                                    <x-admin.nav-link href="/admin/job" :active="request()->is('admin/job*')">
+                                        HR Manager
+                                    </x-admin.nav-link>
+                                @endcan
+                                @can('superadmin')
+                                    <x-admin.nav-link href="/register" :active="request()->is('admin/job*')">
+                                        Add Admin
+                                    </x-admin.nav-link>
+                                @endcan
+
                             </div>
                         </div>
                     </div>

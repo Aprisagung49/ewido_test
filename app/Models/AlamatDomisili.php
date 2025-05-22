@@ -12,7 +12,7 @@ class AlamatDomisili extends Model
     protected $table = 'alamat_domisili';
 
     protected $fillable = [
-        'applicant_id',
+        'pelamar_id',
         'alamat0',
         'kota0',
         'kecamatan0',
@@ -21,8 +21,8 @@ class AlamatDomisili extends Model
         'is_domisili_sama',
     ];
 
-    public function applicant()
+    public function pelamar()
     {
-        return $this->belongsTo(Applicant::class);
+        return $this->belongsTo(Pelamar::class);
     }
 }

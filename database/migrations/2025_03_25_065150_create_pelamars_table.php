@@ -11,20 +11,24 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('applicants', function (Blueprint $table) {
+        Schema::create('pelamars', function (Blueprint $table) {
             $table->id();
-            $table->string('nik')->unique(); // jika 1x melamar semua job
-            $table->foreignId('job_id')->constrained()->onDelete('cascade');
+            $table->string('nik')->unique();
+             $table->foreignId('job_id')->constrained()->onDelete('cascade');
             $table->string('nama');
             $table->string('jenis_kelamin');
-            $table->string('nohp')->nullable();
+            $table->string('nohp');
             $table->string('email')->unique();
             $table->date('tanggal_lahir');
+            $table->string('tempat_lahir');
             $table->string('status_menikah');
             $table->enum('status', ['pending', 'accepted', 'rejected'])->default('pending');
-            $table->string('country');
+            $table->enum('agama', ['Islam', 'Kristen', 'Protestan', 'Katolik', 'Hindu', 'Budha', 'Konguchu'])->default('Islam');
+            $table->string('is_ada_pengalaman')->nullable();
+            $table->boolean('is_read')->default(false);
+            $table->boolean('is_print')->default(false);
             $table->timestamps();
-        }); 
+        });
     }
 
     /**
@@ -32,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('applicant');
+        Schema::dropIfExists('pelamars');
     }
 };

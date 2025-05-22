@@ -6,6 +6,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Swiper from "swiper";
 
 // Swiper
+
 new Swiper(".swiper-plant", {
     modules: [Navigation, Pagination, Autoplay],
 
@@ -30,15 +31,56 @@ new Swiper(".swiper-plant", {
     },
 });
 
-// new Swiper(".swiper-certificate", {
-//     slidesPerView: 4,
-//     spaceBetween: 20,
-//     slidesPerGroup: 4,
-//     navigation: {
-//         nextEl: ".swiper-button-next-certificate",
-//         prevEl: ".swiper-button-prev-certificate",
-//     },
-// });
+new Swiper(".swiper-products", {
+    modules: [Pagination, Navigation],
+
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 30,
+
+    pagination: {
+        el: ".swiper-pagination-products",
+        clickable: true,
+    },
+
+    navigation: {
+        nextEl: ".swiper-button-next-products",
+        prevEl: ".swiper-button-prev-products",
+    },
+});
+
+new Swiper(".swiper-awards", {
+    modules: [Pagination, Navigation],
+
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 30,
+
+    autoplay: {
+        delay: 6000,
+        disableOnInteraction: false,
+    },
+
+    pagination: {
+        el: ".swiper-pagination-awards",
+        clickable: true,
+    },
+
+    navigation: {
+        nextEl: ".swiper-button-next-awards",
+        prevEl: ".swiper-button-prev-awards",
+    },
+});
+
+new Swiper(".swiper-certificate", {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    slidesPerGroup: 4,
+    navigation: {
+        nextEl: ".swiper-button-next-certificate",
+        prevEl: ".swiper-button-prev-certificate",
+    },
+});
 
 // Document Fragments
 document.addEventListener("DOMContentLoaded", function () {

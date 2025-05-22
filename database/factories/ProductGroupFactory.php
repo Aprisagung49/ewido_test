@@ -17,7 +17,15 @@ class ProductGroupFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->word,
+            'parent_id' => null
         ];
+    }
+
+    public function withParent($parentId)
+    {
+        return $this->state([
+            'parent_id' => $parentId
+        ]);
     }
 }

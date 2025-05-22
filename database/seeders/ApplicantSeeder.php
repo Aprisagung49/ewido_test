@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Carbon\Carbon;
 use App\Models\Applicant;
+use App\Models\Pelamar;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -14,9 +15,9 @@ class ApplicantSeeder extends Seeder
      */
     public function run(): void
     {
-        Applicant::create([
-            'nik' => '32109201920292',
+        Pelamar::create([
             'job_id' => 1,
+            'nik' => '32109201920292',
             'nama' => 'Apris Agung Wiresa',
             'jenis_kelamin' => 'Laki-laki',
             'nohp' => '083820385357',
@@ -24,11 +25,12 @@ class ApplicantSeeder extends Seeder
             'tanggal_lahir' => Carbon::createFromFormat('d/m/Y', '21/04/1998')->toDateString(),
             'status_menikah' => 'Belum Menikah',
             'status' => 'pending',
-            'country' => 'Indonesia'
+            'tempat_lahir' => 'Bandung'
+            
         ]);
-        Applicant::create([
-            'nik' => '321092019839393',
+        Pelamar::create([
             'job_id' => 2,
+            'nik' => '321092019839393',
             'nama' => 'Cindy Y',
             'jenis_kelamin' => 'Perempuan',
             'nohp' => '083820385371',
@@ -36,11 +38,11 @@ class ApplicantSeeder extends Seeder
             'tanggal_lahir' => Carbon::createFromFormat('d/m/Y', '14/01/1998')->toDateString(),
             'status_menikah' => 'Menikah',
             'status' => 'pending',
-            'country' => 'Indonesia'
+            'tempat_lahir' => 'Bandung'
         ]);
-        Applicant::create([
-            'nik' => '321092013239393',
+        Pelamar::create([
             'job_id' => 3,
+            'nik' => '321092013239393',
             'nama' => 'Apriyani',
             'jenis_kelamin' => 'Perempuan',
             'nohp' => '083820382332',
@@ -48,11 +50,11 @@ class ApplicantSeeder extends Seeder
             'tanggal_lahir' => Carbon::createFromFormat('d/m/Y', '14/03/1998')->toDateString(),
             'status_menikah' => 'Belum Menikah',
             'status' => 'pending',
-            'country' => 'Indonesia'
+            'tempat_lahir' => 'Bogor'
         ]);
-        Applicant::create([
+        Pelamar::create([
+            'job_id' => 4,
             'nik' => '321092019783737373',
-            'job_id' => 1,
             'nama' => 'Agung',
             'jenis_kelamin' => 'Laki-laki',
             'nohp' => '083820323222',
@@ -60,7 +62,7 @@ class ApplicantSeeder extends Seeder
             'tanggal_lahir' => Carbon::createFromFormat('d/m/Y', '14/01/1998')->toDateString(),
             'status_menikah' => 'Menikah',
             'status' => 'Accepted',
-            'country' => 'Indonesia'
+            'tempat_lahir' => 'Garut'
         ]);
     }
 }

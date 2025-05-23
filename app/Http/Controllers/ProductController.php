@@ -244,16 +244,32 @@ public function update(Request $request, Product $product )
 
     $product->update($productAttrs);
 
-    // ✅ Tambah gambar baru jika ada
+    // Tambah Gambar Baru
+
     if ($request->hasFile('images')) {
         foreach ($request->file('images') as $image) {
-            $path = $image->store('products', 'public');
+            if ($image->isValid()) {
+                $path = $image->store('products', 'public');
 
-            ProductImage::create([
-                'product_id' => $product->id,
-                'image_path' => $path
-            ]);
+                ProductImage::create([
+                    'product_id' => $product->id,
+                    'image_path' => $path
+                ]);
+            }
         }
+    }
+
+    // ✅ Edit Hapus gambar
+    if ($request->filled('deleted_images')) {
+    $deletedImageIds = json_decode($request->deleted_images, true);
+
+    foreach ($deletedImageIds as $id) {
+        $img = ProductImage::find($id);
+        if ($img && Storage::disk('public')->exists($img->image_path)) {
+            Storage::disk('public')->delete($img->image_path);
+        }
+        $img?->delete();
+    }
     }
 
     // ✅ Update sertifikat

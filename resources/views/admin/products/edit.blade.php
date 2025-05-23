@@ -56,7 +56,22 @@
                 </div>
             </div>
         </div>
-        <div id="image-preview-container" class="grid grid-cols-10 gap-4 mt-4"></div>
+        <input type="hidden" name="deleted_images" id="deleted-images">
+        {{-- PREVIEW IMAGE --}}
+        <div id="image-preview-container" class="grid grid-cols-10 gap-4 mt-4">
+            {{-- Gambar lama --}}
+            @foreach ($product->product_images as $img)
+                <div class="relative w-24 h-24 border rounded-lg overflow-hidden" data-old-image="{{ $img->id }}">
+                    <img src="{{ asset('storage/' . $img->image_path) }}" class="w-full h-full object-cover">
+                    <button type="button"
+                        class="absolute top-1 right-1 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs"
+                        onclick="removeOldImage({{ $img->id }}, this)">✖</button>
+
+                </div>
+            @endforeach
+        </div>
+        <!-- Untuk menyimpan ID gambar lama yang dihapus -->
+
         <div class="col-span-full">
             <label class="block mb-2 text-sm font-medium text-gray-900" for="file_input">Certification
             </label>
@@ -151,6 +166,16 @@
         <div class="col-span-full">
             <x-forms.input label="Upload Data Sheet (PDF)" name="data_sheet" type="file" accept=".pdf" />
         </div>
+        @if ($product->data_sheet)
+            <div class="mt-2">
+                <p class="text-sm text-gray-700">Data Sheet saat ini:</p>
+                <a href="{{ asset('storage/' . $product->data_sheet) }}" target="_blank"
+                    class="text-indigo-600 hover:underline">
+                    Lihat / Download Data Sheet
+                </a>
+            </div>
+        @endif
+
         <x-forms.divider />
         <x-forms.button>Edit</x-forms.button>
     </x-forms.form>
@@ -158,78 +183,92 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // handle product child groups
+        // ==========================
+        // Handle Dynamic Dropdown (Parent & Child Categories)
+        // ==========================
         const parentSelect = document.getElementById('product_group_id');
         const childSelect = document.getElementById('category_type');
-
-        const plug = document.getElementById('plug_type')
-        const connector = document.getElementById('connector_type')
-
-        let childCategories = @json($childGroups); // Convert Laravel data to JS object
+        const childCategories = @json($childGroups); // Data dari Laravel
 
         parentSelect.addEventListener('change', function() {
-            let selectedParentId = this.value;
+            const selectedParentId = this.value;
             childSelect.innerHTML = '<option selected disabled>Pilih</option>'; // Reset child options
 
             childCategories.forEach(child => {
                 if (child.parent_id == selectedParentId) {
-                    let option = new Option(child.name, child.id);
+                    const option = new Option(child.name, child.id);
                     childSelect.add(option);
                 }
             });
         });
 
-        // Handle image preview upload
+        // ==========================
+        // Preview & Hapus Gambar Baru
+        // ==========================
         const input = document.getElementById('images');
-        const previewContainer = document.getElementById('image-preview-container')
-        let imagesArr = []
+        const previewContainer = document.getElementById('image-preview-container');
+        let imagesArr = [];
 
         input.addEventListener('change', function(event) {
-            const newFiles = Array.from(event.target.files)
+            const newFiles = Array.from(event.target.files);
 
-            newFiles.forEach((file) => {
-                if (!file.type.startsWith('image/')) return
+            newFiles.forEach(file => {
+                if (!file.type.startsWith('image/')) return;
 
-                imagesArr.push(file)
-                updateFileInput()
+                imagesArr.push(file);
+                updateFileInput();
 
-                const reader = new FileReader()
+                const reader = new FileReader();
                 reader.onload = function(e) {
-                    const imgContainer = document.createElement('div')
+                    const imgContainer = document.createElement('div');
                     imgContainer.classList.add('relative', 'w-24', 'h-24', 'border',
-                        'rounded-lg', 'overflow-hidden')
+                        'rounded-lg', 'overflow-hidden');
 
-                    const img = document.createElement('img')
-                    img.src = e.target.result
-                    img.classList.add('w-full', 'h-full', 'object-cover')
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.classList.add('w-full', 'h-full', 'object-cover');
 
-                    const removeBtn = document.createElement('button')
-                    removeBtn.innerHTML = '✖'
-                    removeBtn.classList.add('absolute', 'top-1', 'right-1', 'bg-red-50',
+                    const removeBtn = document.createElement('button');
+                    removeBtn.innerHTML = '✖';
+                    removeBtn.classList.add(
+                        'absolute', 'top-1', 'right-1', 'bg-red-500',
                         'text-white', 'rounded-full', 'w-5', 'h-5', 'flex',
-                        'items-center', 'justify-center', 'text-xs')
+                        'items-center', 'justify-center', 'text-xs'
+                    );
 
                     removeBtn.addEventListener('click', function() {
-                        const index = imagesArr.indexOf(file)
+                        const index = imagesArr.indexOf(file);
                         if (index !== -1) {
-                            imagesArr.splice(index, 1)
-                            updateFileInput()
-                            imgContainer.remove()
+                            imagesArr.splice(index, 1);
+                            updateFileInput();
+                            imgContainer.remove();
                         }
-                    })
+                    });
 
-                    imgContainer.appendChild(img)
-                    imgContainer.appendChild(removeBtn)
-                    previewContainer.appendChild(imgContainer)
-                }
-                reader.readAsDataURL(file)
-            })
-        })
+                    imgContainer.appendChild(img);
+                    imgContainer.appendChild(removeBtn);
+                    previewContainer.appendChild(imgContainer);
+                };
+
+                reader.readAsDataURL(file);
+            });
+        });
 
         function updateFileInput() {
-            const newFileList = new DataTransfer()
-            imagesArr.forEach(f => newFileList.items.add(f))
-            input.files = newFileList.files
+            const newFileList = new DataTransfer();
+            imagesArr.forEach(file => newFileList.items.add(file));
+            input.files = newFileList.files;
         }
-    })
+
+        // ==========================
+        // Hapus Gambar Lama
+        // ==========================
+        let deletedImages = [];
+
+        window.removeOldImage = function(id, btnElement) {
+            deletedImages.push(id);
+            document.getElementById('deleted-images').value = JSON.stringify(deletedImages);
+            btnElement.closest('div').remove();
+        };
+    });
 </script>

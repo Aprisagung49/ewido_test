@@ -85,13 +85,21 @@
             <x-forms.input label="Cable Type" name="cable_type" />
         </div>
         <div class="col-span-full">
-            <x-forms.input label="Size (AWG/mm<sup>2</sup>)" name="size" />
+            <x-forms.input label="Size (AWG/mm²) " name="size" />
         </div>
         <div class="col-span-full">
             <x-forms.input label="Rated Voltage" name="rated_voltage" />
         </div>
-        <div class="col-span-full">
-            <x-forms.input label="Colour" name="colour" />
+        <p class="text-bold">Colour Available</p>
+        <div class="grid grid-cols-10 gap-2">
+            @foreach ($colors as $color)
+                <label class="flex items-center space-x-2">
+                    <input type="checkbox" name="colour[]" value="{{ $color->code }}"
+                        {{ in_array($color->code, old('colour', $selectedColours ?? [])) ? 'checked' : '' }}>
+                    <span class="w-4 h-4 rounded" style="background-color: {{ $color->code }}"></span>
+                    <span>{{ $color->name }}</span>
+                </label>
+            @endforeach
         </div>
         <div class="col-span-full">
             <x-forms.input label="Application" name="application" />

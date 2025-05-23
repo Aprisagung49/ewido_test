@@ -155,9 +155,14 @@
                     </x-description-row>
                     <x-description-row label="Available Colour">
                         <div class="flex items-center space-x-2">
-                            <span class="w-5 h-5 rounded-full border border-gray-300"
-                                style="background-color: {{ $product->colour }};"></span>
-                            {{-- <span>{{ $product->colour }}</span> --}}
+                            @php
+                                $colors = json_decode($product->colour, true);
+                            @endphp
+
+                            @foreach ($colors as $color)
+                                <span class="w-5 h-5 rounded-full border border-gray-300"
+                                    style="background-color: {{ $color }};" title="{{ $color }}"></span>
+                            @endforeach
                         </div>
                     </x-description-row>
                     <x-description-row label="Application To">

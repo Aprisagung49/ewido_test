@@ -124,8 +124,16 @@
             <x-forms.input label="Rated Voltage" name="rated_voltage"
                 value="{{ old('rated_voltage', $product->rated_voltage ?? '') }}" />
         </div>
-        <div class="col-span-full">
-            <x-forms.input label="Colour" name="colour" value="{{ old('colour', $product->colour ?? '') }}" />
+        <p class="text-bold">Colour Available</p>
+        <div class="grid grid-cols-10 gap-2">
+            @foreach ($colors as $color)
+                <label class="flex items-center space-x-2">
+                    <input type="checkbox" name="colour[]" value="{{ $color->code }}"
+                        {{ in_array($color->code, old('colour', $selectedColours ?? [])) ? 'checked' : '' }}>
+                    <span class="w-4 h-4 rounded" style="background-color: {{ $color->code }}"></span>
+                    <span>{{ $color->name }}</span>
+                </label>
+            @endforeach
         </div>
         <div class="col-span-full">
             <x-forms.input label="Application" name="application"
@@ -164,6 +172,7 @@
                 id="description">{{ old('description', $product->description ?? '') }}</x-forms.textarea>
         </div>
         <div class="col-span-full">
+            <p class="text-xs text-red-700">* Jika Upload Ulang Otomatis File Lama Akan Terganti</p>
             <x-forms.input label="Upload Data Sheet (PDF)" name="data_sheet" type="file" accept=".pdf" />
         </div>
         @if ($product->data_sheet)

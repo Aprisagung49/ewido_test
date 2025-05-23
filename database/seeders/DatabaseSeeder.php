@@ -5,9 +5,10 @@ namespace Database\Seeders;
 use App\Models\Job;
 use App\Models\User;
 use App\Models\Admin;
-use App\Models\Skill;
+use App\Models\Color;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Skill;
 use App\Models\Pelamar;
 use App\Models\Newsroom;
 use App\Models\AlamatKtp;
@@ -48,11 +49,12 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        $this->call([NewsroomcategorySeeder::class, UserSeeder::class, NewsroomSeeder::class, DepartementSeeder::class, JobSeeder::class, PelamarSeeder::class, EducationSeeder::class, AlamatKtpSeeder::class, AlamatDomisiliSeeder::class, ExperienceSeeder::class, SkillSeeder::class, RiwayatKesehatanSeeder::class, JobInformationSeeder::class, ProductGroupSeeder::class, CertificateSeeder::class, AdminSeeder::class]);
+        $this->call([NewsroomcategorySeeder::class, AdminSeeder::class, UserSeeder::class, NewsroomSeeder::class, DepartementSeeder::class, JobSeeder::class, PelamarSeeder::class, EducationSeeder::class, AlamatKtpSeeder::class, AlamatDomisiliSeeder::class, ExperienceSeeder::class, SkillSeeder::class, RiwayatKesehatanSeeder::class, JobInformationSeeder::class, ProductGroupSeeder::class, CertificateSeeder::class, ColorSeeder::class]);
         Newsroom::factory()->recycle([
             Newsroom::all(),
             Newsroomcategory::all(),
             Departement::all(),
+            Admin::all(),
             User::all(),
             Job::all(),
             Pelamar::all(),
@@ -65,7 +67,8 @@ class DatabaseSeeder extends Seeder
             JobInformation::all(),
             ProductGroup::all(),
             Certificate::all(),
-            Admin::all()
+            Color::all()
+            
             
 
         ])->create();

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Color;
 use App\Models\Product;
 use App\Models\Certificate;
 use Illuminate\Support\Str;
@@ -118,8 +119,10 @@ $success = CustomMailer::send(
             $childGroups = ProductGroup::whereNotNull('parent_id')->get();
 
             $certificates = Certificate::all();
+            $colors = Color::all();
+            
 
-            return view('admin.products.create', compact('parentGroups', 'childGroups', 'certificates'));
+            return view('admin.products.create', compact('parentGroups', 'childGroups', 'certificates', 'colors'));
         } else {
             return view('users.products.create');
         }
@@ -135,7 +138,8 @@ $success = CustomMailer::send(
             'rohs' => ['required'],
             'rated_voltage' => ['required'],
             'rating_voltage' => ['nullable', 'string'],
-            'colour' => ['required'],
+            'colour' => ['required', 'array'],
+            'colour.*' => ['string'], // karena valuenya adalah kode warna, bukan ID
             'application' => ['required'],
             'product_standard' => ['required'],
             'heat_resistance' => ['required'],
@@ -145,6 +149,8 @@ $success = CustomMailer::send(
             'data_sheet' => ['required', File::types(['pdf']), 'max: 2048']
         ]);
 
+
+        $productAttrs['colour'] = json_encode($request->colour); // disimpan sebagai JSON
         $productAttrs['slug'] = Str::slug($request->type . '-' . $request->cable_type);
         // $productAttrs['rohs'] = $request->has('rohs');
 
@@ -198,7 +204,9 @@ public function edit(request $request, $slug) {
             $certificates = Certificate::all();
              $selectedCertificates = $product->certificates()->pluck('certificates.id')->toArray();
              $oldImages = json_decode($product->images ?? '[]');
-            return view('admin.products.edit', compact('parentGroups', 'childGroups', 'certificates','product','selectedCertificates','oldImages'));
+             $colors = Color::all();
+             $selectedColours = json_decode($product->colour, true);
+            return view('admin.products.edit', compact('parentGroups', 'childGroups', 'certificates','product','selectedCertificates','oldImages','colors','selectedColours'));
         } else {
             return view('users.products.edit');
         }

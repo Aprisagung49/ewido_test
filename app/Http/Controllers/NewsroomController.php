@@ -34,24 +34,24 @@ class NewsroomController extends Controller
         }
 
             return view('admin.newsroom.index',[
-             'articles' => $query->paginate(9)->withQueryString(),
+             'articles' => $query->paginate(6)->withQueryString(),
              'categories' => NewsroomCategory::all()
             ]);
             
         } else {
         return view('users.newsroom.index',[
-            'articles' => Newsroom::latest()->get(), 
+            'articles' => Newsroom::latest()->paginate(6)->withQueryString(), 
             'categories' => NewsroomCategory::latest()->get()
         ]);
     }
 }
     public function filter(NewsroomCategory $category)
     {
-        return view('users.newsroom.index',[
-        'articles' => Newsroom::latest()->get(), 
+    $articles = $category->newsrooms()->latest()->paginate(6)->withQueryString();
+    return view('users.newsroom.index', [
+        'articles' => $articles,
         'categories' => NewsroomCategory::all(),
-        'articles' => $category->newsrooms
-        ]);
+    ]);
     }
 
     public function show(Request $request, Newsroom $newroom)

@@ -30,7 +30,7 @@
                                     </x-admin.nav-link>
                                 @endcan
                                 @can('superadmin')
-                                    <x-admin.nav-link href="/register" :active="request()->is('admin/job*')">
+                                    <x-admin.nav-link href="/register" :active="request()->is('/register')">
                                         Add Admin
                                     </x-admin.nav-link>
                                 @endcan

@@ -19,30 +19,52 @@ class ProductController extends Controller
 {
     public function index(Request $request)
     {
+
+        $perPage = 4;
         $products = Product::with(['product_images', 'certificates'])
-                ->latest()
-                ->when($request->has('group') && $request->group !== 'all', function($query) use ($request) {
-                    $query->whereHas('product_group', function($q) use ($request) {
-                        $q->where('name', $request->group);
-                    });
-                })
-                ->get();
+                ->latest();
+
+        if ($request->has('group') && $request->group !== 'all') {
+        $products->whereHas('product_group', function($q) use ($request) {
+            $q->where('name', $request->group);
+        });
+    }
 
         // Search products
         if ($request->q) {
-            $products = Product::query()
-                ->with(['product_images', 'certificates'])
-                ->where('type', 'LIKE', '%'.request('q').'%')
-                ->orWhere('cable_type', 'LIKE', '%'.request('q').'%')
-                ->get();
-        }
+        $products->where(function($q) use ($request) {
+            $q->where('type', 'LIKE', '%' . $request->q . '%')
+              ->orWhere('cable_type', 'LIKE', '%' . $request->q . '%');
+        });
+    }
 
+        $parentGroups = ProductGroup::whereNull('parent_id')->get();
+        $childGroups = ProductGroup::whereNotNull('parent_id')->get();
+
+        $products = $products->paginate($perPage)->withQueryString();
         if ($request->is('admin/*')) {
             return view('admin.products.index', compact('products'));
         } else {
-            return view('users.products.index', compact('products'));
+            return view('users.products.index', compact('products','parentGroups'));
         }
     }
+
+    public function filterByCategory($name, Request $request)
+{
+    $group = \App\Models\ProductGroup::where('name', $name)->firstOrFail();
+    $parentGroups = ProductGroup::whereNull('parent_id')->get();
+    $childGroups = ProductGroup::whereNotNull('parent_id')->get();
+    $perPage = 4;
+    $products = \App\Models\Product::with(['product_images', 'certificates'])
+        ->where('product_group_id', $group->id)
+        ->latest()
+        ->paginate($perPage)
+        ->withQueryString();
+
+    return view('users.products.index', compact('products', 'group','parentGroups'));
+}
+
+    
 
 
     public function kirim(Request $request)

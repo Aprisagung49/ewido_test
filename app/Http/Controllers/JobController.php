@@ -24,7 +24,7 @@ class JobController extends Controller
     {
         if ($request->is('admin/*')) {
             return view('admin.job.index', [
-                'jobs' => Job::with('tags')->withCount('pelamars')->withCount('pelamars_is_read')->latest()->get(),
+                'jobs' => Job::with('tags')->withCount('pelamars')->withCount('pelamars_is_read')->latest()->paginate(2)->withQueryString(),
                 'departements' => Departement::latest()->get(),
                 'tags' => Tag::all(),
                 
@@ -32,7 +32,7 @@ class JobController extends Controller
 
         } else {
             return view('users.careers.apply', [
-                'jobs' => Job::with('tags')->latest()->where('job_status', 1)->get()
+                'jobs' => Job::with('tags')->latest()->where('job_status', 1)->paginate(2)->withQueryString()
             ]);
         }
     }
@@ -170,7 +170,7 @@ class JobController extends Controller
         // Query berdasarkan status jika tidak null
         $jobs = Job::when(isset($status), function ($query) use ($status) {
             return $query->where('job_status', $status);
-         })->latest()->get();
+         })->latest()->paginate(2)->withQueryString();
 
         return view('admin.job.index', compact('jobs'));
     }

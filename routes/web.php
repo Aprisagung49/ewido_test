@@ -46,7 +46,9 @@ Route::get('/careers/lamar', [PelamarController::class, 'create1']);
 Route::get('/careers/{job:slug}/apply', [PelamarController::class, 'create']);
 Route::post('/careers/{job:slug}/apply', [PelamarController::class, 'store']);
 
-Route::get('/products', [ProductController::class, 'index']);
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/products/category/{name}', [ProductController::class, 'filterByCategory'])->name('products.category');
+
 // Route::post('/products/{product:slug}', [ProductController::class, 'kirim']);
 Route::get('/products/{product:slug}', [ProductController::class, 'show']);
 Route::post('/products/{product}', [ProductController::class, 'store']);

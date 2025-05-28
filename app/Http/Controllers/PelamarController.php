@@ -37,7 +37,7 @@ class PelamarController extends Controller
                
         } else {
             return view('users.careers.index2', [
-                'jobs' => Job::with('tags')->latest()->where('job_status', 1)->get()
+                'jobs' => Job::with('tags')->latest()->where('job_status', 1)->paginate(2)->withQueryString()
             ]); 
         }
     }

@@ -126,6 +126,11 @@
                         </div>
                     </div>
                 @endforeach
+
+            </div>
+            {{-- PAGINATION --}}
+            <div class="mt-10">
+                {{ $products->links() }}
             </div>
         </section>
     </div>

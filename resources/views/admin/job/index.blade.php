@@ -195,6 +195,10 @@
 
                     <!-- <div class="after:content-[''] after:block after:h-40"></div> -->
                 </div>
+
+            </div>
+            <div class="mt-10">
+                {{ $jobs->links() }}
             </div>
         </div>
     </main>

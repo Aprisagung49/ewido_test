@@ -31,9 +31,14 @@
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mb-8 mx-64">
 
+
+                    @php
+                        $currentSlug = request()->segment(2); // ambil segment URL kedua
+                    @endphp
                     @foreach ($categories as $category)
                         <a href="/newsroom/{{ $category->slug }}"
-                            class="category-button bg-gray-200 text-center py-4 px-13 rounded shadow hover:bg-gray-300 hover:text-yellow-500 focus:text-yellow-500 transitio">
+                            class="category-button bg-gray-200 text-center py-4 px-13 rounded shadow hover:bg-gray-200 hover:text-yellow-500 focus:text-yellow-500 transition 
+                            {{ $currentSlug === $category->slug ? 'text-yellow-500 bg-gray-200' : 'bg-gray-100' }}">
                             <button class="n">
                                 {{ $category->name }}
                             </button></a>

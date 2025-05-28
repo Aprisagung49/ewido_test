@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Job;
+use App\Models\Pelamar;
 use App\Models\AlamatKtp;
 use App\Models\Applicant;
 use App\Models\Education;
@@ -79,7 +80,7 @@ class CareerController extends Controller
     $validatedData = $request->validated();
 
     // Simpan data ke tabel applicants
-    $applicant = Applicant::create([
+    $applicant = Pelamar::create([
         // 'job_id' => $request->job_id,
         'nik' => $validatedData['nik'],
         'nama' => $validatedData['nama_lengkap'],

@@ -99,6 +99,9 @@
                     </x-users.job-card>
         @endforeach
         </div>
+        <div class="mt-10">
+            {{ $jobs->links() }}
+        </div>
         </div>
     </x-users.section>
 

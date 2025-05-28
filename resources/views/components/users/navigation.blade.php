@@ -27,11 +27,12 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div x-show="open" x-transition class="lg:hidden mt-4 space-y-2 bg-gray-50 rounded-lg p-4 shadow-inner">
-        <a href="/company" class="block px-4 py-2  font-semibold text-gold hover:bg-gray-100 rounded">Company</a>
-        <a href="/products" class="block px-4 py-2 font-semibold text-gold hover:bg-gray-100 rounded">Products</a>
-        <a href="/newsroom" class="block px-4 py-2 font-semibold text-gold hover:bg-gray-100 rounded">Newsroom</a>
-        <a href="/contact" class="block px-4 py-2 font-semibold text-gold hover:bg-gray-100 rounded">Contacts Us</a>
-        <a href="/careers" class="block px-4 py-2 text-gold hover:bg-indigo-50 font-semibold rounded">Careers</a>
+    <div x-show="open" x-transition class="lg:hidden mt-4 space-y-2 bg-white-500 rounded-lg p-4 shadow-inner">
+        <a href="/company" class="block px-4 py-2  font-semibold text-gray-500 hover:text-gold rounded">Company</a>
+        <a href="/products" class="block px-4 py-2 font-semibold text-gray-500 hover:text-gold rounded">Products</a>
+        <a href="/newsroom" class="block px-4 py-2 font-semibold text-gray-500 hover:text-gold rounded">Newsroom</a>
+        <a href="/contact" class="block px-4 py-2 font-semibold text-gray-500 hover:text-gold rounded">Contacts
+            Us</a>
+        <a href="/careers" class="block px-4 py-2 text-gray-500 hover:text-gold font-semibold rounded">Careers</a>
     </div>
 </nav>

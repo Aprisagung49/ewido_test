@@ -15,7 +15,7 @@ class admin_newsroom
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (auth()->guest() || auth()->user()->admin_id !== 2) {
+        if (auth()->guest() || auth()->user()->admin_id !== 3) {
             abort(403);
         }
         return $next($request);

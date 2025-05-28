@@ -15,7 +15,7 @@ class admin_product
      */
     public function handle(Request $request, Closure $next): Response
     {
-         if (auth()->guest() || auth()->user()->admin_id !== 3) {
+         if (auth()->guest() || auth()->user()->admin_id !== 2) {
             abort(403);
         }
         return $next($request);

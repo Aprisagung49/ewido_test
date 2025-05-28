@@ -41,7 +41,7 @@ class RegisteredAdminController extends Controller
 
         Auth::login($user);
 
-        return redirect('/login')->with('success', 'Berhasil Membuat Akun Admin');;
+        return redirect('/admin')->with('success', 'Berhasil Membuat Akun Admin');;
     }
 
     /**

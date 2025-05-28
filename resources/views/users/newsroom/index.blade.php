@@ -64,7 +64,7 @@
                                 <div class="flex items-center gap-x-4 text-xs">
                                     <p>{{ $article->created_at->diffForHumans() }}</p>
                                     <a href="#"
-                                        class="relative z-10 rounded-full bg-yellow-500 px-3 py-1.5 font-medium text-white hover:bg-yellow-400 cursor-default">{{ $article->category->name }}</a>
+                                        class="relative z-10 rounded-full bg-yellow-500 px-3 py-1.5 font-medium text-white hover:bg-yellow-400 cursor-pointer">{{ $article->category->name }}</a>
                                 </div>
                                 <div class="group relative">
                                     <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
@@ -88,10 +88,10 @@
                                         <p class="font-semibold text-gray-900">
                                             <a href="post.php">
                                                 <span class="absolute inset-0"></span>
-                                                IT
+
                                             </a>
                                         </p>
-                                        <p class="text-gray-600">{{ $article->user->name }}</p>
+                                        <p class="text-gray-600">ADMIN</p>
                                     </div>
                                 </div>
                             </article>

@@ -1,7 +1,7 @@
 <x-users.layout>
     {{-- DOCUMENT FRAGMENTS --}}
     <section class="container mx-auto px-44 pt-24 fixed top-0 left-0 fixed-nav">
-        <nav class="flex justify-between items-center">
+        <nav class="flex sm:flex justify-between items-center">
             <a href="#about" class="nav-link flex-1 text-center py-2 text-gray-700 font-semibold hover:text-gold">About
                 Us</a>
             <a href="#story" class="nav-link flex-1 text-center py-2 text-gray-700 font-semibold hover:text-gold">Our

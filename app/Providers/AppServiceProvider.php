@@ -24,11 +24,11 @@ class AppServiceProvider extends ServiceProvider
 
         
        Gate::define('admin_product', function (User $user) {
-        return $user->admin_id === 3 || $user->admin_id === 1;
+        return $user->admin_id === 2 || $user->admin_id === 1;
     });
 
     Gate::define('admin_newsroom', function (User $user) {
-        return $user->admin_id === 2 || $user->admin_id === 1;
+        return $user->admin_id === 3 || $user->admin_id === 1;
     });
 
     Gate::define('admin_career', function (User $user) {

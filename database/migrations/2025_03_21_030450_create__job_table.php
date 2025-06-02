@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('status_education')->nullable();
             $table->string('age')->nullable();
             $table->string('ipk')->nullable();
-            // $table->text('job_deskripsi');
+            $table->text('deskripsi')->nullable();
             $table->boolean('job_status')->nullable();
             $table->timestamps();
         });

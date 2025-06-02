@@ -194,9 +194,12 @@
                                             class="block text-sm/6 font-medium text-gray-900">Alamat Lengkap
                                             <span class="text-red-500">*</span></label>
                                         <div class="mt-2">
-                                            <input type="text" id="ktp_alamat" name="alamat_ktp[alamat1]"
-                                                placeholder="Alamat Lengkap"
-                                                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                                            <select id="provinsi"
+                                                class="border p-2  block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                                                <option selected disabled>Pilih Provinsi</option>
+                                            </select>
+
+
                                         </div>
                                     </div>
 

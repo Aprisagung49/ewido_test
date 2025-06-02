@@ -21,20 +21,17 @@ class PelamarController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index(Request $request,$id = null)
     {
         if ($request->is('admin/*')) {
             $query = Pelamar::query();
             if ($request->search) {
-            $query->where('nama', 'like', '%' . $request->search . '%')
-                  ;
+            $query->where('nama', 'like', '%' . $request->search . '%'); 
         }
-            $pelamars = $query->paginate(7)->withQueryString();
+            $pelamars = $query->where('job_id',$id)->paginate(2)->withQueryString();
+            $job = Job::findOrFail($id);
 
-    return view('admin.job.all', [
-        'pelamars' => $pelamars,
-    ]);
-               
+    return view('admin.job.show', compact('job', 'pelamars'));        
         } else {
             return view('users.careers.index2', [
                 'jobs' => Job::with('tags')->latest()->where('job_status', 1)->paginate(2)->withQueryString()

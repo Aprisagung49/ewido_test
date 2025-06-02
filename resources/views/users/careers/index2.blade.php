@@ -84,8 +84,8 @@
                         {{ $job->job_name }}
 
                         {{-- job Deskripsi --}}
-                        {{-- <x-slot:job_deskripsi>{!! $job->job_deskripsi !!}</x-slot:job_deskripsi> --}}
-                        {{-- End job Deskripsi --}}
+                        <x-slot:job_deskripsi>{!! $job->deskripsi !!}</x-slot:job_deskripsi>
+
 
                         <x-slot:status_education>{{ $job->status_education }}</x-slot:status_education>
                         <x-slot:age>{{ $job->age }}</x-slot:age>

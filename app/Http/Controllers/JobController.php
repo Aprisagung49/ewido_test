@@ -67,7 +67,7 @@ class JobController extends Controller
             'job_type' => ['nullable'],
             'quota' => 'nullable',
             'job_location' => ['nullable'],
-            // 'job_deskripsi' => 'required|max:255',
+            'deskripsi' => 'nullable',
             'status_education' => 'nullable',
             'age' => 'nullable',
             'ipk' => 'nullable',
@@ -119,7 +119,7 @@ class JobController extends Controller
             'job_type' => ['nullable'],
             'quota' => 'nullable',
             'job_location' => ['nullable'],
-            // 'job_deskripsi' => 'required|max:255',
+            'job_deskripsi' => 'nullable',
             'status_education' => 'nullable',
             'age' => 'nullable',
             'ipk' => 'nullable',
@@ -196,7 +196,7 @@ class JobController extends Controller
             // Cari job, kalau gak ketemu kasih 404
             $job = Job::findOrFail($id);
             // Ambil semua pelamar untuk job tersebut
-            $pelamars = Pelamar::with(['alamatKtp', 'alamatDomisili','education'])->where('job_id', $id)->get();
+            $pelamars = Pelamar::with(['alamatKtp', 'alamatDomisili','education'])->where('job_id', $id)->paginate(2);
 
             return view('admin/job/show', compact('job', 'pelamars'));
         }
@@ -253,5 +253,7 @@ class JobController extends Controller
             // Tampilkan halaman print, misal view 'admin.job.print'
             return view('admin.job.print', compact('pelamar','file_uploads'));
         }
+
+        
 
 }

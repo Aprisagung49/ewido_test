@@ -186,21 +186,21 @@
 
                                     </div>
 
-                                    {{-- <div class="col-span-full">
-                                            <label for="job_deskripsi"
-                                                class="@error('job_deskripsi') is-invalid @enderror block text-sm/6 font-medium text-gray-900">Job
-                                                Description <span class="text-red-500">*</span></label>
-                                            <div class="mt-2">
-                                                <textarea name="job_deskripsi" id="job_deskripsi" rows="3"
-                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">{{ old('job_deskripsi') }}</textarea>
-                                                @error('job_deskripsi')
-                                                    <div class="invalid-feedback">
-                                                        {{ $message }}
-                                                    </div>
-                                                @enderror
-                                            </div>
+                                    <div class="col-span-full">
+                                        <label for="deskripsi"
+                                            class="@error('deskripsi') is-invalid @enderror block text-sm/6 font-medium text-gray-900">Job
+                                            Description <span class="text-red-500">*</span></label>
+                                        <div class="mt-2">
+                                            <textarea name="deskripsi" id="deskripsi" rows="3"
+                                                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">{{ old('deskripsi') }}</textarea>
+                                            @error('deskripsi')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
-                                    </div> --}}
+                                    </div>
+
 
 
 

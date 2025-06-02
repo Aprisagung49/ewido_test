@@ -11,9 +11,9 @@
         <p class="text-sm text-gray-600 mt-2 leading-relaxed">
             {{-- Job Deskripsi --}}
 
-            {{-- <p class="text-xs text-gray-600">Deskripsi Pekerjaan : </p>{{ $job_deskripsi }}</p> --}}
+        <p class="text-xs text-gray-600"></p>{{ $job_deskripsi }}</p>
 
-            {{-- End Job Deskripsi --}}
+        {{-- End Job Deskripsi --}}
 
         <div class="flex flex-row">
         </div>

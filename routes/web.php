@@ -101,7 +101,7 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     Route::get('/job', [JobController::class, 'index']);
     Route::get('/job/applicantshow/{pelamar}', [JobController::class, 'DetailApplicant'])->name('job.applicants');
     Route::post('/job/applicantshow/{pelamar}/status', [JobController::class, 'ubahStatus'])->name('job.ubahStatus');
-    Route::get('/admin/job', [PelamarController::class, 'index'])->name('nama.route.admin.job');
+    Route::get('/admin/job/{id}', [PelamarController::class, 'index'])->name('nama.route.admin.job');
     Route::get('/job/applicantshow/{pelamar}/mark-print', [JobController::class, 'markPrint'])->name('job.markPrint');
     Route::get('/job/applicantshow/{pelamar}/print', [JobController::class, 'print'])->name('job.print');
     Route::post('/job/applicantshow/{id}/mark-read', [JobController::class, 'markReadAndShowPost']);

@@ -21,6 +21,9 @@
 
             <form method="GET" action="{{ route('products.index') }}"
                 class="flex rounded-full border-2 border-gold outline-none overflow-hidden max-w-lg mx-auto mt-10">
+                @if (request()->routeIs('products.category'))
+                    <input type="hidden" name="group" value="{{ request()->route('name') }}">
+                @endif
                 <input type="text" name="q" value="{{ request('q') }}" placeholder="Search Products..."
                     class="w-full outline-none bg-white text-sm px-5 py-3" />
                 <button type="submit" class="flex items-center justify-center bg-gold hover:bg-yellow-400 px-6">
@@ -53,45 +56,55 @@
                     Category By: {{ $group->name }}
                 @endif
             </x-users.heading>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8 p-14">
-                @foreach ($products as $product)
-                    <div
-                        class="relative rounded-lg overflow-hidden shadow-lg border-1 border-gold flex flex-col h-full">
-                        <img alt="Product image of {{ $product->type }}" class="w-full h-60 object-cover" height="300"
-                            src="{{ asset('storage/' . $product->product_images->first()->image_path) }}"
-                            width="300" />
+            @if ($products->count() > 0)
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8 p-14">
+                    @foreach ($products as $product)
+                        <div
+                            class="relative rounded-lg overflow-hidden shadow-lg border-1 border-gold flex flex-col h-full">
+                            <img alt="Product image of {{ $product->type }}" class="w-full h-60 object-cover"
+                                height="300"
+                                src="{{ asset('storage/' . $product->product_images->first()->image_path) }}"
+                                width="300" />
 
-                        {{-- Product Certificates --}}
-                        @if ($product->certificates->isNotEmpty())
-                            <div class="absolute top-2 right-2 flex flex-col space-y-1">
-                                @foreach ($product->certificates as $certificate)
-                                    <img class="w-10 h-10 border-2 border-gray-200 rounded-lg shadow-md object-contain bg-gray-100"
-                                        src="{{ asset('storage/' . $certificate->logo) }}"
-                                        alt="{{ $certificate->name }}">
-                                @endforeach
-                            </div>
-                        @endif
-                        <div class="p-4 border-t border-gold flex flex-col flex-grow justify-between">
-                            <div class="flex-grow">
-                                <h2 class="font-bold mb-2 text-gold">{{ $product->product_group->name }}</h2>
-                                <h3 class="font-semibold">{{ $product->type }}</h3>
-                                <p class="text-gray-600 mb-6">{{ $product->cable_type }}</p>
-                            </div>
-                            <div class="mt-auto">
-                                <a href="/products/{{ $product->slug }}"
-                                    class="bg-gold text-white py-2 px-4 rounded inline-block">
-                                    View
-                                </a>
+                            {{-- Product Certificates --}}
+                            @if ($product->certificates->isNotEmpty())
+                                <div class="absolute top-2 right-2 flex flex-col space-y-1">
+                                    @foreach ($product->certificates as $certificate)
+                                        <img class="w-10 h-10 border-2 border-gray-200 rounded-lg shadow-md object-contain bg-gray-100"
+                                            src="{{ asset('storage/' . $certificate->logo) }}"
+                                            alt="{{ $certificate->name }}">
+                                    @endforeach
+                                </div>
+                            @endif
+                            <div class="p-4 border-t border-gold flex flex-col flex-grow justify-between">
+                                <div class="flex-grow">
+                                    <h2 class="font-bold mb-2 text-gold">{{ $product->product_group->name }}</h2>
+                                    <h3 class="font-semibold">{{ $product->type }}</h3>
+                                    <p class="text-gray-600 mb-6">{{ $product->cable_type }}</p>
+                                </div>
+                                <div class="mt-auto">
+                                    <a href="/products/{{ $product->slug }}"
+                                        class="bg-gold text-white py-2 px-4 rounded inline-block">
+                                        View
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
-                {{-- PAGINATION --}}
+                    @endforeach
+                    {{-- PAGINATION --}}
 
-            </div>
-            <div class="mt-10">
-                {{ $products->links() }}
-            </div>
+                </div>
+                <div class="mt-10">
+                    {{ $products->links() }}
+                </div>
+
+                {{-- Pengecualian --}}
+            @else
+                {{-- Pesan jika tidak ada produk --}}
+                <div class="text-center py-10 text-gray-600">
+                    <h2 class="font-bold text-3xl mb-10 text-gold">Produk tidak ditemukan.</h2>
+                </div>
+            @endif
         </section>
 
 

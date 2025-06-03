@@ -83,65 +83,73 @@
                     </form>
                 </div>
 
-                <div
-                    class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-                    @foreach ($articles as $article)
-                        @php
-                            $images = json_decode($article->image, true) ?? [];
-                            $firstImage = $images[0] ?? null;
-                        @endphp
+                @if ($articles->count() > 0)
+                    <div
+                        class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                        @foreach ($articles as $article)
+                            @php
+                                $images = json_decode($article->image, true) ?? [];
+                                $firstImage = $images[0] ?? null;
+                            @endphp
 
-                        <div class="border border-gray-300 rounded-2xl p-4 bg-white shadow-lg">
-                            <article class="flex max-w-xl flex-col items-start justify-between">
-                                @if ($firstImage)
-                                    <img src="{{ asset('storage/' . $firstImage) }}" alt="Article Image"
-                                        class="w-full h-48 rounded-lg mb-4" />
-                                @else
-                                    <img src="/assets/google-hq.png" alt="Article Image"
-                                        class="w-full h-48 rounded-lg mb-4" />
-                                @endif
+                            <div class="border border-gray-300 rounded-2xl p-4 bg-white shadow-lg">
+                                <article class="flex max-w-xl flex-col items-start justify-between">
+                                    @if ($firstImage)
+                                        <img src="{{ asset('storage/' . $firstImage) }}" alt="Article Image"
+                                            class="w-full h-48 rounded-lg mb-4" />
+                                    @else
+                                        <img src="/assets/google-hq.png" alt="Article Image"
+                                            class="w-full h-48 rounded-lg mb-4" />
+                                    @endif
 
-                                <div class="flex items-center gap-x-4 text-xs">
-                                    <time datetime="2020-03-16"
-                                        class="text-gray-500">{{ $article->created_at->diffForHumans() }}</time>
-                                    <a href="#"
-                                        class="relative z-10 rounded-full bg-yellow-500 px-3 py-1.5 font-medium text-white hover:bg-yellow-400">{{ $article->category->name }}</a>
-                                </div>
-                                <div class="group relative">
-                                    <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
-                                        <a href="newsroom/{{ $article->slug }}">
-                                            <span class="absolute inset-0"></span>
-                                            {{ $article->title }}
-                                        </a>
-                                    </h3>
-                                    <p class="my-5 line-clamp-3 text-sm/6 text-gray-600">
-                                        {!! Str::limit($article->body, 150) !!}
-                                    </p>
-                                </div>
-                                <div class="flex items-center justify-between gap-4 mt-4">
-                                    <!-- Tombol Edit -->
-                                    <a href="/admin/newsroom/{{ $article->slug }}/edit"
-                                        class="text-md text-blue-600 font-semibold hover:underline"
-                                        onclick="return confirm('Are you sure want to edit this?')">Edit</a>
+                                    <div class="flex items-center gap-x-4 text-xs">
+                                        <time datetime="2020-03-16"
+                                            class="text-gray-500">{{ $article->created_at->diffForHumans() }}</time>
+                                        <a href="#"
+                                            class="relative z-10 rounded-full bg-yellow-500 px-3 py-1.5 font-medium text-white hover:bg-yellow-400">{{ $article->category->name }}</a>
+                                    </div>
+                                    <div class="group relative">
+                                        <h3
+                                            class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
+                                            <a href="newsroom/{{ $article->slug }}">
+                                                <span class="absolute inset-0"></span>
+                                                {{ $article->title }}
+                                            </a>
+                                        </h3>
+                                        <p class="my-5 line-clamp-3 text-sm/6 text-gray-600">
+                                            {!! Str::limit($article->body, 150) !!}
+                                        </p>
+                                    </div>
+                                    <div class="flex items-center justify-between gap-4 mt-4">
+                                        <!-- Tombol Edit -->
+                                        <a href="/admin/newsroom/{{ $article->slug }}/edit"
+                                            class="text-md text-blue-600 font-semibold hover:underline"
+                                            onclick="return confirm('Are you sure want to edit this?')">Edit</a>
 
-                                    <!-- Tombol Delete -->
-                                    <form action="/admin/newsroom/{{ $article->slug }}" method="POST"
-                                        onsubmit="return confirm('Are you sure you want to delete this?')">
-                                        @method('delete')
-                                        @csrf
-                                        <button type="submit"
-                                            class="text-md text-red-600 font-semibold hover:underline cursor-pointer">Delete</button>
-                                    </form>
-                                </div>
-                            </article>
-                        </div>
-                    @endforeach
-                </div>
+                                        <!-- Tombol Delete -->
+                                        <form action="/admin/newsroom/{{ $article->slug }}" method="POST"
+                                            onsubmit="return confirm('Are you sure you want to delete this?')">
+                                            @method('delete')
+                                            @csrf
+                                            <button type="submit"
+                                                class="text-md text-red-600 font-semibold hover:underline cursor-pointer">Delete</button>
+                                        </form>
+                                    </div>
+                                </article>
+                            </div>
+                        @endforeach
+                    </div>
 
-                <!-- Pagination -->
-                <div class="mt-10">
-                    {{ $articles->links() }}
-                </div>
+                    <!-- Pagination -->
+                    <div class="mt-10">
+                        {{ $articles->links() }}
+                    </div>
+                @else
+                    {{-- Pesan jika tidak ada produk --}}
+                    <div class="text-center py-10 text-gray-600">
+                        News tidak ditemukan.
+                    </div>
+                @endif
             </div>
         </div>
     </main>

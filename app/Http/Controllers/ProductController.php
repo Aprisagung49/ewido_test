@@ -23,10 +23,10 @@ class ProductController extends Controller
         $perPage = 4;
         $products = Product::with(['product_images', 'certificates'])
                 ->latest();
-
+        $group = $request->group;
         if ($request->has('group') && $request->group !== 'all') {
-        $products->whereHas('product_group', function($q) use ($request) {
-            $q->where('name', $request->group);
+        $products->whereHas('product_group', function($q) use ($group) {
+            $q->where('name', $group);
         });
     }
 
@@ -55,6 +55,7 @@ class ProductController extends Controller
     $parentGroups = ProductGroup::whereNull('parent_id')->get();
     $childGroups = ProductGroup::whereNotNull('parent_id')->get();
     $perPage = 4;
+    
     $products = \App\Models\Product::with(['product_images', 'certificates'])
         ->where('product_group_id', $group->id)
         ->latest()

@@ -35,6 +35,7 @@
                     @php
                         $currentSlug = request()->segment(2); // ambil segment URL kedua
                     @endphp
+
                     @foreach ($categories as $category)
                         <a href="/newsroom/{{ $category->slug }}"
                             class="category-button bg-gray-200 text-center py-4 px-13 rounded shadow hover:bg-gray-200 hover:text-yellow-500 focus:text-yellow-500 transition 
@@ -47,60 +48,68 @@
                 </div>
                 <div
                     class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-                    @foreach ($articles as $article)
-                        @php
-                            $images = json_decode($article->image, true) ?? [];
-                            $firstImage = $images[0] ?? null;
-                        @endphp
-                        <div class="border border-gray-300 rounded-2xl p-4">
-                            <article class="flex max-w-xl flex-col items-start justify-between">
-                                @if ($firstImage)
-                                    <img src="{{ asset('storage/' . $firstImage) }}"
-                                        class="w-full h-48 rounded-lg mb-4" />
-                                @else
-                                    <img src="{{ asset('storage/images/newsroom/google-hq.png') }}"
-                                        alt="Default Article Image" class="w-full h-48 rounded-lg mb-4" />
-                                @endif
-                                <div class="flex items-center gap-x-4 text-xs">
-                                    <p>{{ $article->created_at->diffForHumans() }}</p>
-                                    <a href="#"
-                                        class="relative z-10 rounded-full bg-yellow-500 px-3 py-1.5 font-medium text-white hover:bg-yellow-400 cursor-pointer">{{ $article->category->name }}</a>
-                                </div>
-                                <div class="group relative">
-                                    <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
-                                        <a href="/categories/{{ $article->slug }}">
-                                            <span class="absolute inset-0"></span>
-                                            {{ $article->title }}
-                                        </a>
-                                    </h3>
-                                    <p class="mt-5 line-clamp-3 text-sm/6 text-gray-600">
-                                        {!! Str::limit($article->body, 150) !!}
-                                    </p>
-
-                                    <a href="/newsroom/{{ $article['id'] }}"
-                                        class="hover:underline cursor-pointer text-md text-indigo-600 font-semibold">Read
-                                        more &raquo;</a>
-                                </div>
-                                <div class="relative mt-8 flex items-center gap-x-4">
-                                    <img src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
-                                        alt="" class="size-10 rounded-full bg-gray-50" />
-                                    <div class="text-sm/6">
-                                        <p class="font-semibold text-gray-900">
-                                            <a href="post.php">
-                                                <span class="absolute inset-0"></span>
-
-                                            </a>
-                                        </p>
-                                        <p class="text-gray-600">ADMIN</p>
+                    @if ($articles->count() > 0)
+                        @foreach ($articles as $article)
+                            @php
+                                $images = json_decode($article->image, true) ?? [];
+                                $firstImage = $images[0] ?? null;
+                            @endphp
+                            <div class="border border-gray-300 rounded-2xl p-4">
+                                <article class="flex max-w-xl flex-col items-start justify-between">
+                                    @if ($firstImage)
+                                        <img src="{{ asset('storage/' . $firstImage) }}"
+                                            class="w-full h-48 rounded-lg mb-4" />
+                                    @else
+                                        <img src="{{ asset('storage/images/newsroom/google-hq.png') }}"
+                                            alt="Default Article Image" class="w-full h-48 rounded-lg mb-4" />
+                                    @endif
+                                    <div class="flex items-center gap-x-4 text-xs">
+                                        <p>{{ $article->created_at->diffForHumans() }}</p>
+                                        <a href="#"
+                                            class="relative z-10 rounded-full bg-yellow-500 px-3 py-1.5 font-medium text-white hover:bg-yellow-400 cursor-pointer">{{ $article->category->name }}</a>
                                     </div>
-                                </div>
-                            </article>
-                        </div>
-                    @endforeach
+                                    <div class="group relative">
+                                        <h3
+                                            class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
+                                            <a href="/categories/{{ $article->slug }}">
+                                                <span class="absolute inset-0"></span>
+                                                {{ $article->title }}
+                                            </a>
+                                        </h3>
+                                        <p class="mt-5 line-clamp-3 text-sm/6 text-gray-600">
+                                            {!! Str::limit($article->body, 150) !!}
+                                        </p>
+
+                                        <a href="/newsroom/{{ $article['id'] }}"
+                                            class="hover:underline cursor-pointer text-md text-indigo-600 font-semibold">Read
+                                            more &raquo;</a>
+                                    </div>
+                                    <div class="relative mt-8 flex items-center gap-x-4">
+                                        <img src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
+                                            alt="" class="size-10 rounded-full bg-gray-50" />
+                                        <div class="text-sm/6">
+                                            <p class="font-semibold text-gray-900">
+                                                <a href="post.php">
+                                                    <span class="absolute inset-0"></span>
+
+                                                </a>
+                                            </p>
+                                            <p class="text-gray-600">ADMIN</p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        @endforeach
                 </div>
                 <div class="mt-10">
                     {{ $articles->links() }}
                 </div>
+            @else
+                {{-- Pesan jika tidak ada produk --}}
+                <div class="px-10 font-bold text-2xl text-gold">
+                    Berita tidak ditemukan.
+                </div>
+                @endif
             </div>
         </div>
 

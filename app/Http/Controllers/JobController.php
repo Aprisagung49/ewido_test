@@ -43,12 +43,11 @@ class JobController extends Controller
     public function create(Request $request)
     {
         if($request->is('admin/*')){
-            return view('admin.job.create',[
+            return view('admin.job.create', [
                 'jobs' => Job::all(),
                 'departements' => Departement::all()
             ]);
-        }
-        else{
+        }else{
             return view('users.job.create');
         }
     }

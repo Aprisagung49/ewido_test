@@ -75,6 +75,7 @@ class PelamarController extends Controller
             'tempat_lahir' => 'required|max:255',
             'tanggal_lahir' => 'required',
             'status_menikah' => 'required',
+            'umur'=>'required',
             'email' => 'required|email|unique:pelamars,email',
             'keahlian' => 'required|array',
             'keahlian.*' => 'string|max:100',
@@ -122,6 +123,7 @@ class PelamarController extends Controller
             'email' => $validatedData['email'], // diperbaiki dari 'email,' jadi 'email'
             'jenis_kelamin' => $validatedData['jenis_kelamin'],
             'status_menikah' => $validatedData['status_menikah'],
+            'umur' => $validatedData['umur'],
             'nohp' => $validatedData['nohp'],
             'agama' => $request->agama,
             'tempat_lahir' => $validatedData['tempat_lahir'],

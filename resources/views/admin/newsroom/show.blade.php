@@ -6,7 +6,7 @@
         class="mx-auto w-full max-w-4xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert pl-5">
         <header class="mb-4 lg:mb-6 not-format">
             <x-users.heading>{{ $newroom->title }}</x-users.heading>
-            <x-admin.author> By {{ $newroom->user->name }} | Published
+            <x-admin.author> By Admin | Published
                 {{ $newroom->created_at->format('d F Y') }}</x-admin.author>
 
 

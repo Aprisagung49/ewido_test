@@ -97,6 +97,11 @@
                             <p>{{ $pelamar->jenis_kelamin }}</p>
                         </div>
                         <div class="flex">
+                            <p class="font-medium w-40">Umur</p>
+                            <p class="mr-2">:</p>
+                            <p>{{ $pelamar->umur }}</p>
+                        </div>
+                        <div class="flex">
                             <p class="font-medium w-40">No HP</p>
                             <p class="mr-2">:</p>
                             <p>{{ $pelamar->nohp }}</p>

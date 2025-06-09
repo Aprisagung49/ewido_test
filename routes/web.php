@@ -90,7 +90,6 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     Route::get('/newsroom', [NewsroomController::class, 'index']);
     Route::get('/newsroom/create', [NewsroomController::class, 'create']);
     Route::post('/newsroom', [NewsroomController::class, 'store']);
-    Route::get('admin/newsroom/{slug}', [NewsroomController::class, 'show']);
     Route::get('/newsroom/{newroom:slug}', [NewsroomController::class, 'show']);
     Route::delete('/newsroom/{newsroom:slug}', [NewsroomController::class, 'destroy'])->name('newsroom.destroy');
     Route::get('/newsroom/{newsroom:slug}/edit', [NewsroomController::class, 'edit']);
@@ -99,23 +98,19 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     // KHUSUS ADMIN CAREER SAJA
     Route::middleware(['auth', 'can:admin_career'])->group(function () {
     Route::get('/job', [JobController::class, 'index']);
+    Route::get('/job/create', [JobController::class, 'create']);
     Route::get('/job/applicantshow/{pelamar}', [JobController::class, 'DetailApplicant'])->name('job.applicants');
     Route::post('/job/applicantshow/{pelamar}/status', [JobController::class, 'ubahStatus'])->name('job.ubahStatus');
-    Route::get('/admin/job/{id}', [PelamarController::class, 'index'])->name('nama.route.admin.job');
+    Route::get('/job/{id}', [PelamarController::class, 'index'])->name('nama.route.admin.job');
     Route::get('/job/applicantshow/{pelamar}/mark-print', [JobController::class, 'markPrint'])->name('job.markPrint');
     Route::get('/job/applicantshow/{pelamar}/print', [JobController::class, 'print'])->name('job.print');
     Route::post('/job/applicantshow/{id}/mark-read', [JobController::class, 'markReadAndShowPost']);
-    // Route::get('/job', [JobController::class, 'index']);
     Route::get('/job/checkSlug', [JobController::class, 'checkSlug']);
     Route::post('/job', [JobController::class, 'store']);
-    Route::get('/job/create', [JobController::class, 'create']);
-    // Route::get('/job/{job:slug}/show', [JobController::class, 'show']);
     Route::get('/job/{job:slug}/edit', [JobController::class, 'edit']);
     Route::put('/job/{job:slug}/update', [JobController::class, 'update']);
     Route::delete('/job/{job:slug}', [JobController::class, 'destroy'])->name('job.destroy');
     Route::get('/jobs/filter', [JobController::class, 'filter'])->name('jobs.filter');
     Route::get('/job/{job}/show', [JobController::class, 'showDataApplicants']);
-    // Route::get('/job/applicantshow', [JobController::class, 'DetailApplicant']);
-    // Route::get('/job/applicantshow/{applicant}', [JobController::class, 'DetailApplicant'])->name('job.applicants');
    });
 });

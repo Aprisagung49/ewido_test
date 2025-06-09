@@ -117,6 +117,10 @@
             <td>{{ $pelamar->jenis_kelamin }}</td>
         </tr>
         <tr>
+            <td>Umur</td>
+            <td>{{ $pelamar->umur }}</td>
+        </tr>
+        <tr>
             <td>Agama</td>
             <td>{{ $pelamar->agama }}</td>
         </tr>

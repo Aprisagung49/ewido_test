@@ -176,14 +176,14 @@
                                         style="display: none;">
 
                                         <a href="/admin/job/{{ $job->slug }}/edit"
-                                            class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Edit</a>
+                                            class="block px-4 py-2  text-gray-800 hover:bg-gray-100">Edit</a>
 
                                         <form action="/admin/job/{{ $job->slug }}" method="POST"
                                             onsubmit="return confirm('Are you sure you want to delete this?')">
                                             @method('delete')
                                             @csrf
                                             <button type="submit"
-                                                class="block w-full text-left px-4 py-2 text-red-600 font-semibold hover:bg-gray-100">
+                                                class="block w-full text-left px-4 py-2 z-999 text-red-600 font-semibold hover:bg-gray-100">
                                                 Delete
                                             </button>
                                         </form>

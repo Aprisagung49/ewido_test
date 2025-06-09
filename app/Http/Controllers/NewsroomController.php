@@ -85,9 +85,8 @@ class NewsroomController extends Controller
             'title' => 'required|max:255',
             'slug' => 'required|unique:newsrooms',
             'category_id' => 'required',
-            // 'image' => 'image|file|max:1024',
             'files' => 'required|array|max:20',
-            'files.*' => 'image|mimes:jpg,jpeg,png,gif|max:20048',
+            'files.*' => 'image|mimes:jpg,jpeg,png|max:20048',
             'body' => 'required'
         ]);
 
@@ -146,7 +145,7 @@ public function update(Request $request, Newsroom $newsroom)
         'title' => 'required|max:255',
         'category_id' => 'required',
         'files' => 'sometimes|array|max:20',
-        'files.*' => 'image|mimes:jpg,jpeg,png,gif|max:80048',
+        'files.*' => 'image|mimes:jpg,jpeg,png|max:20048',
         'body' => 'required'
     ];
 

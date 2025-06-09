@@ -25,7 +25,9 @@ class PelamarSeeder extends Seeder
             'tanggal_lahir' => Carbon::createFromFormat('d/m/Y', '21/04/1998')->toDateString(),
             'status_menikah' => 'Belum Menikah',
             'status' => 'pending',
+            'umur' => null,
             'tempat_lahir' => 'Bandung'
+            
             
         ]);
        Pelamar::create([
@@ -38,6 +40,7 @@ class PelamarSeeder extends Seeder
             'tanggal_lahir' => Carbon::createFromFormat('d/m/Y', '14/01/1998')->toDateString(),
             'status_menikah' => 'Menikah',
             'status' => 'pending',
+            'umur' => 25,
             'tempat_lahir' => 'Bandung'
         ]);
        Pelamar::create([
@@ -50,6 +53,7 @@ class PelamarSeeder extends Seeder
             'tanggal_lahir' => Carbon::createFromFormat('d/m/Y', '14/03/1998')->toDateString(),
             'status_menikah' => 'Belum Menikah',
             'status' => 'pending',
+            'umur' => 14,
             'tempat_lahir' => 'Bogor'
         ]);
        Pelamar::create([
@@ -62,6 +66,7 @@ class PelamarSeeder extends Seeder
             'tanggal_lahir' => Carbon::createFromFormat('d/m/Y', '14/01/1998')->toDateString(),
             'status_menikah' => 'Menikah',
             'status' => 'Accepted',
+            'umur' => null,
             'tempat_lahir' => 'Garut'
         ]);
     }

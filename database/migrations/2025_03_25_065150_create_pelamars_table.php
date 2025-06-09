@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->date('tanggal_lahir');
             $table->string('tempat_lahir');
+            $table->unsignedTinyInteger('umur')->nullable();
             $table->string('status_menikah');
             $table->enum('status', ['pending', 'accepted', 'rejected'])->default('pending');
             $table->enum('agama', ['Islam', 'Kristen', 'Protestan', 'Katolik', 'Hindu', 'Budha', 'Konguchu'])->default('Islam');

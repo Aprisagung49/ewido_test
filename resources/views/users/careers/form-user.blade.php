@@ -51,7 +51,9 @@
                                             <label for="nik"
                                                 class="block mb-2 text-sm font-medium text-gray-900">No. KTP <span
                                                     class="text-red-500">*</span></label>
-                                            <input type="text" name="nik" id="nik"
+                                            <input type="text" name="nik" id="nik" maxlength="16"
+                                                pattern="[0-9]*"
+                                                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                                                 class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                                                 required>
                                         </div>
@@ -94,14 +96,21 @@
                                         </div>
                                         <!-- NO HANDPHONE -->
                                         <div class="col-span-12">
-                                            <label for="nohp"
-                                                class="block mb-2 text-sm font-medium text-gray-900">No. Handphone 1
-                                                <span class="text-red-500">*</span></label>
-                                            <input type="text" name="nohp" id="nohp"
-                                                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                                                required>
-                                            <p class="mt-3 text-sm/6 text-gray-600 text-bold"><span
-                                                    class="text-extrabold">Wajib</span> aktif WhatsApp.</p>
+                                            <label for="nohp" class="block mb-2 text-sm font-medium text-gray-900">
+                                                No. Handphone 1 <span class="text-red-500">*</span>
+                                            </label>
+                                            <div class="flex">
+                                                <span
+                                                    class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-100 text-gray-600 text-sm">
+                                                    +62
+                                                </span>
+                                                <input type="text" name="nohp" id="nohp" maxlength="12"
+                                                    pattern="[0-9]*"
+                                                    oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                                                    required>
+                                            </div>
+                                            <span class="text-red-500 text-xs">*Wajib Terhubung Ke Dalam Whatsapp</span>
                                         </div>
                                         <!-- EMAIL ADDRESS -->
                                         <div class="col-span-12">
@@ -130,6 +139,11 @@
                                                 class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                                                 required>
                                         </div>
+                                        {{-- UMUR --}}
+                                        <input type="hidden" id="umur" name="umur"
+                                            class="block w-full rounded-md bg-gray-100 px-3 py-1.5 text-base text-gray-900 outline-1 outline-gray-300 sm:text-sm/6"
+                                            readonly>
+
                                         <!-- ALAMAT KTP -->
                                         <div class="col-span-12">
                                             <label for="ktp_alamat"
@@ -201,8 +215,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="text-sm/6">
-                                                    <label for="is_domisili_sama"
-                                                        class="font-medium text-gray-900">Alamat
+                                                    <label for="copyAlamat" class="font-medium text-gray-900">Alamat
                                                         sesuai dengan KTP</label>
                                                 </div>
                                             </div>
@@ -264,7 +277,7 @@
                                             <label for="agama"
                                                 class="block text-sm/6 font-medium text-gray-900">Agama</label>
                                             <div class="mt-2 grid grid-cols-1">
-                                                <select name="agama" required
+                                                <select name="agama" id="agama" required
                                                     class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
                                                     <option value="">Pilih Agama</option>
                                                     <option value="Islam">Islam</option>
@@ -335,7 +348,7 @@
                                                 class="block text-sm/6 font-medium text-gray-900">Pendidikan
                                                 Terakhir</label>
                                             <div class="mt-2 grid grid-cols-1">
-                                                <select name="education[last_education]" required
+                                                <select name="education[last_education]" id="last_education" required
                                                     class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
                                                     <option value="">-- Select Pendidikan --</option>
                                                     <option value="SMA/SMK">SMA/SMK</option>
@@ -352,8 +365,8 @@
                                                 class="block text-sm/6 font-medium text-gray-900">Nama Institusi /
                                                 Universitas</label>
                                             <div class="mt-2">
-                                                <input type="text" name="education[name_school]" required
-                                                    autocomplete="name_school"
+                                                <input type="text" name="education[name_school]" id="name_school"
+                                                    required autocomplete="name_school"
                                                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
                                             </div>
                                         </div>
@@ -512,18 +525,16 @@
 
                                 <!-- INFORMASI TAMBAHAN SECTION -->
                                 <div class="border-b border-gray-900/10 pb-6">
-                                    <h2 class="text-base/7 font-semibold text-gray-900">Sebutkan Keahlian Anda</h2>
-
+                                    <label for="keahlian" class="block text-sm/6 font-medium text-gray-900">Sebutkan
+                                        Keahlian Anda</label>
                                     @if (old('keahlian'))
                                         @foreach (old('keahlian') as $index => $keahlian)
                                             <div id="keahlian-container" class="grid gap-4 mb-4 grid-cols-12 mt-10">
                                                 <!-- KEAHLIAN KHUSUS -->
                                                 <div class="col-span-12">
-                                                    <label for="keahlian"
-                                                        class="block text-sm/6 font-medium text-gray-900">Sebutkan
-                                                        Skill Anda</label>
+
                                                     <div class="mt-2">
-                                                        <textarea name="keahlian[]" value="{{ $keahlian }}" rows="3"
+                                                        <textarea name="keahlian[]" id="keahlian" value="{{ $keahlian }}" rows="3"
                                                             class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                                                             placeholder="Contoh: Buta Warna, Bronkitis, Hepatitis, HIV/AIDS">{{ old('nama_penyakit') }}</textarea>
                                                         <p class="mt-3 text-sm/6 text-gray-600">Bersifat
@@ -601,7 +612,7 @@
                                                     class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white 
                       not-checked:before:hidden checked:border-transparent checked:bg-indigo-600 focus:outline-none focus:ring-0 focus:ring-offset-0 
                       disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden">
-                                                <label for="bersedia-kerja"
+                                                <label for="siap_ditempatkan"
                                                     class="block text-sm/6 font-medium text-gray-900">Ya</label>
                                             </div>
                                             <div class="flex items-center gap-x-3">
@@ -624,7 +635,7 @@
                                     <div class="flex gap-3">
                                         <div class="flex h-6 shrink-0 items-center">
                                             <div class="group grid size-4 grid-cols-1">
-                                                <input name="referensi_kerja[]" type="checkbox"
+                                                <input name="referensi_kerja[]" id="website" type="checkbox"
                                                     value="Website Ewindo"
                                                     {{ is_array(old('referensi_kerja')) && in_array('Website Ewindo', old('referensi_kerja')) ? 'checked' : '' }}
                                                     class="col-start-1 row-start-1 appearance-none rounded-sm border border-gray-300 bg-white checked:border-indigo-600 checked:bg-indigo-600 indeterminate:border-indigo-600 indeterminate:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto">
@@ -640,14 +651,15 @@
                                             </div>
                                         </div>
                                         <div class="text-sm/6">
-                                            <label for="candidates" class="font-medium text-gray-900">Website
+                                            <label for="website" class="font-medium text-gray-900">Website
                                                 PT Ewindo</label>
                                         </div>
                                     </div>
                                     <div class="flex gap-3">
                                         <div class="flex h-6 shrink-0 items-center">
                                             <div class="group grid size-4 grid-cols-1">
-                                                <input name="referensi_kerja[]" type="checkbox" value="Instagram"
+                                                <input name="referensi_kerja[]" id="instagram" type="checkbox"
+                                                    value="Instagram"
                                                     {{ is_array(old('referensi_kerja')) && in_array('Instagram', old('referensi_kerja')) ? 'checked' : '' }}
                                                     class="col-start-1 row-start-1 appearance-none rounded-sm border border-gray-300 bg-white checked:border-indigo-600 checked:bg-indigo-600 indeterminate:border-indigo-600 indeterminate:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto">
                                                 <svg class="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-disabled:stroke-gray-950/25"
@@ -662,8 +674,7 @@
                                             </div>
                                         </div>
                                         <div class="text-sm/6">
-                                            <label for="candidates"
-                                                class="font-medium text-gray-900">Instagram</label>
+                                            <label for="instagram" class="font-medium text-gray-900">Instagram</label>
                                         </div>
                                     </div>
                                     <div class="flex gap-3">
@@ -685,7 +696,7 @@
                                             </div>
                                         </div>
                                         <div class="text-sm/6">
-                                            <label for="candidates" class="font-medium text-gray-900">Rekan /
+                                            <label for="checkbox-rekan" class="font-medium text-gray-900">Rekan /
                                                 Kerabat</label>
                                         </div>
                                     </div>
@@ -898,6 +909,27 @@
                 </main>
 
                 <!-- JavaScript -->
+
+
+                {{-- PERHITUNGAN UMUR --}}
+
+
+                <script>
+                    document.getElementById('tanggal_lahir').addEventListener('change', function() {
+                        const tanggalLahir = new Date(this.value);
+                        const hariIni = new Date();
+                        let umur = hariIni.getFullYear() - tanggalLahir.getFullYear();
+                        const bulan = hariIni.getMonth() - tanggalLahir.getMonth();
+                        const tanggal = hariIni.getDate() - tanggalLahir.getDate();
+
+                        // Kurangi umur 1 tahun jika ulang tahun belum lewat di tahun ini
+                        if (bulan < 0 || (bulan === 0 && tanggal < 0)) {
+                            umur--;
+                        }
+
+                        document.getElementById('umur').value = umur;
+                    });
+                </script>
 
                 <script>
                     document.addEventListener('DOMContentLoaded', function() {

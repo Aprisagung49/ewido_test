@@ -98,8 +98,8 @@
                                         <img src="{{ asset('storage/' . $firstImage) }}" alt="Article Image"
                                             class="w-full h-48 rounded-lg mb-4" />
                                     @else
-                                        <img src="/assets/google-hq.png" alt="Article Image"
-                                            class="w-full h-48 rounded-lg mb-4" />
+                                        <img src="{{ asset('storage/images/newsroom/google-hq.png') }}"
+                                            alt="Article Image" class="w-full h-48 rounded-lg mb-4" />
                                     @endif
 
                                     <div class="flex items-center gap-x-4 text-xs">

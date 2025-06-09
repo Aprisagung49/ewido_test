@@ -10,7 +10,7 @@ class Pelamar extends Model
     use HasFactory;
     protected $table = 'pelamars';
 
-    protected $fillable = ['job_id','nik', 'nama', 'email', 'jenis_kelamin', 'nohp', 'tanggal_lahir', 'status_menikah', 'status', 'tempat_lahir','is_ada_pengalaman','agama'];
+    protected $fillable = ['job_id','nik', 'nama', 'email', 'jenis_kelamin', 'nohp', 'tanggal_lahir', 'status_menikah', 'status', 'tempat_lahir','is_ada_pengalaman','agama','umur'];
 
     
 

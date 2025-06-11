@@ -10,7 +10,7 @@ class Skill extends Model
     use HasFactory;
     protected $table = 'skills';
     protected $fillable = [
-        'pelamar_id',
+        'applicant_id',
         'keahlian',
     ];
     
@@ -19,8 +19,8 @@ class Skill extends Model
         'keahlian' => 'array', 
     ];
 
-    public function pelamar()
+    public function applicant()
     {
-        return $this->belongsTo(Pelamar::class);
+        return $this->belongsTo(applicant::class);
     }
 }

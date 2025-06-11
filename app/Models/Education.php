@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Education extends Model
 {
-    protected $fillable = ['pelamar_id','last_education','name_school','jurusan','tahun_kelulusan','nilai_ipk'];
+    protected $fillable = ['applicant_id','last_education','name_school','jurusan','tahun_kelulusan','nilai_ipk'];
     protected $table = 'educations';
-    public function pelamar()
+    public function applicant()
     {
-        return $this->belongsTo(Pelamar::class);
+        return $this->belongsTo(applicant::class);
     }
 }

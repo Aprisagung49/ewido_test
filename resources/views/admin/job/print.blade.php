@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     {{-- <button onclick="window.print()" style="margin-bottom: 20px;">🖨️ Cetak CV</button> --}}
-    <title>CV Digital - {{ $pelamar->nama }}</title>
+    <title>CV Digital - {{ $applicant->nama }}</title>
     <style>
         @media print {
             button {
@@ -85,7 +85,7 @@
     <div class="header">
         <div>
             <h1>Curriculum Vitae</h1>
-            <h2>{{ $pelamar->nama }}</h2>
+            <h2>{{ $applicant->nama }}</h2>
         </div>
         @if ($file_uploads && $file_uploads->pas_foto_upload)
             <img src="{{ asset('storage/' . $file_uploads->pas_foto_upload) }}" alt="Foto KTP"
@@ -101,48 +101,48 @@
     <table>
         <tr>
             <td>Nama</td>
-            <td>{{ $pelamar->nama }}</td>
+            <td>{{ $applicant->nama }}</td>
         </tr>
         <tr>
             <td>NIK</td>
-            <td>{{ $pelamar->nik }}</td>
+            <td>{{ $applicant->nik }}</td>
         </tr>
         <tr>
             <td>Tempat & Tanggal Lahir</td>
-            <td>{{ $pelamar->tempat_lahir }},
-                {{ \Carbon\Carbon::parse($pelamar->tanggal_lahir)->translatedFormat('d F Y') }}</td>
+            <td>{{ $applicant->tempat_lahir }},
+                {{ \Carbon\Carbon::parse($applicant->tanggal_lahir)->translatedFormat('d F Y') }}</td>
         </tr>
         <tr>
             <td>Jenis Kelamin</td>
-            <td>{{ $pelamar->jenis_kelamin }}</td>
+            <td>{{ $applicant->jenis_kelamin }}</td>
         </tr>
         <tr>
             <td>Umur</td>
-            <td>{{ $pelamar->umur }}</td>
+            <td>{{ $applicant->umur }}</td>
         </tr>
         <tr>
             <td>Agama</td>
-            <td>{{ $pelamar->agama }}</td>
+            <td>{{ $applicant->agama }}</td>
         </tr>
         <tr>
             <td>Status Perkawinan</td>
-            <td>{{ $pelamar->status_menikah }}</td>
+            <td>{{ $applicant->status_menikah }}</td>
         </tr>
         <tr>
             <td>No. HP</td>
-            <td>{{ $pelamar->nohp }}</td>
+            <td>{{ $applicant->nohp }}</td>
         </tr>
         <tr>
             <td>Email</td>
-            <td>{{ $pelamar->email }}</td>
+            <td>{{ $applicant->email }}</td>
         </tr>
         <tr>
             <td>Alamat KTP</td>
-            <td>{{ $pelamar->alamatKtp->alamat1 }}</td>
+            <td>{{ $applicant->alamatKtp->alamat1 }}</td>
         </tr>
         <tr>
             <td>Alamat Domisili</td>
-            <td>{{ $pelamar->alamatDomisili->alamat0 }}</td>
+            <td>{{ $applicant->alamatDomisili->alamat0 }}</td>
         </tr>
     </table>
 
@@ -150,25 +150,25 @@
     <table>
         <tr>
             <td>Pendidikan Terakhir</td>
-            <td>{{ $pelamar->education->last_education }}</td>
+            <td>{{ $applicant->education->last_education }}</td>
         </tr>
         <tr>
             <td>Nama Institusi</td>
-            <td>{{ $pelamar->education->name_school }}</td>
+            <td>{{ $applicant->education->name_school }}</td>
         </tr>
         <tr>
             <td>Jurusan</td>
-            <td>{{ $pelamar->education->jurusan }}</td>
+            <td>{{ $applicant->education->jurusan }}</td>
         </tr>
 
         <tr>
             <td>Tahun Lulus</td>
-            <td>{{ $pelamar->education->tahun_kelulusan }}</td>
+            <td>{{ $applicant->education->tahun_kelulusan }}</td>
         </tr>
     </table>
 
     <div class="section-title">Pengalaman Kerja</div>
-    @forelse ($pelamar->experiences as $exp)
+    @forelse ($applicant->experiences as $exp)
         <table>
             <tr>
                 <td>Perusahaan</td>
@@ -195,7 +195,7 @@
     <ul>
 
 
-        @foreach (optional($pelamar->skill)->keahlian ?? [] as $keahlian)
+        @foreach (optional($applicant->skill)->keahlian ?? [] as $keahlian)
             <span
                 class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300">
                 {{ is_array($keahlian) ? implode(', ', $keahlian) : $keahlian }}
@@ -210,7 +210,7 @@
 
         <tr>
             <td>Penyakit</td>
-            <td>{{ optional($pelamar->riwayatKesehatan)->nama_penyakit }}</td>
+            <td>{{ optional($applicant->riwayatKesehatan)->nama_penyakit }}</td>
         </tr>
     </table>
 
@@ -219,16 +219,16 @@
 
         <tr>
             <td>Kenalan di perusahaan</td>
-            <td>{{ optional($pelamar->job_information)->kenalan }}</td>
+            <td>{{ optional($applicant->job_information)->kenalan }}</td>
         </tr>
         <tr>
             <td>Kesiapan Penempatan</td>
-            <td>{{ $pelamar->job_information->siap_ditempatkan }}</td>
+            <td>{{ $applicant->job_information->siap_ditempatkan }}</td>
         </tr>
         <tr>
             <td>Referensi Kerja</td>
             <td>
-                @foreach (Arr::wrap($pelamar->job_information->referensi_kerja) as $ref)
+                @foreach (Arr::wrap($applicant->job_information->referensi_kerja) as $ref)
                     {{ $ref }}{{ !$loop->last ? ', ' : '' }}
                 @endforeach
             </td>

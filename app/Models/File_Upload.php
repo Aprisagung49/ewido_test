@@ -11,7 +11,7 @@ class File_Upload extends Model
 
     protected $table = 'file_uploads';
     protected $fillable = [
-        'pelamar_id',
+        'applicant_id',
         'ktp_upload',
         'pas_foto_upload',
         'kk_upload',
@@ -20,8 +20,8 @@ class File_Upload extends Model
         'sertifikasi_lainnya_upload',
     ];
 
-    public function pelamar()
+    public function applicant()
     {
-        return $this->belongsTo(Pelamar::class, 'pelamar_id');
+        return $this->belongsTo(applicant::class, 'applicant_id');
     }
 }

@@ -80,7 +80,7 @@ class CareerController extends Controller
     $validatedData = $request->validated();
 
     // Simpan data ke tabel applicants
-    $applicant = Pelamar::create([
+    $applicant = Applicant::create([
         // 'job_id' => $request->job_id,
         'nik' => $validatedData['nik'],
         'nama' => $validatedData['nama_lengkap'],

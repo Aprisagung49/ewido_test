@@ -1,6 +1,6 @@
 <x-admin.layout>
     <x-slot:heading>
-        Detail pelamar
+        Detail Applicants
     </x-slot:heading>
 
     <main>
@@ -13,12 +13,12 @@
                     </button>
 
                     <span class="text-xl font-semibold">CV Digital</span>
-                    <a href="{{ route('job.markPrint', $pelamar->id) }}" target="_blank"
+                    <a href="{{ route('job.markPrint', $applicant->id) }}" target="_blank"
                         class="inline-flex items-center bg-blue-500 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded">
                         Print &nbsp;<i class="fa-solid fa-print "></i>
                     </a>
                 </div>
-                <form action="/admin/job/applicantshow/{{ $pelamar->id }}/status" method="POST" class="inline-flex">
+                <form action="/admin/job/applicantshow/{{ $applicant->id }}/status" method="POST" class="inline-flex">
                     @csrf
                     <input type="hidden" name="status" value="accepted">
                     <div class="inline-flex rounded-md shadow-xs" role="group">
@@ -34,7 +34,7 @@
                         </button>
                 </form>
 
-                <form action="/admin/job/applicantshow/{{ $pelamar->id }}/status" method="POST" class="inline-flex">
+                <form action="/admin/job/applicantshow/{{ $applicant->id }}/status" method="POST" class="inline-flex">
                     @csrf
                     <input type="hidden" name="status" value="pending">
                     <button id="btn-pending" type="submit"
@@ -49,7 +49,7 @@
                     </button>
                 </form>
 
-                <form action="/admin/job/applicantshow/{{ $pelamar->id }}/status" method="POST" class="inline-flex">
+                <form action="/admin/job/applicantshow/{{ $applicant->id }}/status" method="POST" class="inline-flex">
                     @csrf
                     <input type="hidden" name="status" value="rejected">
                     <button id="btn-reject" type="submit"
@@ -83,55 +83,55 @@
 
             <div class="ml-6 flex-1">
 
-                <h1 class="text-3xl font-bold text-gray-800">{{ $pelamar->nama }}</h1>
+                <h1 class="text-3xl font-bold text-gray-800">{{ $applicant->nama }}</h1>
                 <div class="mt-4 text-gray-700 text-sm">
                     <div class="grid gap-y-2">
                         <div class="flex">
                             <p class="font-medium w-40">NIK</p>
                             <p class="mr-2">:</p>
-                            <p>{{ $pelamar->nik }}</p>
+                            <p>{{ $applicant->nik }}</p>
                         </div>
                         <div class="flex">
                             <p class="font-medium w-40">Jenis Kelamin</p>
                             <p class="mr-2">:</p>
-                            <p>{{ $pelamar->jenis_kelamin }}</p>
+                            <p>{{ $applicant->jenis_kelamin }}</p>
                         </div>
                         <div class="flex">
                             <p class="font-medium w-40">Umur</p>
                             <p class="mr-2">:</p>
-                            <p>{{ $pelamar->umur }}</p>
+                            <p>{{ $applicant->umur }}</p>
                         </div>
                         <div class="flex">
                             <p class="font-medium w-40">No HP</p>
                             <p class="mr-2">:</p>
-                            <p>{{ $pelamar->nohp }}</p>
+                            <p>{{ $applicant->nohp }}</p>
                         </div>
                         <div class="flex">
                             <p class="font-medium w-40">Email</p>
                             <p class="mr-2">:</p>
-                            <p>{{ $pelamar->email }}</p>
+                            <p>{{ $applicant->email }}</p>
                         </div>
                         <div class="flex">
                             <p class="font-medium w-40">Tempat, Tanggal Lahir</p>
                             <p class="mr-2">:</p>
                             <p>Bandung,
-                                {{ \Carbon\Carbon::parse($pelamar->tanggal_lahir)->translatedFormat('d F Y') }}</p>
+                                {{ \Carbon\Carbon::parse($applicant->tanggal_lahir)->translatedFormat('d F Y') }}</p>
                         </div>
                         <div class="flex">
                             <p class="font-medium w-40">Alamat</p>
                             <p class="mr-2">:</p>
-                            <p>{{ $pelamar->alamatDomisili->alamat0 }},
-                                {{ $pelamar->alamatDomisili->kota0 }}</p>
+                            <p>{{ $applicant->alamatDomisili->alamat0 }},
+                                {{ $applicant->alamatDomisili->kota0 }}</p>
                         </div>
                         <div class="flex">
                             <p class="font-medium w-40">Agama</p>
                             <p class="mr-2">:</p>
-                            <p>{{ $pelamar->agama }}</p>
+                            <p>{{ $applicant->agama }}</p>
                         </div>
                         <div class="flex">
                             <p class="font-medium w-40">Status Pernikahan</p>
                             <p class="mr-2">:</p>
-                            <p>{{ $pelamar->status_menikah }}</p>
+                            <p>{{ $applicant->status_menikah }}</p>
                         </div>
                     </div>
                 </div>
@@ -146,27 +146,27 @@
                     <div class="flex">
                         <p class="font-medium w-60">Pendidikan Terakhir</p>
                         <p class="mr-2">:</p>
-                        <p>{{ $pelamar->education->last_education }}</p>
+                        <p>{{ $applicant->education->last_education }}</p>
                     </div>
                     <div class="flex">
                         <p class="font-medium w-60">Nama Institusi / Universitas</p>
                         <p class="mr-2">:</p>
-                        <p>{{ $pelamar->education->name_school }}</p>
+                        <p>{{ $applicant->education->name_school }}</p>
                     </div>
                     <div class="flex">
                         <p class="font-medium w-60">Program Studi / Jurusan</p>
                         <p class="mr-2">:</p>
-                        <p>{{ $pelamar->education->jurusan }}</p>
+                        <p>{{ $applicant->education->jurusan }}</p>
                     </div>
                     <div class="flex">
                         <p class="font-medium w-60">Tahun Kelulusan</p>
                         <p class="mr-2">:</p>
-                        <p>{{ $pelamar->education->tahun_kelulusan }}</p>
+                        <p>{{ $applicant->education->tahun_kelulusan }}</p>
                     </div>
                     <div class="flex">
                         <p class="font-medium w-60">Nilai / IPK Akhir</p>
                         <p class="mr-2">:</p>
-                        <p>{{ $pelamar->education->nilai_ipk }}</p>
+                        <p>{{ $applicant->education->nilai_ipk }}</p>
                     </div>
                 </div>
             </div>
@@ -178,27 +178,27 @@
                     <div class="flex">
                         <p class="font-medium w-60">Alamat Domisili</p>
                         <p class="mr-2">:</p>
-                        <p>{{ $pelamar->alamatDomisili->alamat0 }}</p>
+                        <p>{{ $applicant->alamatDomisili->alamat0 }}</p>
                     </div>
                     <div class="flex">
                         <p class="font-medium w-60">Kota</p>
                         <p class="mr-2">:</p>
-                        <p>{{ $pelamar->alamatDomisili->kota0 }}</p>
+                        <p>{{ $applicant->alamatDomisili->kota0 }}</p>
                     </div>
                     <div class="flex">
                         <p class="font-medium w-60">Kecamatan</p>
                         <p class="mr-2">:</p>
-                        <p>{{ $pelamar->alamatDomisili->kecamatan0 }}</p>
+                        <p>{{ $applicant->alamatDomisili->kecamatan0 }}</p>
                     </div>
                     <div class="flex">
                         <p class="font-medium w-60">Kelurahan</p>
                         <p class="mr-2">:</p>
-                        <p>{{ $pelamar->alamatDomisili->kelurahan0 }}</p>
+                        <p>{{ $applicant->alamatDomisili->kelurahan0 }}</p>
                     </div>
                     <div class="flex">
                         <p class="font-medium w-60">Provinsi</p>
                         <p class="mr-2">:</p>
-                        <p>{{ $pelamar->alamatDomisili->provinsi0 }}</p>
+                        <p>{{ $applicant->alamatDomisili->provinsi0 }}</p>
                     </div>
                 </div>
             </div>
@@ -210,34 +210,34 @@
                     <div class="flex">
                         <p class="font-medium w-60">Alamat Lengkap </p>
                         <p class="mr-2">:</p>
-                        <p>{{ $pelamar->alamatKtp->alamat1 }}</p>
+                        <p>{{ $applicant->alamatKtp->alamat1 }}</p>
                     </div>
                     <div class="flex">
                         <p class="font-medium w-60">Kota</p>
                         <p class="mr-2">:</p>
-                        <p>{{ $pelamar->alamatKtp->kota1 }}</p>
+                        <p>{{ $applicant->alamatKtp->kota1 }}</p>
                     </div>
                     <div class="flex">
                         <p class="font-medium w-60">Kecamatan</p>
                         <p class="mr-2">:</p>
-                        <p>{{ $pelamar->alamatKtp->kecamatan1 }}</p>
+                        <p>{{ $applicant->alamatKtp->kecamatan1 }}</p>
                     </div>
                     <div class="flex">
                         <p class="font-medium w-60">Kelurahan</p>
                         <p class="mr-2">:</p>
-                        <p>{{ $pelamar->alamatKtp->kelurahan1 }}</p>
+                        <p>{{ $applicant->alamatKtp->kelurahan1 }}</p>
                     </div>
                     <div class="flex">
                         <p class="font-medium w-60">Provinsi</p>
                         <p class="mr-2">:</p>
-                        <p>{{ $pelamar->alamatKtp->provinsi1 }}</p>
+                        <p>{{ $applicant->alamatKtp->provinsi1 }}</p>
                     </div>
                 </div>
             </div>
         </section>
 
 
-        @foreach ($pelamar->experiences as $experience)
+        @foreach ($applicant->experiences as $experience)
             <section class="bg-white shadow-md rounded-lg p-6 mb-6">
                 <h2 class="text-2xl font-semibold text-gray-800 mb-4">Pengalaman Kerja {{ $loop->iteration }}</h2>
                 <div class="mt-4 text-gray-700 text-sm">
@@ -291,12 +291,12 @@
                     <div class="flex">
                         <p class="font-medium w-60">Riwayat Kesehatan</p>
                         <p class="mr-2">:</p>
-                        <p>{{ $pelamar->riwayatKesehatan->nama_penyakit }}</p>
+                        <p>{{ $applicant->riwayatKesehatan->nama_penyakit }}</p>
                     </div>
                     <div class="flex">
                         <p class="font-medium w-60">Ketersediaan Bekerja</p>
                         <p class="mr-2">:</p>
-                        <p>{{ $pelamar->job_information->siap_ditempatkan }}</p>
+                        <p>{{ $applicant->job_information->siap_ditempatkan }}</p>
                     </div>
                 </div>
             </div>
@@ -309,13 +309,13 @@
                     <div class="flex">
                         <p class="font-medium w-60">Referensi Kerja</p>
                         <p class="mr-2">:</p>
-                        <p>{{ is_array($pelamar->job_information->referensi_kerja) ? implode(', ', $pelamar->job_information->referensi_kerja) : $pelamar->job_information->referensi_kerja }}
+                        <p>{{ is_array($applicant->job_information->referensi_kerja) ? implode(', ', $applicant->job_information->referensi_kerja) : $applicant->job_information->referensi_kerja }}
                         </p>
                     </div>
                     <div class="flex">
                         <p class="font-medium w-60">Rekan / Kerabat</p>
                         <p class="mr-2">:</p>
-                        <p>{{ $pelamar->job_information->kenalan }}</p>
+                        <p>{{ $applicant->job_information->kenalan }}</p>
                     </div>
                 </div>
             </div>

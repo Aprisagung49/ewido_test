@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('alamat_domisili', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('pelamar_id')->unique();
+            $table->unsignedBigInteger('applicant_id')->unique();
             $table->string('alamat0');
             $table->string('kota0');
             $table->string('kecamatan0');
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('provinsi0');
             $table->boolean('is_domisili_sama')->default(1); // 1 = sama, 0 = beda
             $table->timestamps();
-            $table->foreign('pelamar_id')->references('id')->on('pelamars')->onDelete('cascade');
+            $table->foreign('applicant_id')->references('id')->on('applicants')->onDelete('cascade');
         });
     }
 

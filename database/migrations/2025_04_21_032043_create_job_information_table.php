@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('job_information', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pelamar_id')->constrained('pelamars')->onDelete('cascade');
+            $table->foreignId('applicant_id')->constrained('applicants')->onDelete('cascade');
             $table->text('referensi_kerja')->nullable();
             $table->string('kenalan', 255)->nullable();
             $table->string('siap_ditempatkan', 10)->default('Tidak');

@@ -16,14 +16,14 @@ class Job extends Model
     protected $casts = ['job_status' => 'boolean'];
 
 
-    public function pelamars_is_read()
+    public function applicants_is_read()
 {
-    return $this->hasMany(Pelamar::class, 'job_id')->where('is_read', 1);
+    return $this->hasMany(applicant::class, 'job_id')->where('is_read', 1);
 }
 
-    public function pelamars()
-{
-    return $this->hasMany(Pelamar::class);
+    public function applicants()
+{ 
+    return $this->hasMany(applicant::class);
 }
 
     public function tag(string $name): void
@@ -52,10 +52,7 @@ class Job extends Model
         ];
     }
 
-    public function applicants()
-    {
-        return $this->hasMany(Pelamar::class); // Relasi ke applicants
-    }
+    
 
 
 

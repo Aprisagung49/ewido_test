@@ -12,8 +12,8 @@ class RiwayatKesehatan extends Model
     protected $table = 'riwayat_kesehatan';
     protected $fillable = ['ada_riwayat_penyakit', 'nama_penyakit'];
 
-    public function pelamar()
+    public function applicant()
 {
-    return $this->belongsTo(Pelamar::class, 'pelamar_id');
+    return $this->belongsTo(applicant::class, 'applicant_id');
 }
 }

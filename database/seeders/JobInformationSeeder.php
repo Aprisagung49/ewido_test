@@ -14,25 +14,25 @@ class JobInformationSeeder extends Seeder
     public function run(): void
     {
         JobInformation::create([
-            'pelamar_id' => 1,
+            'applicant_id' => 1,
             'referensi_kerja' => 'Koran,website',
             'kenalan' => 'Gama',
             'siap_ditempatkan' => 'Tidak'
         ]);
         JobInformation::create([
-            'pelamar_id' => 2,
+            'applicant_id' => 2,
             'referensi_kerja' => 'website, linkedin, facebook',
             'kenalan' => 'Gama',
             'siap_ditempatkan' => 'Ya'
         ]);
         JobInformation::create([
-            'pelamar_id' => 3,
+            'applicant_id' => 3,
             'referensi_kerja' => 'website, linkedin, Kerabat',
             'kenalan' => 'Iman',
             'siap_ditempatkan' => 'Tidak'
         ]);
         JobInformation::create([
-            'pelamar_id' => 4,
+            'applicant_id' => 4,
             'referensi_kerja' => 'website, linkedin, Kerabat',
             'kenalan' => 'Apris',
             'siap_ditempatkan' => 'Ya'

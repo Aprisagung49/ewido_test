@@ -1,19 +1,14 @@
 <?php
 
 
-use App\Models\Career;
-use App\Models\Pelamar;
-use Illuminate\Support\Arr;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\EmailController;
-use App\Http\Controllers\PressController;
-use App\Http\Controllers\CareerController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\PelamarController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\NewsroomController;
+use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\RegisteredAdminController;
 
 // user section
@@ -32,24 +27,14 @@ Route::get('/newsroom/{newroom:slug}', [NewsroomController::class, 'show']);
 
 Route::get('/contact', [EmailController::class, 'index']);
 Route::post('/kirim-email', [EmailController::class, 'kirim'])->name('kirim.email');
-// Route::post('/contact', [ContactController::class, 'store']);
 
-// Route::get('/careers', [JobController::class, 'index']);
-// Route::get('/careers/{job:slug}/apply', [JobController::class, 'create']);
-// Route::post('/careers', [JobController::class, 'store']);
-// Route::post('/careers', [JobController::class, 'store']);
-
-Route::get('/careers', [PelamarController::class, 'index']);
-Route::get('/careers/lamar', [PelamarController::class, 'create1']);
-// Route::get('careers/apply', [PelamarController::class, 'create']);
-// Route::post('careers/apply', [PelamarController::class, 'store']);
-Route::get('/careers/{job:slug}/apply', [PelamarController::class, 'create']);
-Route::post('/careers/{job:slug}/apply', [PelamarController::class, 'store']);
+Route::get('/careers', [ApplicantController::class, 'index']);
+Route::get('/careers/lamar', [ApplicantController::class, 'create1']);
+Route::get('/careers/{job:slug}/apply', [ApplicantController::class, 'create']);
+Route::post('/careers/{job:slug}/apply', [ApplicantController::class, 'store']);
 
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 Route::get('/products/category/{name}', [ProductController::class, 'filterByCategory'])->name('products.category');
-
-// Route::post('/products/{product:slug}', [ProductController::class, 'kirim']);
 Route::get('/products/{product:slug}', [ProductController::class, 'show']);
 Route::post('/products/{product}', [ProductController::class, 'store']);
 Route::post('/products/{product}/request-a-quotation', [ProductController::class, 'kirim']);
@@ -60,14 +45,6 @@ Route::delete('/logout', [SessionController::class, 'destroy'])->middleware('aut
 
 Route::get('/register', [RegisteredAdminController::class, 'index'])->middleware('superadmin');
 Route::post('/register', [RegisteredAdminController::class, 'store']);
-
-
-// Tampilkan form
-// Route::get('/form', function () {
-//     return view('users.contact.form');
-// });
-// Proses kirim email
-
 
 // admin section
 Route::prefix('admin')->middleware('auth')->group(function() {
@@ -99,11 +76,11 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     Route::middleware(['auth', 'can:admin_career'])->group(function () {
     Route::get('/job', [JobController::class, 'index']);
     Route::get('/job/create', [JobController::class, 'create']);
-    Route::get('/job/applicantshow/{pelamar}', [JobController::class, 'DetailApplicant'])->name('job.applicants');
-    Route::post('/job/applicantshow/{pelamar}/status', [JobController::class, 'ubahStatus'])->name('job.ubahStatus');
-    Route::get('/job/{id}', [PelamarController::class, 'index'])->name('nama.route.admin.job');
-    Route::get('/job/applicantshow/{pelamar}/mark-print', [JobController::class, 'markPrint'])->name('job.markPrint');
-    Route::get('/job/applicantshow/{pelamar}/print', [JobController::class, 'print'])->name('job.print');
+    Route::get('/job/applicantshow/{applicant}', [JobController::class, 'DetailApplicant'])->name('job.applicants');
+    Route::post('/job/applicantshow/{applicant}/status', [JobController::class, 'ubahStatus'])->name('job.ubahStatus');
+    Route::get('/job/{id}', [ApplicantController::class, 'index'])->name('nama.route.admin.job');
+    Route::get('/job/applicantshow/{applicant}/mark-print', [JobController::class, 'markPrint'])->name('job.markPrint');
+    Route::get('/job/applicantshow/{applicant}/print', [JobController::class, 'print'])->name('job.print');
     Route::post('/job/applicantshow/{id}/mark-read', [JobController::class, 'markReadAndShowPost']);
     Route::get('/job/checkSlug', [JobController::class, 'checkSlug']);
     Route::post('/job', [JobController::class, 'store']);

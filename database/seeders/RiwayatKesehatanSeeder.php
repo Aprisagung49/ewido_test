@@ -14,22 +14,22 @@ class RiwayatKesehatanSeeder extends Seeder
     public function run(): void
     {
         RiwayatKesehatan::create([
-            'pelamar_id' => 1,
+            'applicant_id' => 1,
             'ada_riwayat_penyakit' => 0,
             'nama_penyakit' =>'',
         ]);
         RiwayatKesehatan::create([
-            'pelamar_id' => 2,
+            'applicant_id' => 2,
             'ada_riwayat_penyakit' => 1,
             'nama_penyakit' => 'Sakit Hati, Sakit Maag',
         ]);
         RiwayatKesehatan::create([
-            'pelamar_id' => 3,
+            'applicant_id' => 3,
             'ada_riwayat_penyakit' => 1,
             'nama_penyakit' => 'Sakit Panas, TBC(TEKANAN BATIN CINTA',
         ]);
         RiwayatKesehatan::create([
-            'pelamar_id' => 4,
+            'applicant_id' => 4,
             'ada_riwayat_penyakit' => 0,
             'nama_penyakit' => '',
         ]);

@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('alamat_ktp', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('pelamar_id')->unique();
+            $table->unsignedBigInteger('applicant_id')->unique();
             $table->string('alamat1');
             $table->string('kota1');
             $table->string('kecamatan1');
             $table->string('kelurahan1');
             $table->string('provinsi1');
             $table->timestamps();
-            $table->foreign('pelamar_id')->references('id')->on('pelamars')->onDelete('cascade');
+            $table->foreign('applicant_id')->references('id')->on('applicants')->onDelete('cascade');
         });
     }
 

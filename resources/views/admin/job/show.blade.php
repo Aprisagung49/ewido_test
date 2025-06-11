@@ -106,7 +106,7 @@
                                 </div>
                                 <input type="search" name="search" value="{{ request('search') }}" id="search"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2"
-                                    placeholder="Search nama pelamar" />
+                                    placeholder="Search nama applicant" />
                             </div>
                             <button type="submit"
                                 class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-4 py-2 rounded-r-lg ml-2">
@@ -183,7 +183,7 @@
 
 
                 <div class="relative overflow-x-auto shadow-md rounded-lg mx-4">
-                    @if ($pelamars->count() > 0)
+                    @if ($applicants->count() > 0)
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500">
                             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                                 <tr>
@@ -219,56 +219,56 @@
                             <tbody>
 
 
-                                @foreach ($pelamars as $pelamar)
-                                    <form id="form-markread-{{ $pelamar->id }}"
-                                        action="/admin/job/applicantshow/{{ $pelamar->id }}/mark-read"
+                                @foreach ($applicants as $applicant)
+                                    <form id="form-markread-{{ $applicant->id }}"
+                                        action="/admin/job/applicantshow/{{ $applicant->id }}/mark-read"
                                         method="POST" style="display:none;">
                                         @csrf
                                     </form>
                                     <tr class="bg-white border-b border-gray-200 hover:bg-gray-50 cursor-pointer"
-                                        onclick="event.preventDefault(); document.getElementById('form-markread-{{ $pelamar->id }}').submit();">
+                                        onclick="event.preventDefault(); document.getElementById('form-markread-{{ $applicant->id }}').submit();">
                                         <th scope="row" class="px-6 py-4">
                                             {{ $loop->iteration }}
                                         </th>
                                         <th scope="row"
                                             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                            {{ $pelamar->nama }}
+                                            {{ $applicant->nama }}
                                         </th>
                                         <td class="px-6 py-4">
-                                            {{ $pelamar->created_at->format('d M Y') }}
+                                            {{ $applicant->created_at->format('d M Y') }}
                                         </td>
                                         <td class="px-6 py-4">
-                                            {{ $pelamar->umur }}
+                                            {{ $applicant->umur }}
                                         </td>
                                         <td class="px-6 py-4">
-                                            {{ $pelamar->education->last_education }}
+                                            {{ $applicant->education->last_education }}
                                         </td>
                                         <td class="px-6 py-4">
-                                            {{ $pelamar->education->jurusan }}
+                                            {{ $applicant->education->jurusan }}
                                         </td>
                                         <td class="px-6 py-4">
-                                            {{ $pelamar->alamatKtp->kota1 }}
+                                            {{ $applicant->alamatKtp->kota1 }}
                                         </td>
                                         <td class="px-6 py-4">
                                             <span
                                                 class="
                                             text-white text-xs font-medium me-2 px-3 py-1 rounded-full
-                                            {{ $pelamar->status === 'accepted'
+                                            {{ $applicant->status === 'accepted'
                                                 ? 'bg-green-500'
-                                                : ($pelamar->status === 'pending'
+                                                : ($applicant->status === 'pending'
                                                     ? 'bg-gray-500'
-                                                    : ($pelamar->status === 'rejected'
+                                                    : ($applicant->status === 'rejected'
                                                         ? 'bg-red-500'
                                                         : 'bg-gray-300')) }}
                                         ">
-                                                {{ ucfirst($pelamar->status) }}
+                                                {{ ucfirst($applicant->status) }}
                                             </span>
                                         </td>
                                         <td class="px-6 py-4 text-center">
-                                            @if ($pelamar->is_read)
+                                            @if ($applicant->is_read)
                                                 <i class="fa-solid fa-eye text-yellow-500 mr-2"></i>
                                             @endif
-                                            @if ($pelamar->is_print)
+                                            @if ($applicant->is_print)
                                                 <i class="fa-solid fa-print text-yellow-500 mr-2"></i>
                                             @endif
                                         </td>
@@ -277,7 +277,7 @@
                             </tbody>
                         </table>
                     @else
-                        <p>Belum ada pelamar untuk lowongan ini.</p>
+                        <p>Belum ada applicant untuk lowongan ini.</p>
                     @endif
                 </div>
                 <nav class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4 mt-4"
@@ -285,28 +285,28 @@
                     <span class="text-sm font-normal text-gray-500">
                         Showing
                         <span
-                            class="font-semibold text-gray-900">{{ ($pelamars->currentPage() - 1) * $pelamars->perPage() + 1 }}
+                            class="font-semibold text-gray-900">{{ ($applicants->currentPage() - 1) * $applicants->perPage() + 1 }}
                             -
-                            {{ min($pelamars->currentPage() * $pelamars->perPage(), $pelamars->total()) }}</span>
+                            {{ min($applicants->currentPage() * $applicants->perPage(), $applicants->total()) }}</span>
                         of
-                        <span class="font-semibold text-gray-900">{{ $pelamars->total() }}</span>
+                        <span class="font-semibold text-gray-900">{{ $applicants->total() }}</span>
                     </span>
 
                     <ul class="inline-flex items-stretch -space-x-px">
                         <li>
-                            <a href="{{ $pelamars->previousPageUrl() }}"
-                                class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 {{ $pelamars->onFirstPage() ? 'pointer-events-none opacity-50' : '' }}">
+                            <a href="{{ $applicants->previousPageUrl() }}"
+                                class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 {{ $applicants->onFirstPage() ? 'pointer-events-none opacity-50' : '' }}">
                                 < <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 01..." clip-rule="evenodd" />
                                     </svg>
                             </a>
                         </li>
                         <li>
-                            @for ($i = 1; $i <= $pelamars->lastPage(); $i++)
+                            @for ($i = 1; $i <= $applicants->lastPage(); $i++)
                         <li>
-                            <a href="{{ $pelamars->url($i) }}"
+                            <a href="{{ $applicants->url($i) }}"
                                 class="flex items-center justify-center text-sm py-2 px-3 leading-tight
-                    {{ $pelamars->currentPage() === $i
+                    {{ $applicants->currentPage() === $i
                         ? 'text-primary-600 bg-primary-50 border border-primary-300'
                         : 'text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700' }}">
                                 {{ $i }}
@@ -314,8 +314,8 @@
                         </li>
                         @endfor
                         <li>
-                            <a href="{{ $pelamars->nextPageUrl() }}"
-                                class="flex items-center justify-center h-full py-1.5 px-3 text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 {{ !$pelamars->hasMorePages() ? 'pointer-events-none opacity-50' : '' }}">>
+                            <a href="{{ $applicants->nextPageUrl() }}"
+                                class="flex items-center justify-center h-full py-1.5 px-3 text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 {{ !$applicants->hasMorePages() ? 'pointer-events-none opacity-50' : '' }}">>
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 01..." clip-rule="evenodd" />
                                 </svg>

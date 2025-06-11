@@ -14,7 +14,7 @@ class ExperienceSeeder extends Seeder
     public function run(): void
     {
         Experience::create([
-            'pelamar_id' => 1,
+            'applicant_id' => 1,
             'nama_perusahaan' => 'PT. PLN',
             'jabatan' => 'Token listrik',
             'jenis_pekerjaan' => 'Fulltime',
@@ -23,7 +23,7 @@ class ExperienceSeeder extends Seeder
             'gaji_terakhir' => '2.300.000'
         ]);
         Experience::create([
-            'pelamar_id' => 1,
+            'applicant_id' => 1,
             'nama_perusahaan' => 'PT. Perhutani',
             'jabatan' => 'IT STAFF',
             'jenis_pekerjaan' => 'Fulltime',
@@ -32,7 +32,7 @@ class ExperienceSeeder extends Seeder
             'gaji_terakhir' => '4.300.000'
         ]);
         Experience::create([
-            'pelamar_id' => 1,
+            'applicant_id' => 1,
             'nama_perusahaan' => 'PT. DAHLIA',
             'jabatan' => 'SONAR',
             'jenis_pekerjaan' => 'Fulltime',
@@ -41,7 +41,7 @@ class ExperienceSeeder extends Seeder
             'gaji_terakhir' => '1.300.000'
         ]);
         Experience::create([
-            'pelamar_id' => 2,
+            'applicant_id' => 2,
             'nama_perusahaan' => 'PT. Karya Nusantara',
             'jabatan' => 'Produksi',
             'jenis_pekerjaan' => 'Fulltime',
@@ -50,7 +50,7 @@ class ExperienceSeeder extends Seeder
             'gaji_terakhir' => '4.400.000'
         ]);
         Experience::create([
-            'pelamar_id' => 2,
+            'applicant_id' => 2,
             'nama_perusahaan' => 'PT. Citra Surya Kencana',
             'jabatan' => 'Staff Management',
             'jenis_pekerjaan' => 'Fulltime',
@@ -59,7 +59,7 @@ class ExperienceSeeder extends Seeder
             'gaji_terakhir' => '7.400.000'
         ]);
         Experience::create([
-            'pelamar_id' => 3,
+            'applicant_id' => 3,
             'nama_perusahaan' => 'PT. Karya Durable',
             'jabatan' => 'Packing',
             'jenis_pekerjaan' => 'Fulltime',
@@ -68,7 +68,7 @@ class ExperienceSeeder extends Seeder
             'gaji_terakhir' => '1.900.000'
         ]);
         Experience::create([
-            'pelamar_id' => 4,
+            'applicant_id' => 4,
             'nama_perusahaan' => 'PT. Karya Anak Nusantara',
             'jabatan' => 'Cameraman',
             'jenis_pekerjaan' => 'Fulltime',

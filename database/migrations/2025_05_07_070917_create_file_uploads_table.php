@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('file_uploads', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pelamar_id')->constrained('pelamars')->onDelete('cascade');
+            $table->foreignId('applicant_id')->constrained('applicants')->onDelete('cascade');
             $table->string('ktp_upload')->nullable();
             $table->string('pas_foto_upload')->nullable();
             $table->string('kk_upload')->nullable();

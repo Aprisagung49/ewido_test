@@ -12,7 +12,7 @@ class Experience extends Model
     protected $table = 'experiences';
 
     protected $fillable = [
-        'pelamar_id',
+        'applicant_id',
         'nama_perusahaan',
         'jabatan',
         'jenis_pekerjaan',
@@ -21,8 +21,8 @@ class Experience extends Model
         'gaji_terakhir'
     ];
 
-    public function pelamar()
+    public function applicant()
     {
-        return $this->belongsTo(Pelamar::class);
+        return $this->belongsTo(applicant::class);
     }
 }

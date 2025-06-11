@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('riwayat_kesehatan', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pelamar_id')->constrained('pelamars')->onDelete('cascade');
+            $table->foreignId('applicant_id')->constrained('applicants')->onDelete('cascade');
             $table->boolean('ada_riwayat_penyakit')->default(0);
             $table->text('nama_penyakit')->nullable();
             $table->timestamps();

@@ -119,7 +119,7 @@
 
                                             <div class="flex-grow flex flex-col ml-4">
 
-                                                <span class="text-xl font-bold">{{ $job->pelamars_count }}</span>
+                                                <span class="text-xl font-bold">{{ $job->applicants_count }}</span>
 
                                                 <div class="flex items-center justify-between">
                                                     <span class="text-gray-500">Pendaftar</span>
@@ -139,7 +139,7 @@
                                             </svg>
                                             <div class="flex-grow flex flex-col ml-4">
                                                 <span
-                                                    class="text-xl font-bold">{{ $job->pelamars_is_read_count }}</span>
+                                                    class="text-xl font-bold">{{ $job->applicants_is_read_count }}</span>
                                                 <div class="flex items-center justify-between">
                                                     <span class="text-gray-500">Dilihat</span>
                                                 </div>

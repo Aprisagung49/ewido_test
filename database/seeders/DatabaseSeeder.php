@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        $this->call([NewsroomcategorySeeder::class, AdminSeeder::class, UserSeeder::class, NewsroomSeeder::class, DepartementSeeder::class, JobSeeder::class, PelamarSeeder::class, EducationSeeder::class, AlamatKtpSeeder::class, AlamatDomisiliSeeder::class, ExperienceSeeder::class, SkillSeeder::class, RiwayatKesehatanSeeder::class, JobInformationSeeder::class, ProductGroupSeeder::class, CertificateSeeder::class, ColorSeeder::class]);
+        $this->call([NewsroomcategorySeeder::class, AdminSeeder::class, UserSeeder::class, NewsroomSeeder::class, DepartementSeeder::class, JobSeeder::class, applicantSeeder::class, EducationSeeder::class, AlamatKtpSeeder::class, AlamatDomisiliSeeder::class, ExperienceSeeder::class, SkillSeeder::class, RiwayatKesehatanSeeder::class, JobInformationSeeder::class, ProductGroupSeeder::class, CertificateSeeder::class, ColorSeeder::class]);
         Newsroom::factory()->recycle([
             Newsroom::all(),
             Newsroomcategory::all(),
@@ -57,7 +57,7 @@ class DatabaseSeeder extends Seeder
             Admin::all(),
             User::all(),
             Job::all(),
-            Pelamar::all(),
+            applicant::all(),
             Education::all(),
             AlamatKtp::all(),
             AlamatDomisili::all(),

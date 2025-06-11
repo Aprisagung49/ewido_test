@@ -14,11 +14,11 @@ class SkillSeeder extends Seeder
     public function run(): void
     {
         Skill::create([
-            'pelamar_id' => 1,
+            'applicant_id' => 1,
             'keahlian' => ['php','mysql','css']
         ]);
         Skill::create([
-            'pelamar_id' => 2,
+            'applicant_id' => 2,
             'keahlian' => ['photoshop','figma','html2']
         ]);
     }

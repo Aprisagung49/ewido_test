@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('experiences', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('pelamar_id');
+            $table->unsignedBigInteger('applicant_id');
             $table->string('nama_perusahaan');
             $table->string('jabatan');
             $table->string('jenis_pekerjaan');
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('gaji_terakhir');
             $table->timestamps();
         
-            $table->foreign('pelamar_id')->references('id')->on('pelamars')->onDelete('cascade');
+            $table->foreign('applicant_id')->references('id')->on('applicants')->onDelete('cascade');
         });
     }
 

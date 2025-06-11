@@ -16,8 +16,8 @@ class JobInformation extends Model
     ];
     protected $fillable = ['referensi_kerja', 'kenalan', 'siap_ditempatkan'];
 
-    public function pelamar()
+    public function applicant()
     {
-        return $this->belongsTo(Pelamar::class, 'pelamar_id');
+        return $this->belongsTo(applicant::class, 'applicant_id');
     }
 }

@@ -2,14 +2,15 @@
 
 @php
     if ($color === 'gray') {
-      $class = "bg-background";
+        $class = 'bg-background';
     }
 
     if ($color === 'white') {
-      $class = "bg-white";
+        $class = 'bg-white';
     }
+
 @endphp
 
 <div class="{{ $class }}" {{ $attributes }}>
-  {{ $slot }}
+    {{ $slot }}
 </div>

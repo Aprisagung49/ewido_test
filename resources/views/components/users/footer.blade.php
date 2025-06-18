@@ -3,7 +3,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-5">
             <div>
                 <div>
-                    <h3 class="text-xl font-bold">PLANT 1</h3>
+                    <h3 class="text-xl font-bold">PLANT 1 - Wire & Cable</h3>
                     <p class="mt-2">
                         Jl. Cimuncang No. 68, Bandung, Jawa Barat, Indonesia.
                     </p>
@@ -11,7 +11,7 @@
                     <p class="mt-2">F: +62 22 720 7132, 720 6283</p>
                 </div>
                 <div class="mt-6">
-                    <h3 class="text-xl font-bold">PLANT 2</h3>
+                    <h3 class="text-xl font-bold">PLANT 2 - Power Supply Cord & Wiring Harness </h3>
                     <p class="mt-2">
                         Kawasan Industri Rancaekek Kav. A.8, Jalan Raya Rancaekek KM 24.5 Sumedang 45364, Jawa Barat,
                         Indonesia.

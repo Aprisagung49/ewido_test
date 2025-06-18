@@ -88,14 +88,13 @@
                         class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                         @foreach ($articles as $article)
                             @php
-                                $images = json_decode($article->image, true) ?? [];
-                                $firstImage = $images[0] ?? null;
+                                $firstImage = $article->newsroom_images->first();
                             @endphp
 
                             <div class="border border-gray-300 rounded-2xl p-4 bg-white shadow-lg">
                                 <article class="flex max-w-xl flex-col items-start justify-between">
                                     @if ($firstImage)
-                                        <img src="{{ asset('storage/' . $firstImage) }}" alt="Article Image"
+                                        <img src="{{ asset('storage/' . $firstImage->image_path) }}" alt="Article Image"
                                             class="w-full h-48 rounded-lg mb-4" />
                                     @else
                                         <img src="{{ asset('storage/images/newsroom/google-hq.png') }}"
@@ -117,7 +116,7 @@
                                             </a>
                                         </h3>
                                         <p class="my-5 line-clamp-3 text-sm/6 text-gray-600">
-                                            {!! Str::limit($article->body, 150) !!}
+                                            {!! Str::limit(strip_tags($article->body), 150) !!}
                                         </p>
                                     </div>
                                     <div class="flex items-center justify-between gap-4 mt-4">

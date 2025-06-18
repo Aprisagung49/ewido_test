@@ -36,4 +36,8 @@ class Newsroom extends Model
             ]
         ];
     }
+public function newsroom_images()
+{
+    return $this->hasMany(NewsroomImage::class);
+}
 }

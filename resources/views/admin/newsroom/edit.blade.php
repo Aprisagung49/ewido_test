@@ -129,7 +129,8 @@
             const fileInput = document.getElementById('files');
             const hiddenInput = document.getElementById('remaining-old-images');
 
-            const existingImages = @json(json_decode($newsroom->image ?? '[]', true));
+            // Ambil gambar dari relasi
+            const existingImages = @json($newsroom->newsroom_images->pluck('image_path'));
 
             function updateRemainingImages() {
                 const remaining = [];
@@ -167,7 +168,7 @@
                 previewContainer.appendChild(wrapper);
             }
 
-            // Tampilkan gambar lama
+            // Tampilkan gambar lama dari relasi
             existingImages.forEach(imagePath => {
                 createImagePreview(`/storage/${imagePath}`, true);
             });
@@ -182,6 +183,7 @@
                 });
             });
         </script>
+
 
         <script>
             function confirmCancel() {

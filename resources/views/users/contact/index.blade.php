@@ -187,7 +187,7 @@
 
                     <!-- Right Side: Full Address -->
                     <div class="w-full md:w-3/4 text-gray-700 text-md p-4 font-semibold">
-                        <h3 class="font-bold text-xl text-amber-500">Plant 1</h3>
+                        <h3 class="font-bold text-xl text-amber-500">Plant 1 - Wire & Cable</h3>
                         <p>Jl. Cimuncang No. 68, Bandung, Jawa Barat, Indonesia</p>
                         <p>T +62 22 720 8008</p>
                         <p>F +62 22 720 7132, 720 8263</p>
@@ -213,7 +213,7 @@
 
                     <!-- Right Side: Full Address -->
                     <div class="w-full md:w-3/4 text-gray-700 text-md p-4 font-semibold">
-                        <h3 class="font-bold text-xl text-amber-500">Plant 2</h3>
+                        <h3 class="font-bold text-xl text-amber-500">Plant 2 - Power Supply Cord & Wiring Harness </h3>
                         <p>Kawasan Industri Rancaekek Kav. A.8,</p>
                         <p>Jalan Raya Rancaekek KM 24.5 Sumedang, 45364, Jawa Barat, Indonesia.</p>
                         <p>T +62 22 778 0008</p>

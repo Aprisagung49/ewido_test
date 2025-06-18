@@ -1,87 +1,77 @@
 <x-admin.layout>
     <x-slot:heading>
-        Press Manager
+        Press Manager Preview
     </x-slot:heading>
-    <div
-        class="mx-auto w-full max-w-4xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert pl-5">
-        <header class="mb-4 lg:mb-6 not-format">
-            <x-users.heading>{{ $newroom->title }}</x-users.heading>
-            <x-admin.author> By Admin | Published
-                {{ $newroom->created_at->format('d F Y') }}</x-admin.author>
 
-
-        </header>
-    </div>
-    <div class="flex flex-col items-center gap-4">
-        @php
-            $images = json_decode($newroom->image, true) ?? [];
-        @endphp
-
-        {{-- Main Image --}}
-        <div class="w-3/5 mb-4">
-            @if (isset($images[0]))
-                <img id="mainImage" class="w-full h-auto rounded-lg" src="{{ asset('storage/' . $images[0]) }}"
-                    alt="Main Image">
-            @else
-                <img class="w-full h-auto rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg" alt="Main Image">
-            @endif
+    <section class="container py-10 dark:text-gray-800">
+        <div
+            class="mx-auto w-full max-w-4xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert pl-5">
+            <header class="mb-4 lg:mb-6 not-format">
+                <h1
+                    class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl text-center dark:text-gray-800">
+                    {{ $newsroom->title }}</h1>
+            </header>
         </div>
+        <div class="flex flex-col items-center gap-4">
+            {{-- Main Image --}}
+            @php
+                $firstImage = $newsroom->newsroom_images->first();
+            @endphp
 
-        {{-- Thumbnails --}}
-        @if (count($images) > 1)
-            <div class="w-3/5 relative">
-                <div id="thumbnailContainer"
-                    class="overflow-x-auto flex gap-4 scroll-smooth px-2 py-2 whitespace-nowrap border rounded-md">
-                    @foreach (array_slice($images, 1) as $img)
-                        <div class="flex-shrink-0 w-32 sm:w-36 md:w-40">
-                            <img class="w-full h-auto rounded-md cursor-pointer thumbnail-img"
-                                src="{{ asset('storage/' . $img) }}" alt="Thumbnail">
-                        </div>
+            @if ($firstImage)
+            @endif
+
+            <div x-data="{ currentImage: '{{ $firstImage ? asset('storage/' . $firstImage->image_path) : '' }}' }" class="space-y-4 w-4/5">
+                <div>
+                    <img :src="currentImage" alt="Main Image"
+                        class="w-full h-[500px] rounded-lg shadow-lg object-cover">
+                </div>
+
+                {{-- Small Images --}}
+                <div class="flex gap-4 overflow-x-auto max-w-full pb-2">
+                    @foreach ($newsroom->newsroom_images as $image)
+                        <img src="{{ asset('storage/' . $image->image_path) }}" alt="Thumbnail"
+                            class="w-50 h-[100px] rounded-lg border border-gray-300 cursor-pointer object-cover hover:scale-105 transition"
+                            @click='currentImage = "{{ asset('storage/' . $image->image_path) }}"'>
                     @endforeach
                 </div>
             </div>
-        @endif
-    </div>
+            <!-- Newsroom body -->
+            <article class="mx-auto w-4/5 text-base/7 text-justify leading-relaxed text-gray-800 mt-8">
+                {!! $newsroom->body !!}
+            </article>
+            {{-- Writer Info --}}
+            <div class="flex flex-col gap-4 items-end mt-12">
+                <address class="flex items-end not-italic">
+                    <div class="inline-flex items-end mr-32 text-sm text-gray-900 dark:text-white">
+                        <img class="mr-4 w-16 h-16 rounded-full"
+                            src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Jese Leos">
+                        <div>
+                            <a href="#" rel="author"
+                                class="text-xl font-bold text-gray-900 dark:text-gray-800"></a>
+                            <p class="text-base text-gray-700 dark:text-gray-600">Administrator</p>
+                            <p class="text-base text-gray-700 dark:text-gray-600"><time pubdate
+                                    datetime="2025-02-04">{{ $newsroom->created_at }}</time></p>
+                        </div>
+                    </div>
+                </address>
+            </div>
+            {{-- Divider --}}
+            <div class="mx-auto mt-10 w-3/5 border-t border-gray-300 pt-10"></div>
+            {{-- Bottom section --}}
+            <section class="py-4">
+                <div class="text-center mb-6">
+                    <h2 class="text-3xl font-bold">Newsroom</h2>
+                    <p class="text-gray-500">The latest news and updates, direct from EWINDO</p>
+                </div>
+                <div class="text-center">
+                    <a href="/admin/newsroom">
+                        <button
+                            class="bg-gold py-2 px-6 rounded-full hover:bg-yellow-400 text-white font-semibold cursor-pointer">Back
+                            to Newsroom Page</button>
+                    </a>
+                </div>
+            </section>
+    </section>
 
-
-    <!-- Article Below Images -->
-    <article class="mx-auto w-3/5 text-base/7 text-justify leading-relaxed text-gray-800 mt-8">
-        <p>
-            {!! $newroom->body !!}
-        </p>
-
-    </article>
-    <div class="flex flex-col gap-4 items-end mt-12">
-        <address class="flex items-end not-italic">
-
-        </address>
-    </div>
-    <div class="mx-auto mt-10 w-3/5 border-t border-gray-300 pt-10"></div>
-    <section class="bg-gray-0 py-4">
-        <div class="text-center mb-6">
-            <h2 class="text-3xl font-bold">Newsroom</h2>
-            <p class="text-gray-500">The latest news and updates, direct from EWINDO</p>
-        </div>
-        <div class="text-center">
-            <a href="/admin/newsroom">
-                <button
-                    class="cursor-pointer py-2 px-6 rounded-full hover:bg-yellow-600 bg-yellow-500 text-white font-semibold">Read
-                    More</button>
-            </a>
-        </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const mainImage = document.getElementById('mainImage');
-                const thumbnails = document.querySelectorAll('.thumbnail-img');
-
-                thumbnails.forEach(thumbnail => {
-                    thumbnail.addEventListener('click', function() {
-                        const tempSrc = mainImage.src;
-                        mainImage.src = this.src;
-                        this.src = tempSrc;
-                    });
-                });
-            });
-        </script>
-</x-admin.layout>
+    </x-users.layout>

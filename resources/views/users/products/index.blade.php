@@ -57,10 +57,10 @@
                 @endif
             </x-users.heading>
             @if ($products->count() > 0)
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8 p-14">
+                <div class="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8 mt-1 lg:p-14">
                     @foreach ($products as $product)
                         <div
-                            class="relative rounded-lg overflow-hidden shadow-lg border-1 border-gold flex flex-col h-full">
+                            class="relative rounded-lg overflow-hidden shadow-lg border-1 border-gold flex flex-col h-[200px] w-[150px] lg:h-full lg:w-full">
                             <img alt="Product image of {{ $product->type }}" class="w-full h-60 object-cover"
                                 height="300"
                                 src="{{ asset('storage/' . $product->product_images->first()->image_path) }}"

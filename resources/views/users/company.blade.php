@@ -32,7 +32,7 @@
                     cords, and cord sets.
                 </p>
                 <p class="mt-4">
-                    Our workforce consists of 2.800 dedicated employees, spread across
+                    Our workforce consists of Over 2.800 dedicated employees, spread across
                     two advanced facilities:
                 </p>
                 <ul role="list" class="mt-4 space-y-4 text-gray-600">
@@ -46,7 +46,8 @@
 
                         <span><strong class="font-semibold text-gray-900">Plant 1 :</strong>
                             Located at Jalan Cimuncang No. 68 in Bandung, it specializes in producing magnet wire, a
-                            variety of cables (including electronic, automotive, and UL/c-UL), and power supply cords on
+                            variety of cables & wires (including electronic, automotive, and UL/CUL), and power supply
+                            cords on
                             a 2.4-hectare site.
                         </span>
                     </li>
@@ -60,54 +61,45 @@
 
                         <span><strong class="font-semibold text-gray-900">Plant 2 :</strong>
                             Situated on a 2.5-hectare plot at Jalan Rancaekek KM 24.5 within the Dwipapuri Industrial
-                            Estate, it focuses on wiring harnesses for both electronic and automotive applications.
+                            Estate, it focuses on wiring harnesses and power supply cords for both electronic and
+                            automotive applications.
                         </span>
                     </li>
                 </ul>
                 <p class="mt-4">
                     We are proud to have strong backing from both Japanese and Indonesian shareholders, including
-                    Nikkatsu Densen Seizo K.K., Mr. Minoru Otanaka, Merbabu Corporation, and Sakata Manufacturing Co.
-                    Ltd., as well as local partners Ms. Corry K. Djuwanta and Mr. Satrio Nugroho. Our leadership team,
-                    headed by President Director Ms. Corry K. Djuwanta and supported by directors Mr. Toshio Sakuma and
-                    Mr. Keiji Matsumura, is committed to maintaining the highest standards of quality and innovation.
+                    Nikkatsu Densen Seizo K.K., Mr. Shuichi Otanaka, Merbabu Corporation, and Sakata Manufacturing Co.
+                    Ltd., as well as local partners Ms. Corry K. Djuwanta and
+                    Mr. Satrio Nugroho. Our leadership team, headed by President Director Ms. Corry K. Djuwanta and
+                    supported by directors Mr. Toshio Sakuma, Mr. Shuichi Otanaka and Mr. Kevin Ariestia, is committed
+                    to maintaining the highest standards of quality and innovation.
                 </p>
             </div>
-            <div class="relative isolate px-6 pt-10 lg:px-8">
-                <div class="bg-dark sm:py-6">
-                    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                        <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-4">
-                            <div
-                                class="mx-auto flex w-48 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
-                                <dt class="text-base/7 text-gray-600">Founded</dt>
-                                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                                    1974
-                                </dd>
-                            </div>
-                            <div
-                                class="mx-auto flex w-48 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
-                                <dt class="text-base/7 text-gray-600">Employees</dt>
-                                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                                    2800+
-                                </dd>
-                            </div>
-                            <div
-                                class="mx-auto flex w-48 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
-                                <dt class="text-base/7 text-gray-600">Plants</dt>
-                                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                                    2
-                                </dd>
-                            </div>
-                            <div
-                                class="mx-auto flex w-48 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
-                                <dt class="text-base/7 text-gray-600">Products</dt>
-                                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                                    200+
-                                </dd>
-                            </div>
-                        </dl>
+            <div class="flex justify-center">
+                <dl
+                    class="grid grid-cols-2 gap-x-8 gap-y-8 text-center place-items-center sm:grid-cols-2 lg:grid-cols-4">
+                    <div class="mx-auto flex w-48 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
+                        <dt class="text-base/7 text-gray-600">Founded</dt>
+                        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">1974
+                        </dd>
                     </div>
-                </div>
+                    <div class="mx-auto flex w-48 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
+                        <dt class="text-base/7 text-gray-600">Employees</dt>
+                        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">2800+
+                        </dd>
+                    </div>
+                    <div class="mx-auto flex w-48 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
+                        <dt class="text-base/7 text-gray-600">Plants</dt>
+                        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">2</dd>
+                    </div>
+                    <div class="mx-auto flex w-48 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
+                        <dt class="text-base/7 text-gray-600">Products</dt>
+                        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">200+
+                        </dd>
+                    </div>
+                </dl>
             </div>
+
         </x-users.section>
     </x-users.panel>
 
@@ -461,9 +453,9 @@
                 </p>
                 <div class="relative isolate px-6 lg:px-8">
                     <div class="bg-white py-4 sm:py-6">
-                        <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                            <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-5">
-                                <div class="card w-40">
+                        <div class="mx-auto max-w-7xl px-6 lg:px-8 sm:grid-cols-3">
+                            <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-5 ">
+                                <div class="card w-40 mx-auto">
                                     <div
                                         class="card__content text-center relative p-20 transition-transform duration-1000 text-black font-bold">
                                         <div
@@ -480,7 +472,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card w-40">
+                                <div class="card w-40 mx-auto">
                                     <div
                                         class="card__content text-center relative p-20 transition-transform duration-1000 text-black font-bold">
                                         <div
@@ -497,7 +489,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card w-40">
+                                <div class="card w-40 mx-auto">
                                     <div
                                         class="card__content text-center relative p-20 transition-transform duration-1000 text-black font-bold">
                                         <div
@@ -514,7 +506,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card w-40">
+                                <div class="card w-40 mx-auto">
                                     <div
                                         class="card__content text-center relative p-20 transition-transform duration-1000 text-black font-bold">
                                         <div
@@ -531,7 +523,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card w-40">
+                                <div class="card w-40 mx-auto">
                                     <div
                                         class="card__content text-center relative p-20 transition-transform duration-1000 text-black font-bold">
                                         <div

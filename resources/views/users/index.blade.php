@@ -149,65 +149,98 @@
         </x-users.section>
     </x-users.panel>
 
-    {{-- OUR CUSTOMERS --}}
+    {{-- OUR CUSTOMERS PLANT 1 --}}
     <x-users.panel color="gray">
         <x-users.section>
             <x-users.heading>
                 Our Customers
             </x-users.heading>
+            <x-users.heading-plant>
+                Plant 1
+            </x-users.heading-plant>
             <div
-                class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-                <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/9.png') }}" alt="Transistor" width="158"
-                    height="48" />
-                <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/2.png') }}" alt="Omron Logo" width="158"
-                    height="48" />
-                <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/3.png') }}" alt="Polytron Logo" width="158"
-                    height="48" />
-                <img class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/4.png') }}" alt="Sharp Logo" width="158"
-                    height="48" />
-                <img class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/5.png') }}" alt="Panasonic Logo" width="158"
-                    height="48" />
+                class="mx-auto mt-10 grid max-w-lg grid-cols-3 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-3 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo/3.png') }}" alt="Logo 1" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo/4.png') }}" alt="Logo 2" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo/9.png') }}" alt="Logo 3" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo/5.png') }}" alt="Logo 3" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo/12.png') }}" alt="Logo 3" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo/11.png') }}" alt="Logo 3" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo/13.png') }}" alt="Logo 1" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo/14.png') }}" alt="Logo 2" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo/10.png') }}" alt="Logo 3" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo/8.png') }}" alt="Logo 3" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo/15.png') }}" alt="Logo 3" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo/1.png') }}" alt="Logo 3" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo/2.png') }}" alt="Logo 3" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo/6.png') }}" alt="Logo 3" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo/7.png') }}" alt="Logo 3" />
+
             </div>
+            <p class="text base text-gray-700 font-semibold leading-7 text-center mt-12">
+                and more...
+            </p>
+        </x-users.section>
+    </x-users.panel>
+
+
+    {{-- OUR CUSTOMERS PLANT 2 --}}
+    <x-users.panel color="gray">
+        <x-users.section>
+            <x-users.heading>
+                Our Customers
+            </x-users.heading>
+            <x-users.heading-plant>
+                Plant 2
+            </x-users.heading-plant>
             <div
-                class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-                <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/6.png') }}" alt="Leoco Logo" width="158"
-                    height="48" />
-                <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/7.png') }}" alt="Reform" width="158"
-                    height="48" />
-                <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/8.png') }}" alt="Tuple" width="158"
-                    height="48" />
-                <img class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/1.png') }}" alt="SavvyCal" width="158"
-                    height="48" />
-                <img class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/10.png') }}" alt="Statamic" width="158"
-                    height="48" />
-            </div>
-            <div
-                class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-                <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/11.png') }}" alt="Transistor" width="158"
-                    height="48" />
-                <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/12.png') }}" alt="Reform" width="158"
-                    height="48" />
-                <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/13.png') }}" alt="Tuple" width="158"
-                    height="48" />
-                <img class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/14.png') }}" alt="SavvyCal" width="158"
-                    height="48" />
-                <img class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/15.png') }}" alt="Statamic" width="158"
-                    height="48" />
+                class="mx-auto mt-10 grid max-w-lg grid-cols-3 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-3 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo-2/23.png') }}" alt="Logo 1" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo-2/25.png') }}" alt="Logo 2" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo-2/31.png') }}" alt="Logo 3" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo-2/24.png') }}" alt="Logo 3" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo-2/35.png') }}" alt="Logo 3" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo-2/36.png') }}" alt="Logo 3" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo-2/37.png') }}" alt="Logo 1" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo-2/34.png') }}" alt="Logo 2" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo-2/33.png') }}" alt="Logo 3" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo-2/32.png') }}" alt="Logo 3" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo-2/26.png') }}" alt="Logo 3" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo-2/27.png') }}" alt="Logo 3" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo-2/28.png') }}" alt="Logo 3" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo-2/29.png') }}" alt="Logo 3" />
+                <img class="max-h-12 w-full object-contain lg:col-span-1"
+                    src="{{ asset('storage/images/customers-logo-2/30.png') }}" alt="Logo 3" />
+
             </div>
             <p class="text base text-gray-700 font-semibold leading-7 text-center mt-12">
                 and more...
@@ -223,9 +256,6 @@
             </x-users.heading>
             <div
                 class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20">
-            </div>
-            <div
-                class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center">
             </div>
             <div class="swiper swiper-awards">
                 <div class="swiper-wrapper">

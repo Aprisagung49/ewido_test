@@ -6,13 +6,13 @@
 
             {{-- Banner Section --}}
             <div class="w-full rounded-xl overflow-hidden shadow-lg">
-                <div class="w-full min-h-[400px] bg-center bg-cover relative flex items-end p-6"
+                <div class="w-full min-h-[120px] min-w-[50px] lg:min-h-[400px] bg-center bg-cover relative flex items-end p-6"
                     style="background-image: url('{{ asset('/storage/images/hero/2.png') }}')">
                     <div class="flex items-start justify-items-start w-full h-full py-6">
                         <div class="text-left">
                             <div class="container mx-auto">
                                 <div class="max-w-4xl mx-auto text-left">
-                                    <h2 class="text-4xl font-extrabold tracking-wide text-gold shadow-text sm:text-4xl uppercase px-4 py-2 mt-8 rounded-lg"
+                                    <h2 class="text-2xl px-19 py-2 font-extrabold tracking-wide text-gold shadow-text sm:text-4xl uppercase px-4 py-2 mt-8 rounded-lg"
                                         style="text-shadow: 2px 2px 5px rgba(0, 0, 0, 1)">
                                         What's New
                                     </h2>
@@ -27,10 +27,10 @@
 
     <x-users.panel>
 
-        <div class="bg-white py-24 sm:py-16">
-            <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mb-8 mx-64">
-
+        <div class="bg-white py-12 sm:py-16">
+            <div class="mx-auto max-w-7xl px-8 lg:px-8">
+                <div
+                    class="grid grid-cols-2 gap-3 mx-auto max-w-2xl sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 mb-8 mx-64">
 
                     @php
                         $currentSlug = request()->segment(2); // ambil segment URL kedua
@@ -38,26 +38,24 @@
 
                     @foreach ($categories as $category)
                         <a href="/newsroom/{{ $category->slug }}"
-                            class="category-button bg-gray-200 text-center py-4 px-13 rounded shadow hover:bg-gray-200 hover:text-yellow-500 focus:text-yellow-500 transition 
+                            class="category-button bg-gray-200 text-center py-4 px-2 rounded shadow hover:bg-gray-200 hover:text-yellow-500 focus:text-yellow-500 transition 
                             {{ $currentSlug === $category->slug ? 'text-yellow-500 bg-gray-200' : 'bg-gray-100' }}">
                             <button class="n">
                                 {{ $category->name }}
                             </button></a>
                     @endforeach
-
                 </div>
                 <div
                     class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                     @if ($articles->count() > 0)
                         @foreach ($articles as $article)
                             @php
-                                $images = json_decode($article->image, true) ?? [];
-                                $firstImage = $images[0] ?? null;
+                                $firstImage = $article->newsroom_images->first();
                             @endphp
                             <div class="border border-gray-300 rounded-2xl p-4">
                                 <article class="flex max-w-xl flex-col items-start justify-between">
                                     @if ($firstImage)
-                                        <img src="{{ asset('storage/' . $firstImage) }}"
+                                        <img src="{{ asset('storage/' . $firstImage->image_path) }}"
                                             class="w-full h-48 rounded-lg mb-4" />
                                     @else
                                         <img src="{{ asset('storage/images/newsroom/google-hq.png') }}"
@@ -77,7 +75,7 @@
                                             </a>
                                         </h3>
                                         <p class="mt-5 line-clamp-3 text-sm/6 text-gray-600">
-                                            {!! Str::limit($article->body, 150) !!}
+                                            {!! Str::limit(strip_tags($article->body), 150) !!}
                                         </p>
 
                                         <a href="/newsroom/{{ $article['id'] }}"

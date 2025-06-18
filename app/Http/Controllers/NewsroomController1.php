@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\User;
 use App\Models\Newsroom;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Models\NewsroomImage;
 use App\Models\NewsroomCategory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -47,67 +45,71 @@ class NewsroomController extends Controller
         ]);
     }
 }
-
     public function filter(NewsroomCategory $category)
     {
-       $articles = $category->newsrooms()->latest()->paginate(6)->withQueryString();
+    $articles = $category->newsrooms()->latest()->paginate(6)->withQueryString();
     return view('users.newsroom.index', [
         'articles' => $articles,
         'categories' => NewsroomCategory::all(),
     ]);
     }
 
-    public function create()
-    {
-        $categories = NewsroomCategory::all();
-        return view('admin.newsroom.create', compact('categories'));
-    }
-
     public function show(Request $request, Newsroom $newsroom)
     {
-        $newsroom->load(['category']);
-         
-        if ($request->is('admin/*')) {
+      
+        if (!$newsroom) {
+            abort(404, 'Newsroom not found');
+        }
+        if ($request->is('admin/*')) 
+        {
             return view('admin.newsroom.show', compact('newsroom'));
+        } else {
+            return view('users.newsroom.show', compact('newsroom'));
         }
-        else{
-            $newsroom->load(['category']);
-        
-    return view('users.newsroom.show', compact('newsroom'));
-        }
-         
-
-    
     }
 
+    public function create(Request $request)
+    {
+        if ($request->is('admin/*')) {
+            return view('admin.newsroom.create', [
+                'categories' => Newsroomcategory::all()
+            ]);
+        } else {
+            return view('users.newsroom.create');
+        }
+    }
     public function store(Request $request)
     {
-        $attrs = $request->validate([
-            'category_id' => ['required'],
-            'title' => ['required', 'string', 'max:255'],
-            'body' => ['required', 'string']
+        // dd($request);
+        $validateData = $request->validate([
+            'title' => 'required|max:255',
+            'slug' => 'required|unique:newsrooms',
+            'category_id' => 'required',
+            'files' => 'required|array|max:20',
+            'files.*' => 'image|mimes:jpg,jpeg,png|max:20048',
+            'body' => 'required'
         ]);
 
-        $attrs['user_id'] = Auth::user()->id;
-        $attrs['slug'] = Str::slug($request->title);
 
-        $newsroom = Newsroom::create($attrs);
-
-        // Handle multiple image upload
+        $uploadedFiles = [];
         if ($request->hasFile('files')) {
-            foreach ($request->file('files') as $image) {
-                $path = $image->store('newsroom-images', 'public'); // storage/app/public/products
-
-                NewsroomImage::create([
-                    'newsroom_id' => $newsroom->id,
-                    'image_path' => $path
-                ]);
+            foreach ($request->file('files') as $file) {
+                $path = $file->store('newsroom-images', 'public');
+                $uploadedFiles[] = $path;
             }
         }
 
-        return redirect('/admin/newsroom')->with('success', 'Post Has Been Created!');;
-    }
+       
+        $validateData['user_id'] = Auth::user()->id;
+        $validateData['image'] = json_encode($uploadedFiles);
 
+        // dd($validateData);
+
+        Newsroom::create($validateData);
+
+        return redirect('/admin/newsroom')->with('success', 'New Post Has Been added!');
+    }
+    
     public function destroy(Newsroom $newsroom)
     {
 
@@ -137,8 +139,8 @@ class NewsroomController extends Controller
             'existingImages' => json_decode($newsroom->image, true),
             'categories' => Newsroomcategory::all()]);
     }
-    public function update(Request $request, Newsroom $newsroom)
-    {
+public function update(Request $request, Newsroom $newsroom)
+{
     $rules = [
         'title' => 'required|max:255',
         'category_id' => 'required',
@@ -157,28 +159,27 @@ class NewsroomController extends Controller
 
     // Ambil gambar lama yang masih dipertahankan (yang masih tampil di preview)
     $remainingOldImages = json_decode($request->input('remaining_old_images', '[]'), true);
+    $oldImages = json_decode($newsroom->image ?? '[]', true);
 
-    $existingImages = $newsroom->newsroom_images;
-
-    // Hapus gambar lama yang tidak termasuk dalam list `remaining_old_images`
-    foreach ($existingImages as $image) {
-        if (!in_array($image->image_path, $remainingOldImages)) {
-            Storage::delete('public/' . $image->image_path);
-            $image->delete();
-        }
+    // Cari gambar lama yang dihapus, lalu hapus dari storage
+    $deletedImages = array_diff($oldImages, $remainingOldImages);
+    foreach ($deletedImages as $file) {
+        Storage::delete('public/' . $file);
     }
 
     // Upload file baru jika ada
+    $newImages = [];
     if ($request->hasFile('files')) {
         foreach ($request->file('files') as $file) {
             $path = $file->store('newsroom-images', 'public');
-            $newsroom->newsroom_images()->create([
-                'image_path' => $path,
-            ]);
+            $newImages[] = $path;
         }
         // dd($newImages);
     }
     // dd($request->file('files'));
+    // Gabungkan gambar lama yang masih ada + gambar baru
+    $finalImages = array_merge($remainingOldImages, $newImages);
+
 
     // dd([
     //     'remaining' => $remainingOldImages,
@@ -191,10 +192,12 @@ class NewsroomController extends Controller
         'slug' => $validatedData['slug'] ?? $newsroom->slug,
         'category_id' => $validatedData['category_id'],
         'body' => $validatedData['body'],
+        'image' => json_encode($finalImages),
     ]);
 
     // dd($newsroom->fresh()->image);
     
     return redirect('/admin/newsroom')->with('success', 'Post Has Been Updated!');
 }
+
 }

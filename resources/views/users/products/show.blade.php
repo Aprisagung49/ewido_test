@@ -85,7 +85,7 @@
                             @if ($product->product_images->isNotEmpty())
                                 @foreach ($product->product_images as $image)
                                     <div class="swiper-slide">
-                                        <img class="w-[500px] h-[500px] object-contain"
+                                        <img class="rounded-full w-[500px] h-[500px] object-contain"
                                             src="{{ asset('storage/' . $image->image_path) }}"
                                             alt="{{ $product->cable_type }}" />
                                     </div>
@@ -114,6 +114,7 @@
                     @endif
                     <x-forms.divider />
                     <div class="h-80 overflow-y-auto pr-2">
+                        Description:
                         {!! $product->description !!}
                     </div>
                     {{-- Request a quotation (for non admin auth) --}}
@@ -212,13 +213,14 @@
 
                 {{-- Bottom description detail --}}
             </div>
-            <div class="mt-4 p-8">
-                <div class="px-4 sm:px-0">
+            <div class="mt-4 mr-6 lg:p-2">
+                <div class="px-2 sm:px-0">
                     <h3 class="text-base/7 font-semibold text-gray-900">Product Information</h3>
                     <p class="mt-1 max-w-2xl text-sm/6 text-gray-500">Product details and application.</p>
                 </div>
                 <div class="mt-6 border-t border-gray-100">
                     <dl class="divide-y divide-gray-100">
+
                         <x-description-row label="Type">
                             {{ $product->type }}
                         </x-description-row>

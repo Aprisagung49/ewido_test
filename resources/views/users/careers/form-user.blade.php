@@ -2,7 +2,7 @@
 
     <x-users.panel>
 
-        <x-users.section>
+        <x-users.section-product>
             <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
             <div class="container">
 
@@ -22,7 +22,7 @@
                 @endif
 
 
-                <main class="mb-auto pt-20">
+                <main class="mb-auto pt-2">
                     <section class="container mx-auto sm:px-44 my-32">
                         <h2
                             class="text-pretty text-center text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
@@ -155,48 +155,52 @@
                                                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
                                             </div>
                                         </div>
-                                        <div class="col-span-3">
-                                            <label for="ktp_kota"
-                                                class="block text-sm/6 font-medium text-gray-900">Kota/Kabupaten <span
-                                                    class="text-red-500">*</span></label>
+                                        <div class="col-span-12 md:col-span-3">
+                                            <label for="ktp_kota" class="block text-sm font-medium text-gray-900">
+                                                Kota/Kabupaten <span class="text-red-500">*</span>
+                                            </label>
                                             <div class="mt-2">
                                                 <input type="text" id="ktp_kota" name="alamat_ktp[kota1]"
                                                     placeholder="Kota" autocomplete="ktp_kota"
-                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm">
                                             </div>
                                         </div>
-                                        <div class="col-span-3">
-                                            <label for="ktp_provinsi"
-                                                class="block text-sm/6 font-medium text-gray-900">Provinsi <span
-                                                    class="text-red-500">*</span></label>
+                                        <div class="col-span-12 md:col-span-3">
+                                            <label for="ktp_provinsi" class="block text-sm font-medium text-gray-900">
+                                                Provinsi <span class="text-red-500">*</span>
+                                            </label>
                                             <div class="mt-2">
                                                 <input type="text" id="ktp_provinsi" name="alamat_ktp[provinsi1]"
-                                                    placeholder="Provinsi" required autocomplete="ktp_provinsi"
-                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                                                    placeholder="Provinsi" autocomplete="ktp_provinsi"
+                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm">
                                             </div>
                                         </div>
-                                        <div class="col-span-3">
+                                        <div class="col-span-12 md:col-span-3">
                                             <label for="ktp_kecamatan"
-                                                class="block text-sm/6 font-medium text-gray-900">Kecamatan <span
-                                                    class="text-red-500">*</span></label>
+                                                class="block text-sm font-medium text-gray-900">
+                                                Kecamatan <span class="text-red-500">*</span>
+                                            </label>
                                             <div class="mt-2">
                                                 <input type="text" id="ktp_kecamatan"
-                                                    name="alamat_ktp[kecamatan1]" placeholder="Kecamatan" required
+                                                    name="alamat_ktp[kecamatan1]" placeholder="Kecamatan"
                                                     autocomplete="ktp_kecamatan"
-                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm">
                                             </div>
                                         </div>
-                                        <div class="col-span-3">
+
+                                        <div class="col-span-12 md:col-span-3">
                                             <label for="ktp_kelurahan"
-                                                class="block text-sm/6 font-medium text-gray-900">Kelurahan <span
-                                                    class="text-red-500">*</span></label>
+                                                class="block text-sm font-medium text-gray-900">
+                                                Kelurahan <span class="text-red-500">*</span>
+                                            </label>
                                             <div class="mt-2">
                                                 <input type="text" id="ktp_kelurahan"
-                                                    name="alamat_ktp[kelurahan1]" placeholder="Kelurahan" required
+                                                    name="alamat_ktp[kelurahan1]" placeholder="Kelurahan"
                                                     autocomplete="ktp_kelurahan"
-                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm">
                                             </div>
                                         </div>
+
                                         <div class="col-span-12">
                                             <div class="flex gap-3">
                                                 <div class="flex h-6 shrink-0 items-center">
@@ -232,46 +236,62 @@
                                                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
                                             </div>
                                         </div>
-                                        <div class="col-span-3">
+
+                                        <div class="col-span-12 md:col-span-3">
                                             <label for="domisili_kota"
-                                                class="block text-sm/6 font-medium text-gray-900">Kota/Kabupaten</label>
+                                                class="block text-sm font-medium text-gray-900">
+                                                Kota <span class="text-red-500">*</span>
+                                            </label>
                                             <div class="mt-2">
                                                 <input type="text" id="domisili_kota"
-                                                    name="alamat_domisili[kota0]" placeholder="Kota Domisili"
+                                                    name="alamat_domisili[kota0]" placeholder="Kota"
                                                     autocomplete="domisili_kota"
-                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm">
                                             </div>
                                         </div>
-                                        <div class="col-span-3">
+
+                                        <div class="col-span-12 md:col-span-3">
                                             <label for="domisili_provinsi"
-                                                class="block text-sm/6 font-medium text-gray-900">Provinsi</label>
+                                                class="block text-sm font-medium text-gray-900">
+                                                Provinsi <span class="text-red-500">*</span>
+                                            </label>
                                             <div class="mt-2">
                                                 <input type="text" id="domisili_provinsi"
-                                                    name="alamat_domisili[provinsi0]" placeholder="Provinsi" required
+                                                    name="alamat_domisili[provinsi0]" placeholder="Provinsi"
                                                     autocomplete="domisili_provinsi"
-                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm">
                                             </div>
                                         </div>
-                                        <div class="col-span-3">
+
+                                        <div class="col-span-12 md:col-span-3">
                                             <label for="domisili_kecamatan"
-                                                class="block text-sm/6 font-medium text-gray-900">Kecamatan</label>
+                                                class="block text-sm font-medium text-gray-900">
+                                                Kecamatan <span class="text-red-500">*</span>
+                                            </label>
                                             <div class="mt-2">
                                                 <input type="text" id="domisili_kecamatan"
                                                     name="alamat_domisili[kecamatan0]" placeholder="Kecamatan"
-                                                    required autocomplete="domisili_kecamatan"
-                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                                                    autocomplete="domisili_kecamatan"
+                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm">
                                             </div>
                                         </div>
-                                        <div class="col-span-3">
+
+                                        <div class="col-span-12 md:col-span-3">
                                             <label for="domisili_kelurahan"
-                                                class="block text-sm/6 font-medium text-gray-900">Kelurahan</label>
+                                                class="block text-sm font-medium text-gray-900">
+                                                Kelurahan <span class="text-red-500">*</span>
+                                            </label>
                                             <div class="mt-2">
                                                 <input type="text" id="domisili_kelurahan"
                                                     name="alamat_domisili[kelurahan0]" placeholder="Kelurahan"
-                                                    required autocomplete="domisili_kelurahan"
-                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                                                    autocomplete="domisili_kelurahan"
+                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm">
                                             </div>
                                         </div>
+
+
+
+
                                         <!-- AGAMA -->
                                         <div class="col-span-12">
                                             <label for="agama"
@@ -1136,7 +1156,7 @@
                     });
                 </script>
 
-        </x-users.section>
+                </x-users.section>
 
     </x-users.panel>
 

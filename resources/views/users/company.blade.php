@@ -1,21 +1,20 @@
 <x-users.layout>
     {{-- DOCUMENT FRAGMENTS --}}
-    <section class="container mx-auto px-44 pt-24 fixed top-0 left-0 fixed-nav">
-        <nav class="flex sm:flex justify-between items-center">
-            <a href="#about" class="nav-link flex-1 text-center py-2 text-gray-700 font-semibold hover:text-gold">About
-                Us</a>
-            <a href="#story" class="nav-link flex-1 text-center py-2 text-gray-700 font-semibold hover:text-gold">Our
-                Story</a>
-            <a href="#quality"
-                class="nav-link flex-1 text-center py-2 text-gray-700 font-semibold hover:text-gold">Quality Control</a>
-            <a href="#manpower"
-                class="nav-link flex-1 text-center py-2 text-gray-700 font-semibold hover:text-gold">Manpower &
-                Training</a>
-            <a href="#certificates"
-                class="nav-link flex-1 text-center py-2 text-gray-700 font-semibold hover:text-gold">Certificates</a>
-            <a href="#quality-acc"
-                class="nav-link flex-1 text-center py-2 text-gray-700 font-semibold hover:text-gold">Quality
-                Accreditations</a>
+    <section
+        class="container mx-auto px-10 top-0 left-1 pr-25 pt-24 lg:px-44 lg:pt-25 fixed lg:top-0 lg:left-0 fixed-nav">
+        <nav class="flex-1 ml-4 overflow-x-auto whitespace-nowrap scrollbar-hide lg:overflow-x-visible">
+            <div class="flex space-x-4 sm:justify-between">
+                <a href="#about" class="nav-link py-2 px-3 text-gray-700 font-semibold hover:text-gold">About Us</a>
+                <a href="#story" class="nav-link py-2 px-3 text-gray-700 font-semibold hover:text-gold">Our Story</a>
+                <a href="#quality" class="nav-link py-2 px-3 text-gray-700 font-semibold hover:text-gold">Quality
+                    Control</a>
+                <a href="#manpower" class="nav-link py-2 px-3 text-gray-700 font-semibold hover:text-gold">Manpower &
+                    Training</a>
+                <a href="#certificates"
+                    class="nav-link py-2 px-3 text-gray-700 font-semibold hover:text-gold">Certificates</a>
+                <a href="#quality-acc" class="nav-link py-2 px-3 text-gray-700 font-semibold hover:text-gold">Quality
+                    Accreditations</a>
+            </div>
         </nav>
     </section>
 
@@ -23,8 +22,8 @@
     <x-users.panel color="gray" id="about">
         <x-users.section>
             <x-users.heading>About Us</x-users.heading>
-            <div class="text-base text-gray-700 leading-7 text-justify">
-                <p class="mt-8">
+            <div class="text-xs lg:text-base text-gray-700 leading-7 text-justify">
+                <p class="mt-2">
                     PT Ewindo was established on May 10, 1974, as a joint venture
                     dedicated to manufacturing high-quality electrical products. With
                     a capital investment of USD 10 million, we specialize in producing
@@ -78,21 +77,21 @@
             <div class="flex justify-center">
                 <dl
                     class="grid grid-cols-2 gap-x-8 gap-y-8 text-center place-items-center sm:grid-cols-2 lg:grid-cols-4">
-                    <div class="mx-auto flex w-48 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
+                    <div class="mx-auto flex w-25 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
                         <dt class="text-base/7 text-gray-600">Founded</dt>
                         <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">1974
                         </dd>
                     </div>
-                    <div class="mx-auto flex w-48 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
+                    <div class="mx-auto flex w-20 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
                         <dt class="text-base/7 text-gray-600">Employees</dt>
                         <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">2800+
                         </dd>
                     </div>
-                    <div class="mx-auto flex w-48 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
+                    <div class="mx-auto flex w-25 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
                         <dt class="text-base/7 text-gray-600">Plants</dt>
                         <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">2</dd>
                     </div>
-                    <div class="mx-auto flex w-48 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
+                    <div class="mx-auto flex w-20 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
                         <dt class="text-base/7 text-gray-600">Products</dt>
                         <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">200+
                         </dd>
@@ -109,8 +108,8 @@
             <div class="grid gap-4 mx-4 sm:grid-cols-12">
                 <div class="col-span-12 sm:col-span-3">
                     <div
-                        class="text-center sm:text-left mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:dark:bg-yellow-500">
-                        <h3 class="text-3xl font-semibold text-gold">Our Story</h3>
+                        class="text-center sm:text-left lg:mb-14 before:block before:w-24 before:h-3 lg:before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:dark:bg-yellow-500">
+                        <h3 class="text-[3rem] lg:text-3xl mt-14 lg:mt-1 font-semibold text-gold">Our Story</h3>
                     </div>
                 </div>
                 <div class="relative col-span-12 px-4 space-y-6 sm:col-span-9">
@@ -121,23 +120,24 @@
                             <h3 class="text-xl font-semibold tracking-wide">
                                 Foundation and Initial Growth
                             </h3>
-                            <time class="text-xs tracking-wide uppercase dark:text-gray-600">1974 - 1978</time>
+                            <time class="text-xs tracking-wide uppercase dark:text-gray-600"><b>1974 - 1978</b></time>
                             <ul class="mt-3 mb-4 text-base text-gray-700 leading-7 text-justify">
                                 <li>
-                                    1974: Founded in Bandung as a joint-venture company with a capital of USD 0.9
+                                    <b>1974</b>: Founded in Bandung as a joint-venture company with a capital of USD 0.9
                                     million.
                                 </li>
                                 <li>
-                                    1975: Began manufacturing Enamel Wire (EW) & Polyvinyl Formal Enamelled Wire (PVF).
+                                    <b>1975</b>: Began manufacturing Enamel Wire (EW) & Polyvinyl Formal Enamelled Wire
+                                    (PVF).
                                 </li>
                                 <li>
-                                    1976: Started manufacturing Polyester Enamelled Wire (PEW).
+                                    <b>1976</b>: Started manufacturing Polyester Enamelled Wire (PEW).
                                 </li>
                                 <li>
-                                    1977: Started manufacturing Polyurethane Enamelled Wire (UEW).
+                                    <b>1977</b>: Started manufacturing Polyurethane Enamelled Wire (UEW).
                                 </li>
                                 <li>
-                                    1983: Obtained approval from JIS for PEW
+                                    <b>1983</b>: Obtained approval from JIS for PEW
                                 </li>
                             </ul>
                             <div class="grid grid-cols-2 md:grid-cols-3">
@@ -160,28 +160,30 @@
                             <h3 class="text-xl font-semibold tracking-wide">
                                 Expansion into Electric Cables and Certifications
                             </h3>
-                            <time class="text-xs tracking-wide uppercase dark:text-gray-600">1986 - 1990</time>
+                            <time class="text-xs tracking-wide uppercase dark:text-gray-600"><b>1986 - 1990</b></time>
                             <ul class="mt-3 mb-4 text-base text-gray-700 leading-7">
                                 <li>
-                                    1986: Started manufacturing Electric Cables and increased capital to USD 1.35
+                                    <b>1986</b>: Started manufacturing Electric Cables and increased capital to USD 1.35
                                     million.
                                 </li>
                                 <li>
-                                    1990: Obtained approval from Dentori Japan for Cables.
+                                    <b>1990</b>: Obtained approval from Dentori Japan for Cables.
                                 </li>
                                 <li>
-                                    1999: Obtained approval from CB Certificate and European Certificate for cables.
+                                    <b>1999</b>: Obtained approval from CB Certificate and European Certificate for
+                                    cables.
                                 </li>
                                 <li>
-                                    1991: Started manufacturing Electric Cables, obtained approval from UL and CSA for
+                                    <b>1991</b>: Started manufacturing Electric Cables, obtained approval from UL and
+                                    CSA for
                                     Electric Cables & Power Supply Cord.
                                 </li>
                                 <li>
-                                    1994: Increased capital to USD 4.75 million and started manufacturing Wiring
+                                    <b>199</b>: Increased capital to USD 4.75 million and started manufacturing Wiring
                                     Harness; obtained UL/CSA approval.
                                 </li>
                                 <li>
-                                    1995: Obtained Quality System Management ISO 9002.
+                                    <b>1995</b>: Obtained Quality System Management ISO 9002.
                                 </li>
                             </ul>
                             <div class="grid grid-cols-2 md:grid-cols-3">
@@ -200,19 +202,23 @@
                             <h3 class="text-xl font-semibold tracking-wide">
                                 International Certification and Expansion
                             </h3>
-                            <time class="text-xs tracking-wide uppercase dark:text-gray-600">1997 - 2001</time>
+                            <time class="text-xs tracking-wide uppercase dark:text-gray-600">
+                                <b>1997 - 2001</b>
+                            </time>
                             <ul class="mt-3 mb-4 text-base text-gray-700 leading-7 text-justify">
                                 <li>
-                                    1997: Obtained approval from F Mark for cables.
+                                    <b>1997</b>: Obtained approval from F Mark for cables.
                                 </li>
                                 <li>
-                                    1998: Obtained approval from C-UL for cables.
+                                    <b>1998</b>: Obtained approval from C-UL for cables.
                                 </li>
                                 <li>
-                                    1999: Obtained approval from CB Certificate and European Certificate for cables.
+                                    <b>1999</b>: Obtained approval from CB Certificate and European Certificate for
+                                    cables.
                                 </li>
                                 <li>
-                                    2000: Obtained approval from Australian Standard Mark for cable and Management
+                                    <b>2000</b>: Obtained approval from Australian Standard Mark for cable and
+                                    Management
                                     System of Occupational Safety and Health Certificate.
                                 </li>
                             </ul>
@@ -236,20 +242,22 @@
                             <h3 class="text-xl font-semibold tracking-wide">
                                 Facility Expansion and Environmental Standards
                             </h3>
-                            <time class="text-xs tracking-wide uppercase dark:text-gray-600">2002 - 2007</time>
+                            <time class="text-xs tracking-wide uppercase dark:text-gray-600"><b>2002 - 2007</b></time>
                             <ul class="mt-3 mb-4 text-base text-gray-700 leading-7 text-justify">
                                 <li>
-                                    2003: Moved Plant 2, Wiring Harness Dept. to Rancaekek Sumedang.
+                                    <b>2003</b>: Moved Plant 2, Wiring Harness Dept. to Rancaekek Sumedang.
                                 </li>
                                 <li>
-                                    2005: Obtained approval from UL for Enamel Wire.
+                                    <b>2005</b>: Obtained approval from UL for Enamel Wire.
                                 </li>
                                 <li>
-                                    1999: Obtained approval from CB Certificate and European Certificate for cables.
+                                    <b>1999</b>: Obtained approval from CB Certificate and European Certificate for
+                                    cables.
                                 </li>
                                 <li>
-                                    2006: Increased capital to USD 6.25 million and successfully received EMS ISO
-                                    14001:2004 certification.
+                                    <b>2006</b>
+                                </li>: Increased capital to USD 6.25 million and successfully received EMS ISO
+                                14001:2004 certification.
                                 </li>
                             </ul>
                             <div class="grid grid-cols-2 md:grid-cols-3">
@@ -272,16 +280,16 @@
                             <h3 class="text-xl font-semibold tracking-wide">
                                 Continued Growth and ISO Updates
                             </h3>
-                            <time class="text-xs tracking-wide uppercase dark:text-gray-600">2009 - 2014</time>
+                            <time class="text-xs tracking-wide uppercase dark:text-gray-600"><b>2009 - 2014</b></time>
                             <ul class="mt-3 mb-4 text-base text-gray-700 leading-7 text-justify">
                                 <li>
-                                    2009: Successfully updated ISO 9001:2008.
+                                    <b>2009</b>: Successfully updated ISO 9001:2008.
                                 </li>
                                 <li>
-                                    2011: Increased capital to USD 9 million.
+                                    <b>2011</b>: Increased capital to USD 9 million.
                                 </li>
                                 <li>
-                                    2013: Increased capital to USD 10 million.
+                                    <b>2013</b>: Increased capital to USD 10 million.
                                 </li>
                             </ul>
                             <div class="grid grid-cols-2 md:grid-cols-3">
@@ -304,13 +312,13 @@
                             <h3 class="text-xl font-semibold tracking-wide">
                                 Modernization and New Standards
                             </h3>
-                            <time class="text-xs tracking-wide uppercase dark:text-gray-600">2017 - 2020</time>
+                            <time class="text-xs tracking-wide uppercase dark:text-gray-600"><b>2017 - 2020</b></time>
                             <ul class="mt-3 mb-4 text-base text-gray-700 leading-7 text-justify">
                                 <li>
-                                    2017: Successfully updated ISO 9001:2015 and ISO 14001:2015.
+                                    <b>2017</b>: Successfully updated ISO 9001:2015 and ISO 14001:2015.
                                 </li>
                                 <li>
-                                    2020: Successfully updated ISO IATF 16949:2016.
+                                    <b>2020</b>: Successfully updated ISO IATF 16949:2016.
                                 </li>
                             </ul>
                             <div class="grid grid-cols-2 md:grid-cols-3">
@@ -329,7 +337,7 @@
     {{-- QUALITY CONTROL & TQA --}}
     <x-users.panel color="gray" id="quality">
         <x-users.section>
-            <x-users.heading>Quality Control & TQA</x-users.heading>
+            <x-users.heading class="text-[3rem]">Quality Control & TQA</x-users.heading>
             <div class="text-base text-gray-700 leading-7 text-justify">
                 <p class="mt-8">
                     We are committed to the 5S Concept as a cornerstone of our
@@ -442,7 +450,7 @@
     {{-- MANPOWER SECTION --}}
     <x-users.panel id="manpower">
         <x-users.section>
-            <x-users.heading>Manpower & Training</x-users.heading>
+            <x-users.heading class="text-[2.7rem]">Manpower & Training</x-users.heading>
             <div class="text-base text-gray-700 leading-7 text-justify">
                 <p class="mt-8 text-center">
                     At PT EWINDO, we view our employees as one of our most valuable
@@ -612,7 +620,7 @@
     {{-- QUALITY ACCREDITATIONS --}}
     <x-users.panel id="quality-acc">
         <x-users.section>
-            <x-users.heading>Quality Accreditations</x-users.heading>
+            <x-users.heading class="text-[2.6rem]">Quality Accreditations</x-users.heading>
             <div
                 class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-4 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
                 <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"

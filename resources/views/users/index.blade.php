@@ -23,8 +23,9 @@
 
                 <div class="lg:w-3/5 w-full">
                     <div class="relative rounded-2xl overflow-hidden col-span-3">
-                        <div class="w-full h-[400px]">
-                            <video class="absolute top-0 left-0 w-full h-[400px] object-cover" autoplay muted loop>
+                        <div class="lg:w-full h-[200px] lg:h-[400px]">
+                            <video class="absolute top-0 left-0 h-[200px] w-[500px] lg:w-full lg:h-[400px] object-cover"
+                                autoplay muted loop>
                                 <source src="{{ asset('storage/video/ewindo.mp4') }}" type="video/mp4" />
                             </video>
                         </div>

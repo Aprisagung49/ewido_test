@@ -1,7 +1,7 @@
 <x-users.layout>
 
     <x-users.panel>
-        <x-users.section>
+        <x-users.section-product>
             <x-users.heading>Newsroom</x-users.heading>
 
             {{-- Banner Section --}}
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </div>
-        </x-users.section>
+        </x-users.section-product>
     </x-users.panel>
 
     <x-users.panel>

@@ -1,7 +1,7 @@
 <x-users.layout>
     {{-- PRODUCT INFO --}}
     <x-users.panel>
-        <x-users.section>
+        <x-users.section-product>
             <x-users.heading>Products</x-users.heading>
             <p class="mt-6 text-base text-gray-700 leading-7 text-center">
                 PT EWINDO offers a diverse range of products, including bare
@@ -39,32 +39,36 @@
             <section class="text-center my-8">
                 <div class="flex justify-center space-x-4">
                     @foreach ($parentGroups as $parent)
-                        <a class="text-gold hover:text-yellow-400"
+                        <a class="text-sm text-gold hover:text-yellow-400"
                             href="{{ route('products.category', $parent->name) }}">{{ $parent->name }}</a>
                     @endforeach
 
                 </div>
                 <hr class="mt-4 border-gray-300" />
             </section>
-        </x-users.section>
+        </x-users.section-product>
     </x-users.panel>
 
     <x-users.panel>
         <section class="container max-w-7xl mx-auto">
             <x-users.heading>
                 @if (isset($group))
-                    Category By: {{ $group->name }}
+                    <p class="text-lg mt-1 sm:text-base md:text-lg lg:text-xl text-gold">
+                        Results for {{ $group->name }}
+                    </p>
                 @endif
             </x-users.heading>
             @if ($products->count() > 0)
-                <div class="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8 mt-1 lg:p-14">
+                <div class="grid grid-cols-2 gap-4 pr-4 pl-3 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8 mt-1 lg:p-14">
                     @foreach ($products as $product)
-                        <div
-                            class="relative rounded-lg overflow-hidden shadow-lg border-1 border-gold flex flex-col h-[200px] w-[150px] lg:h-full lg:w-full">
-                            <img alt="Product image of {{ $product->type }}" class="w-full h-60 object-cover"
-                                height="300"
-                                src="{{ asset('storage/' . $product->product_images->first()->image_path) }}"
-                                width="300" />
+                        <div class="relative rounded-lg overflow-hidden shadow-lg border border-gold flex flex-col">
+                            <a href="/products/{{ $product->slug }}">
+                                <div class="w-full aspect-square overflow-hidden">
+                                    <img alt="Product image of {{ $product->type }}"
+                                        src="{{ asset('storage/' . $product->product_images->first()->image_path) }}"
+                                        class="w-full h-full object-cover" />
+                                </div>
+                            </a>
 
                             {{-- Product Certificates --}}
                             @if ($product->certificates->isNotEmpty())
@@ -78,15 +82,19 @@
                             @endif
                             <div class="p-4 border-t border-gold flex flex-col flex-grow justify-between">
                                 <div class="flex-grow">
-                                    <h2 class="font-bold mb-2 text-gold">{{ $product->product_group->name }}</h2>
-                                    <h3 class="font-semibold">{{ $product->type }}</h3>
-                                    <p class="text-gray-600 mb-6">{{ $product->cable_type }}</p>
+
+                                    <p class="font-semibold text-sm lg:text-1xl">{{ $product->type }}</p>
+                                    <p
+                                        class="text-gray-600 mb-6 text-left text-xs lg:text-justify lg:text-sm leading-relaxed">
+                                        {{ $product->cable_type }}</p>
+                                </div>
+                                <div class="flex justify-end">
+                                    <h2
+                                        class="inline-block rounded-full bg-yellow-500 px-3 py-1.5  text-white hover:bg-yellow-400 cursor-pointer font-bold mt-2 text-[10px] lg:text-xs ">
+                                        {{ Str::limit($product->product_group->name, 10) }}
+                                    </h2>
                                 </div>
                                 <div class="mt-auto">
-                                    <a href="/products/{{ $product->slug }}"
-                                        class="bg-gold text-white py-2 px-4 rounded inline-block">
-                                        View
-                                    </a>
                                 </div>
                             </div>
                         </div>

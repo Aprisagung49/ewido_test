@@ -1,6 +1,6 @@
 <x-users.layout>
     <x-users.panel>
-        <x-users.section>
+        <x-users.section-product>
             <x-users.heading>Careers</x-users.heading>
 
             {{-- KEADAAN KETIKA BERHASIL MENAMBAHKAN SEBUAH PRODUK --}}
@@ -46,7 +46,7 @@
             @endif
             {{-- Banner Section --}}
             <div class="w-full rounded-xl overflow-hidden shadow-lg">
-                <div class="w-full min-h-[400px] bg-center bg-cover relative flex items-end p-6"
+                <div class="w-full min-h-[120px] min-w-[50px] lg:min-h-[400px] bg-center bg-cover relative flex items-end p-6"
                     style="background-image: url('{{ asset('/storage/images/hero/joinus2.png') }}')">
                     <div class="flex items-start justify-items-start w-full h-full py-6">
                         <div class="text-left">
@@ -62,7 +62,7 @@
                     </div>
                 </div>
             </div>
-        </x-users.section>
+        </x-users.section-product>
     </x-users.panel>
 
     <x-users.section>

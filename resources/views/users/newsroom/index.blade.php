@@ -6,13 +6,13 @@
 
             {{-- Banner Section --}}
             <div class="w-full rounded-xl overflow-hidden shadow-lg">
-                <div class="w-full min-h-[120px] min-w-[50px] lg:min-h-[400px] bg-center bg-cover relative flex items-end p-6"
+                <div class="w-full min-h-[120px] min-w-[50px] lg:min-h-[400px] bg-center bg-cover relative flex items-end pl-6 pt-16 lg:p-6"
                     style="background-image: url('{{ asset('/storage/images/hero/2.png') }}')">
                     <div class="flex items-start justify-items-start w-full h-full py-6">
                         <div class="text-left">
                             <div class="container mx-auto">
                                 <div class="max-w-4xl mx-auto text-left">
-                                    <h2 class="text-2xl px-19 py-2 font-extrabold tracking-wide text-gold shadow-text sm:text-4xl uppercase px-4 py-2 mt-8 rounded-lg"
+                                    <h2 class="text-2xl font-extrabold tracking-wide text-gold shadow-text sm:text-4xl uppercase rounded-lg"
                                         style="text-shadow: 2px 2px 5px rgba(0, 0, 0, 1)">
                                         What's New
                                     </h2>
@@ -104,8 +104,8 @@
                 </div>
             @else
                 {{-- Pesan jika tidak ada produk --}}
-                <div class="px-10 font-bold text-2xl text-gold">
-                    Berita tidak ditemukan.
+                <div class="font-bold text-2xl text-gold">
+                    Not Found
                 </div>
                 @endif
             </div>

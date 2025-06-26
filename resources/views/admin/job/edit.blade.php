@@ -212,6 +212,31 @@
                                                     </div>
                                                 </div>
 
+                                                <div class="sm:col-span-6">
+                                                    <label for="is_preferred_position"
+                                                        class="block text-sm/6 font-medium text-gray-900">
+                                                        Posisi Yang Diinginkan
+                                                        <span class="text-red-500">Optional</span>
+                                                    </label>
+
+                                                    {{-- Hidden input untuk memastikan nilai 0 jika tidak dicentang --}}
+                                                    <input type="hidden" name="is_preferred_position"
+                                                        value="0">
+
+                                                    <label class="block text-sm/6 font-medium text-gray-900">
+                                                        <input type="checkbox" name="is_preferred_position"
+                                                            value="1"
+                                                            {{ old('is_preferred_position', $job->is_preferred_position ?? 0) == 1 ? 'checked' : '' }}
+                                                            class="form-checkbox">
+                                                        <br>
+                                                        <span class="ml-1 text-red-500 text-xs">
+                                                            * Jika Diaktifkan maka akan menampilkan pilihan untuk user
+                                                            memilih bagian/posisi yang diinginkan
+                                                        </span>
+                                                    </label>
+                                                </div>
+
+
 
                                                 <div class="sm:col-span-3">
                                                     <label for="job_status"

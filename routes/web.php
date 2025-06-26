@@ -34,10 +34,13 @@ Route::get('/careers/{job:slug}/apply', [ApplicantController::class, 'create']);
 Route::post('/careers/{job:slug}/apply', [ApplicantController::class, 'store']);
 
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
-Route::get('/products/category/{name}', [ProductController::class, 'filterByCategory'])->name('products.category');
+Route::get('/products/category/{name}', [ProductController::class, 'showByCategory'])->name('products.category');
+// Route::get('/products/category/{name}', [ProductController::class, 'filterByCategory'])->name('products.category');
 Route::get('/products/{product:slug}', [ProductController::class, 'show']);
 Route::post('/products/{product}', [ProductController::class, 'store']);
 Route::post('/products/{product}/request-a-quotation', [ProductController::class, 'kirim']);
+
+
 
 Route::get('/login', [SessionController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [SessionController::class, 'store']);
@@ -74,6 +77,7 @@ Route::prefix('admin')->middleware('auth')->group(function() {
 });
     // KHUSUS ADMIN CAREER SAJA
     Route::middleware(['auth', 'can:admin_career'])->group(function () {
+    Route::get('/job/checkSlug', [JobController::class, 'checkSlug']);
     Route::get('/job', [JobController::class, 'index']);
     Route::get('/job/create', [JobController::class, 'create']);
     Route::get('/job/applicantshow/{applicant}', [JobController::class, 'DetailApplicant'])->name('job.applicants');
@@ -82,7 +86,6 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     Route::get('/job/applicantshow/{applicant}/mark-print', [JobController::class, 'markPrint'])->name('job.markPrint');
     Route::get('/job/applicantshow/{applicant}/print', [JobController::class, 'print'])->name('job.print');
     Route::post('/job/applicantshow/{id}/mark-read', [JobController::class, 'markReadAndShowPost']);
-    Route::get('/job/checkSlug', [JobController::class, 'checkSlug']);
     Route::post('/job', [JobController::class, 'store']);
     Route::get('/job/{job:slug}/edit', [JobController::class, 'edit']);
     Route::put('/job/{job:slug}/update', [JobController::class, 'update']);

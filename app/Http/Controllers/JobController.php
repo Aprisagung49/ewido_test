@@ -27,7 +27,7 @@ class JobController extends Controller
             return view('admin.job.index', [
                 'jobs' => Job::with('tags')->withCount('applicants')->withCount('applicants_is_read')->latest()->paginate(2)->withQueryString(),
                 'departements' => Departement::latest()->get(),
-                'tags' => Tag::all(),
+                'tags' => Tag::all(), 
                 
             ]);
 
@@ -68,12 +68,15 @@ class JobController extends Controller
             'quota' => 'nullable',
             'job_location' => ['nullable'],
             'deskripsi' => 'nullable',
+            'is_preferred_position' => 'nullable',
             'status_education' => 'nullable',
             'age' => 'nullable',
             'ipk' => 'nullable',
             'job_status' => 'required',
             'tags' => 'nullable'
         ]);
+
+        
 
         $job = Job::create(Arr::except($attrs, 'tags'));
 
@@ -102,6 +105,7 @@ class JobController extends Controller
         return view('admin.job.edit', [
             'job' => $job,
             'departements' => Departement::all(),
+            'is_preferred_position' => '$is_preferred_position',
             'tags' => $job->tags, // Mengambil hanya tag yang terkait dengan job ini
             'allTags' => Tag::all(), // Jika butuh semua tag untuk dropdown atau input
         ]);
@@ -120,6 +124,7 @@ class JobController extends Controller
             'quota' => 'nullable',
             'job_location' => ['nullable'],
             'job_deskripsi' => 'nullable',
+            'is_preferred_position' => 'nullable',
             'status_education' => 'nullable',
             'age' => 'nullable',
             'ipk' => 'nullable',
@@ -130,6 +135,8 @@ class JobController extends Controller
         if ($request->slug != $job->slug) {
             $rules['slug'] = 'required|unique:jobs';
         }
+
+        // $validatedData['is_preferred_position'] = $request->has('is_preferred_position') ? 1 : 0;
 
         $validatedData = $request->validate($rules);
 
@@ -158,7 +165,7 @@ class JobController extends Controller
         }
 
 
-        return redirect('/admin/job')->with('success', 'Lowongan Has Been Updated!');
+        return redirect('/admin/job')->with('success', 'Job Has Been Updated!');
     }
 
 
@@ -191,15 +198,15 @@ class JobController extends Controller
         return response()->json(['slug' => $slug]);
     }
 
-            public function showDataApplicants($id)
-        {
+     public function showDataApplicants($id)
+    {
             // Cari job, kalau gak ketemu kasih 404
             $job = Job::findOrFail($id);
             // Ambil semua applicant untuk job tersebut
             $applicants = Applicant::with(['alamatKtp', 'alamatDomisili','education'])->where('job_id', $id)->paginate(2);
 
             return view('admin/job/show', compact('job', 'applicants'));
-        }
+    }
 
         public function DetailApplicant($id){
             $applicant = Applicant::with(['alamatKtp', 'alamatDomisili', 'education', 'riwayatKesehatan', 'job_information', 'experiences'])->findOrFail($id);

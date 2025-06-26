@@ -226,6 +226,10 @@
             <td>{{ $applicant->job_information->siap_ditempatkan }}</td>
         </tr>
         <tr>
+            <td>Bagian Yang Diharapkan</td>
+            <td>{{ optional($applicant->job_information)->preferred_position }}</td>
+        </tr>
+        <tr>
             <td>Referensi Kerja</td>
             <td>
                 @foreach (Arr::wrap($applicant->job_information->referensi_kerja) as $ref)

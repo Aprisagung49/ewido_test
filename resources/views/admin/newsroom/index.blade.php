@@ -64,9 +64,9 @@
                         <form>
                             <input type="search" name="search" value="{{ request('search') }}" id="search"
                                 placeholder="Search news..."
-                                class="w-full px-4 py-2 border border-gray-300 focus:outline-2 focus:-outline-offset-1 focus:outline-yellow-500 rounded-l-lg focus:ring-2 focus:ring-yellow-500 focus:outline-none">
+                                class="w-[250px] px-8 py-2 border border-gray-300 focus:outline-2 focus:-outline-offset-1 focus:outline-yellow-500 rounded-l-lg focus:ring-2 focus:ring-yellow-500 focus:outline-none">
                             <button type="submit"
-                                class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-4 py-2 rounded-r-lg">
+                                class="bg-yellow-500 cursor-pointer hover:bg-yellow-600 text-white font-semibold px-4 py-2 rounded-r-lg">
                                 Search
                             </button>
                     </div>
@@ -105,7 +105,7 @@
                                         <time datetime="2020-03-16"
                                             class="text-gray-500">{{ $article->created_at->diffForHumans() }}</time>
                                         <a href="#"
-                                            class="relative z-10 rounded-full bg-yellow-500 px-3 py-1.5 font-medium text-white hover:bg-yellow-400">{{ $article->category->name }}</a>
+                                            class="relative rounded-full bg-yellow-500 px-3 py-1.5 font-medium text-white hover:bg-yellow-400">{{ $article->category->name }}</a>
                                     </div>
                                     <div class="group relative">
                                         <h3
@@ -122,8 +122,7 @@
                                     <div class="flex items-center justify-between gap-4 mt-4">
                                         <!-- Tombol Edit -->
                                         <a href="/admin/newsroom/{{ $article->slug }}/edit"
-                                            class="text-md text-blue-600 font-semibold hover:underline"
-                                            onclick="return confirm('Are you sure want to edit this?')">Edit</a>
+                                            class="text-md text-blue-600 font-semibold hover:underline">Edit</a>
 
                                         <!-- Tombol Delete -->
                                         <form action="/admin/newsroom/{{ $article->slug }}" method="POST"

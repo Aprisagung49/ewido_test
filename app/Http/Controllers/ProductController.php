@@ -20,7 +20,8 @@ class ProductController extends Controller
     public function index(Request $request)
     {
 
-        $perPage = 4;
+
+    $perPage = 4;
         $products = Product::with(['product_images', 'certificates'])
                 ->latest();
         $group = $request->group;
@@ -30,40 +31,61 @@ class ProductController extends Controller
         });
     }
 
-        // Search products
-        if ($request->q) {
-        $products->where(function($q) use ($request) {
+    $parentGroups = ProductGroup::whereNull('parent_id')->get();
+    $childGroups = ProductGroup::whereNotNull('parent_id')->get();
+    $products = $products->paginate($perPage)->withQueryString();
+     if ($request->is('admin/*')) {
+    return view('admin.products.index', compact('products'));
+     }
+     else{
+        return view('users.products.index', compact('parentGroups', 'childGroups'));
+     }
+}
+    public function showByCategory($name, Request $request)
+{
+    // Ambil group berdasarkan name kategori
+    $group = ProductGroup::where('name', $name)->firstOrFail();
+
+    $parentGroups = ProductGroup::whereNull('parent_id')->get();
+    $childGroups = ProductGroup::whereNotNull('parent_id')->get();
+
+    $perPage = $request->get('per_page', 6); // default 6 kalau tidak ada
+
+    $products = Product::with(['product_images', 'certificates'])
+        ->where('product_group_id', $group->id);
+
+    // Filter berdasarkan keyword pencarian TAPI hanya di kategori ini
+    if ($request->filled('q')) {
+        $products->where(function ($q) use ($request) {
             $q->where('type', 'LIKE', '%' . $request->q . '%')
               ->orWhere('cable_type', 'LIKE', '%' . $request->q . '%');
         });
     }
 
-        $parentGroups = ProductGroup::whereNull('parent_id')->get();
-        $childGroups = ProductGroup::whereNotNull('parent_id')->get();
+    $products = $products->latest()->paginate($perPage)->withQueryString();
 
-        $products = $products->paginate($perPage)->withQueryString();
-        if ($request->is('admin/*')) {
-            return view('admin.products.index', compact('products'));
-        } else {
-            return view('users.products.index', compact('products','parentGroups'));
-        }
-    }
-
-    public function filterByCategory($name, Request $request)
-{
-    $group = \App\Models\ProductGroup::where('name', $name)->firstOrFail();
-    $parentGroups = ProductGroup::whereNull('parent_id')->get();
-    $childGroups = ProductGroup::whereNotNull('parent_id')->get();
-    $perPage = 4;
-    
-    $products = \App\Models\Product::with(['product_images', 'certificates'])
-        ->where('product_group_id', $group->id)
-        ->latest()
-        ->paginate($perPage)
-        ->withQueryString();
-
-    return view('users.products.index', compact('products', 'group','parentGroups'));
+    return view('users.products.show-category', compact(
+        'products', 'group', 'parentGroups', 'childGroups'
+    ));
 }
+
+
+
+//     public function filterByCategory($name, Request $request)
+// {
+//     $group = \App\Models\ProductGroup::where('name', $name)->firstOrFail();
+//     $parentGroups = ProductGroup::whereNull('parent_id')->get();
+//     $childGroups = ProductGroup::whereNotNull('parent_id')->get();
+//     $perPage = 4;
+    
+//     $products = \App\Models\Product::with(['product_images', 'certificates'])
+//         ->where('product_group_id', $group->id)
+//         ->latest()
+//         ->paginate($perPage)
+//         ->withQueryString();
+
+//     return view('users.products.index', compact('products', 'group','parentGroups'));
+// }
 
     
 

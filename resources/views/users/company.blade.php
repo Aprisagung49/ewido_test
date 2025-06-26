@@ -4,15 +4,19 @@
         class="container mx-auto px-10 top-0 left-1 pr-25 pt-24 lg:px-44 lg:pt-25 fixed lg:top-0 lg:left-0 fixed-nav">
         <nav class="flex-1 ml-4 overflow-x-auto whitespace-nowrap scrollbar-hide lg:overflow-x-visible">
             <div class="flex space-x-4 sm:justify-between">
-                <a href="#about" class="nav-link py-2 px-3 text-gray-700 font-semibold hover:text-gold">About Us</a>
-                <a href="#story" class="nav-link py-2 px-3 text-gray-700 font-semibold hover:text-gold">Our Story</a>
-                <a href="#quality" class="nav-link py-2 px-3 text-gray-700 font-semibold hover:text-gold">Quality
+                <a href="#about" class="nav-link py-2 px-3 text-gray-700 font-semibold hover:text-yellow-500">About
+                    Us</a>
+                <a href="#story" class="nav-link py-2 px-3 text-gray-700 font-semibold hover:text-yellow-500">Our
+                    Story</a>
+                <a href="#quality" class="nav-link py-2 px-3 text-gray-700 font-semibold hover:text-yellow-500">Quality
                     Control</a>
-                <a href="#manpower" class="nav-link py-2 px-3 text-gray-700 font-semibold hover:text-gold">Manpower &
+                <a href="#manpower" class="nav-link py-2 px-3 text-gray-700 font-semibold hover:text-yellow-500">Manpower
+                    &
                     Training</a>
                 <a href="#certificates"
-                    class="nav-link py-2 px-3 text-gray-700 font-semibold hover:text-gold">Certificates</a>
-                <a href="#quality-acc" class="nav-link py-2 px-3 text-gray-700 font-semibold hover:text-gold">Quality
+                    class="nav-link py-2 px-3 text-gray-700 font-semibold hover:text-yellow-500">Certificates</a>
+                <a href="#quality-acc"
+                    class="nav-link py-2 px-3 text-gray-700 font-semibold hover:text-yellow-500">Quality
                     Accreditations</a>
             </div>
         </nav>
@@ -20,7 +24,7 @@
 
     {{-- ABOUT US SECTION --}}
     <x-users.panel color="gray" id="about">
-        <x-users.section>
+        <x-users.section-about>
             <x-users.heading>About Us</x-users.heading>
             <div class="text-xs lg:text-base text-gray-700 leading-7 text-justify">
                 <p class="mt-2">
@@ -77,21 +81,23 @@
             <div class="flex justify-center">
                 <dl
                     class="grid grid-cols-2 gap-x-8 gap-y-8 text-center place-items-center sm:grid-cols-2 lg:grid-cols-4">
-                    <div class="mx-auto flex w-25 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
+                    <div class="mx-auto flex w-50 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
                         <dt class="text-base/7 text-gray-600">Founded</dt>
                         <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">1974
                         </dd>
                     </div>
-                    <div class="mx-auto flex w-20 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
+                    <div
+                        class="mx-auto flex w-30 lg:w-50  items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
                         <dt class="text-base/7 text-gray-600">Employees</dt>
                         <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">2800+
                         </dd>
                     </div>
-                    <div class="mx-auto flex w-25 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
+                    <div class="mx-auto flex w-50 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
                         <dt class="text-base/7 text-gray-600">Plants</dt>
                         <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">2</dd>
                     </div>
-                    <div class="mx-auto flex w-20 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
+                    <div
+                        class="mx-auto flex w-30 lg:w-50 items-center justify-center flex-col gap-y-4 bg-white p-6 rounded-lg">
                         <dt class="text-base/7 text-gray-600">Products</dt>
                         <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">200+
                         </dd>
@@ -99,7 +105,7 @@
                 </dl>
             </div>
 
-        </x-users.section>
+        </x-users.section-about>
     </x-users.panel>
 
     {{-- OUR STORY --}}
@@ -170,16 +176,12 @@
                                     <b>1990</b>: Obtained approval from Dentori Japan for Cables.
                                 </li>
                                 <li>
-                                    <b>1999</b>: Obtained approval from CB Certificate and European Certificate for
-                                    cables.
-                                </li>
-                                <li>
                                     <b>1991</b>: Started manufacturing Electric Cables, obtained approval from UL and
                                     CSA for
                                     Electric Cables & Power Supply Cord.
                                 </li>
                                 <li>
-                                    <b>199</b>: Increased capital to USD 4.75 million and started manufacturing Wiring
+                                    <b>1994</b>: Increased capital to USD 4.75 million and started manufacturing Wiring
                                     Harness; obtained UL/CSA approval.
                                 </li>
                                 <li>
@@ -251,14 +253,12 @@
                                     <b>2005</b>: Obtained approval from UL for Enamel Wire.
                                 </li>
                                 <li>
-                                    <b>1999</b>: Obtained approval from CB Certificate and European Certificate for
-                                    cables.
+                                    <b>2006</b> : Increased capital to USD 6.25 million and successfully received EMS
+                                    ISO
+                                    14001:2004 certification.
                                 </li>
-                                <li>
-                                    <b>2006</b>
-                                </li>: Increased capital to USD 6.25 million and successfully received EMS ISO
-                                14001:2004 certification.
-                                </li>
+
+
                             </ul>
                             <div class="grid grid-cols-2 md:grid-cols-3">
                                 <div>
@@ -336,7 +336,7 @@
 
     {{-- QUALITY CONTROL & TQA --}}
     <x-users.panel color="gray" id="quality">
-        <x-users.section>
+        <x-users.section-about>
             <x-users.heading class="text-[3rem]">Quality Control & TQA</x-users.heading>
             <div class="text-base text-gray-700 leading-7 text-justify">
                 <p class="mt-8">
@@ -444,12 +444,12 @@
                     and responsibility across our organization.
                 </p>
             </div>
-        </x-users.section>
+        </x-users.section-about>
     </x-users.panel>
 
     {{-- MANPOWER SECTION --}}
     <x-users.panel id="manpower">
-        <x-users.section>
+        <x-users.section-about>
             <x-users.heading class="text-[2.7rem]">Manpower & Training</x-users.heading>
             <div class="text-base text-gray-700 leading-7 text-justify">
                 <p class="mt-8 text-center">
@@ -561,62 +561,62 @@
                     train abroad, particularly in Japan.
                 </p>
             </div>
-        </x-users.section>
+        </x-users.section-about>
     </x-users.panel>
 
     {{-- HONOR CERTIFICATES --}}
-    <x-users.panel color="gray" id="certificates">
-        <x-users.section>
-            <x-users.heading>Honor Certificates</x-users.heading>
-            <div class="swiper swiper-certificate mt-10 px-10">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="certificate-placeholder bg-gray-200">
-                            <a href="#"
-                                onclick="openModal(event, asset('storage/images/sertifikat/Sertifikat-ISO-14001-2015/Sertifikat ISO 14001 2015_page-0001.jpg'))">
-                                <img src="{{ asset('storage/images/sertifikat/Sertifikat-ISO-14001-2015/Sertifikat ISO 14001 2015_page-0001.jpg') }}"
-                                    alt="Certificates" class="cursor-pointer hover:opacity-80 transition">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="certificate-placeholder bg-gray-200">
-                            <img src="{{ asset('storage/images/sertifikat/Sertifikat-ISO-9001-2015/Sertifikat ISO 9001 2015_page-0001.jpg') }}"
-                                alt="">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="certificate-placeholder bg-gray-200">
-                            <img src="{{ asset('storage/images/sertifikat/Sertifikat-SNI-ISO-9001-2015/Sertifikat SNI ISO 9001 2015_page-0001.jpg') }}"
-                                alt="">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="certificate-placeholder bg-gray-200">
-                            <img src="{{ asset('storage/images/sertifikat/Nondetachable-Power-Supply-Cords---General-Use/Nondetachable Power Supply Cords - General Use_page-0001.jpg') }}"
-                                alt="">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="certificate-placeholder bg-gray-200">
-                            <img src="storage/images/sertifikat/Detachable-Power-Supply-Cords---General-Use/Detachable Power Supply Cords - General Use_page-0001.jpg"
-                                alt="">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="certificate-placeholder bg-gray-200">
-                            <img src="storage/images/sertifikat/CORD-SETS-AND-POWER-SUPPLY-CORDS/CORD SETS AND POWER-SUPPLY CORDS_page-0001.jpg"
-                                alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination swiper-pagination-certificate"></div>
-                <div class="swiper-button-prev swiper-button-prev-certificate"></div>
-                <div class="swiper-button-next swiper-button-next-certificate"></div>
-            </div>
-        </x-users.section>
-    </x-users.panel>
 
+    <x-users.panel color="gray" id="certificates">
+        <x-users.section-about>
+            <x-users.heading>Honor Certificates</x-users.heading>
+            <div x-data="{ showModal: false, imageSrc: '' }">
+
+                <!-- Swiper Slider -->
+                <div class="swiper swiper-certificate lg:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+                    <div class="swiper-wrapper">
+
+                        {{-- Contoh Slide Gambar --}}
+                        @php
+                            $images = [
+                                'storage/images/sertifikat/Sertifikat-ISO-14001-2015/Sertifikat ISO 14001 2015_page-0001.jpg',
+                                'storage/images/sertifikat/Sertifikat-ISO-9001-2015/Sertifikat ISO 9001 2015_page-0001.jpg',
+                                'storage/images/sertifikat/Sertifikat-SNI-ISO-9001-2015/Sertifikat SNI ISO 9001 2015_page-0001.jpg',
+                                'storage/images/sertifikat/Nondetachable-Power-Supply-Cords---General-Use/Nondetachable Power Supply Cords - General Use_page-0001.jpg',
+                                'storage/images/sertifikat/Detachable-Power-Supply-Cords---General-Use/Detachable Power Supply Cords - General Use_page-0001.jpg',
+                                'storage/images/sertifikat/CORD-SETS-AND-POWER-SUPPLY-CORDS/CORD SETS AND POWER-SUPPLY CORDS_page-0001.jpg',
+                            ];
+                        @endphp
+
+                        @foreach ($images as $image)
+                            <div class="swiper-slide">
+                                <div class="certificate-placeholder mx-auto bg-gray-200">
+                                    <img src="{{ asset($image) }}" alt="Certificate"
+                                        class="cursor-pointer hover:opacity-80 transition"
+                                        @click="showModal = true; imageSrc = '{{ asset($image) }}'">
+                                </div>
+                            </div>
+                        @endforeach
+
+                    </div>
+                    <div class="swiper-pagination swiper-pagination-certificate"></div>
+                    <div class="swiper-button-prev swiper-button-prev-certificate"></div>
+                    <div class="swiper-button-next swiper-button-next-certificate"></div>
+                </div>
+                <!-- Modal Image Preview -->
+                <div x-show="showModal" x-transition
+                    class="fixed inset-0 z-50 flex items-center justify-center  backdrop-blur-md bg-black/40"
+                    style="display: none" @click.away="showModal = false" @keydown.escape.window="showModal = false">
+                    <div class="relative max-w-5xl mx-auto px-4">
+                        <img :src="imageSrc" alt="Preview" class="max-h-[90vh] mx-auto rounded shadow-lg">
+                    </div>
+                    <button @click="showModal = false"
+                        class="absolute top-1 right-4 w-10 h-10 flex justify-center rounded-full bg-white text-black text-3xl cursor-pointer font-bold hover:bg-red-600 hover:text-white transition">
+                        &times;
+                    </button>
+                </div>
+            </div>
+        </x-users.section-about>
+    </x-users.panel>
     {{-- QUALITY ACCREDITATIONS --}}
     <x-users.panel id="quality-acc">
         <x-users.section>
@@ -639,7 +639,75 @@
                     src="{{ asset('storage/images/quality-accreditations/21.png') }}" alt="SavvyCal" width="158"
                     height="48" />
             </div>
+            {{-- SCRIPT JS SWIPPER CERTIFICATE --}}
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    new Swiper(".swiper-certificate", {
+                        loop: true,
+                        spaceBetween: 20,
+                        pagination: {
+                            el: ".swiper-pagination-certificate",
+                            clickable: true,
+                        },
+                        navigation: {
+                            nextEl: ".swiper-button-next-certificate",
+                            prevEl: ".swiper-button-prev-certificate",
+                        },
+                        // Responsive breakpoints
+                        breakpoints: {
+                            0: {
+                                slidesPerView: 1, // Mobile: 1 slide per view
+                            },
+                            768: {
+                                slidesPerView: 2, // Tablet: 2 slides
+                            },
+                            1024: {
+                                slidesPerView: 3, // Desktop: 3 slides (default)
+                            },
+                        },
+                    });
+                });
+            </script>
+
+            {{-- SCRIPT NAV AKTIF --}}
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const navLinks = document.querySelectorAll('.nav-link');
+                    const sections = Array.from(navLinks).map(link => document.querySelector(link.getAttribute('href')));
+                    const navContainer = document.querySelector('nav');
+
+                    function getActiveSection() {
+                        const scrollPosition = window.scrollY + 100; // +100 untuk menghindari ketutup header
+                        let activeIndex = 0;
+                        sections.forEach((section, index) => {
+                            if (section && section.offsetTop <= scrollPosition) {
+                                activeIndex = index;
+                            }
+                        });
+                        return activeIndex;
+                    }
+
+                    function updateActiveLink() {
+                        const activeIndex = getActiveSection();
+                        navLinks.forEach((link, i) => {
+                            link.classList.remove('text-gold');
+                            if (i === activeIndex) {
+                                link.classList.add('text-gold');
+
+                                // Scroll nav agar link aktif kelihatan di tengah
+                                link.scrollIntoView({
+                                    behavior: 'smooth',
+                                    inline: 'center',
+                                    block: 'nearest'
+                                });
+                            }
+                        });
+                    }
+
+                    // Scroll event
+                    window.addEventListener('scroll', updateActiveLink);
+                });
+            </script>
         </x-users.section>
     </x-users.panel>
-
 </x-users.layout>

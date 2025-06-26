@@ -87,10 +87,15 @@
         class="mt-4 space-y-4 lg:hidden p-6 rounded absolute w-full left-0 z-50 bg-white/90 backdrop-blur-md shadow-md transition duration-300"
         @click.outside="open = false">
         <!-- Menu items -->
-        <a href="/company" class="block text-gold font-medium">Company</a>
-        <a href="/products" class="block text-gold font-medium">Products</a>
-        <a href="/newsroom" class="block text-gold font-medium">Newsroom</a>
-        <a href="/contact" class="block text-gold font-medium">Contact</a>
-        <a href="/careers" class="block text-gold font-medium">Careers</a>
+        <a href="/company"
+            class="block text-gold font-medium  border-gold hover:transition duration-200 hover:text-xl">Company</a>
+        <a href="/products"
+            class="block text-gold font-medium  border-gold hover:transition duration-200 hover:text-xl">Products</a>
+        <a href="/newsroom"
+            class="block text-gold font-medium  border-gold hover:transition duration-200 hover:text-xl">Newsroom</a>
+        <a href="/contact"
+            class="block text-gold font-medium  border-gold hover:transition duration-200 hover:text-xl">Contact</a>
+        <a href="/careers"
+            class="block text-gold font-medium  border-gold hover:transition duration-200 hover:text-xl">Careers</a>
     </div>
 </nav>

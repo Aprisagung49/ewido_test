@@ -2,6 +2,11 @@
     {{-- PRODUCT INFO --}}
     <x-users.panel>
         <x-users.section-product>
+
+
+
+
+
             <x-users.heading>Products</x-users.heading>
             <p class="mt-6 text-base text-gray-700 leading-7 text-center">
                 PT EWINDO offers a diverse range of products, including bare
@@ -19,7 +24,9 @@
                 include ISO 9001, ISO 14001, ISO 45001, CE, and UL.
             </p>
 
-            <form method="GET" action="{{ route('products.index') }}"
+            <x-users.heading-small>Featured Categories</x-users.heading-small>
+
+            {{-- <form method="GET" action="{{ route('products.index') }}"
                 class="flex rounded-full border-2 border-gold outline-none overflow-hidden max-w-lg mx-auto mt-10">
                 @if (request()->routeIs('products.category'))
                     <input type="hidden" name="group" value="{{ request()->route('name') }}">
@@ -34,87 +41,66 @@
                         </path>
                     </svg>
                 </button>
-            </form>
+            </form> --}}
 
-            <section class="text-center my-8">
-                <div class="flex justify-center space-x-4">
+
+
+
+            @php
+                // Mapping nama kategori ke gambar
+                $categoryImages = [
+                    'Cables' => 'storage/images/cable.jpg',
+                    'Enamelled Wire' => 'storage/images/wire.jpg',
+                    'Power Supply Cord and Cord Set' => 'storage/images/power.jpg',
+                    // Default jika nama tidak cocok
+                    // 'default' => 'storage/images/default.jpg',
+                ];
+            @endphp
+
+            <section class="text-center my-10">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
                     @foreach ($parentGroups as $parent)
-                        <a class="text-sm text-gold hover:text-yellow-400"
-                            href="{{ route('products.category', $parent->name) }}">{{ $parent->name }}</a>
-                    @endforeach
+                        @php
+                            $imagePath = $categoryImages[$parent->name] ?? $categoryImages['default'];
+                        @endphp
 
-                </div>
-                <hr class="mt-4 border-gray-300" />
-            </section>
-        </x-users.section-product>
-    </x-users.panel>
-
-    <x-users.panel>
-        <section class="container max-w-7xl mx-auto">
-            <x-users.heading>
-                @if (isset($group))
-                    <p class="text-lg mt-1 sm:text-base md:text-lg lg:text-xl text-gold">
-                        Results for {{ $group->name }}
-                    </p>
-                @endif
-            </x-users.heading>
-            @if ($products->count() > 0)
-                <div class="grid grid-cols-2 gap-4 pr-4 pl-3 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8 mt-1 lg:p-14">
-                    @foreach ($products as $product)
-                        <div class="relative rounded-lg overflow-hidden shadow-lg border border-gold flex flex-col">
-                            <a href="/products/{{ $product->slug }}">
-                                <div class="w-full aspect-square overflow-hidden">
-                                    <img alt="Product image of {{ $product->type }}"
-                                        src="{{ asset('storage/' . $product->product_images->first()->image_path) }}"
-                                        class="w-full h-full object-cover" />
-                                </div>
-                            </a>
-
-                            {{-- Product Certificates --}}
-                            @if ($product->certificates->isNotEmpty())
-                                <div class="absolute top-2 right-2 flex flex-col space-y-1">
-                                    @foreach ($product->certificates as $certificate)
-                                        <img class="w-10 h-10 border-2 border-gray-200 rounded-lg shadow-md object-contain bg-gray-100"
-                                            src="{{ asset('storage/' . $certificate->logo) }}"
-                                            alt="{{ $certificate->name }}">
-                                    @endforeach
-                                </div>
-                            @endif
-                            <div class="p-4 border-t border-gold flex flex-col flex-grow justify-between">
-                                <div class="flex-grow">
-
-                                    <p class="font-semibold text-sm lg:text-1xl">{{ $product->type }}</p>
-                                    <p
-                                        class="text-gray-600 mb-6 text-left text-xs lg:text-justify lg:text-sm leading-relaxed">
-                                        {{ $product->cable_type }}</p>
-                                </div>
-                                <div class="flex justify-end">
-                                    <h2
-                                        class="inline-block rounded-full bg-yellow-500 px-3 py-1.5  text-white hover:bg-yellow-400 cursor-pointer font-bold mt-2 text-[10px] lg:text-xs ">
-                                        {{ Str::limit($product->product_group->name, 10) }}
-                                    </h2>
-                                </div>
-                                <div class="mt-auto">
-                                </div>
+                        <a href="{{ route('products.category', $parent->name) }}"
+                            class="relative w-88 h-50 rounded-lg overflow-hidden shadow-lg group">
+                            <div class="aspect-3/2 absolute inset-0 bg-cover bg-center transform transition-transform duration-1800 ease-in-out group-hover:scale-140"
+                                style="background-image: url('{{ asset($imagePath) }}');">
                             </div>
-                        </div>
+                            <div class="absolute inset-0  bg-opacity-10 flex flex-col justify-between p-4">
+                                <h3 class="text-white hover:text-gold text-xl font-semibold">{{ $parent->name }}</h3>
+                                <span
+                                    class="inline-block mt-4  self-start px-3 py-1 text-sm font-medium text-white border border-white rounded-md hover:bg-gold hover:text-white transition">
+                                    Explore All
+                                </span>
+                            </div>
+                        </a>
                     @endforeach
-                    {{-- PAGINATION --}}
-
                 </div>
-                <div class="mt-10">
-                    {{ $products->links() }}
-                </div>
+            </section>
 
-                {{-- Pengecualian --}}
-            @else
-                {{-- Pesan jika tidak ada produk --}}
-                <div class="text-center py-10 text-gray-600">
-                    <h2 class="font-bold text-3xl mb-10 text-gold">Produk tidak ditemukan.</h2>
-                </div>
-            @endif
-        </section>
+            <script>
+                const swiperBanner = new Swiper(".mySwiperBanner", {
+                    loop: true,
+                    spaceBetween: 0,
+                    autoplay: {
+                        delay: 4000,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                });
+            </script>
 
 
+        </x-users.section-product>
     </x-users.panel>
 </x-users.layout>

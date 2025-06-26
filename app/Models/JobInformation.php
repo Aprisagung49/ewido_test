@@ -14,7 +14,7 @@ class JobInformation extends Model
     protected $casts = [
         'referensi_kerja' => 'array',
     ];
-    protected $fillable = ['referensi_kerja', 'kenalan', 'siap_ditempatkan'];
+    protected $fillable = ['referensi_kerja', 'preferred_position', 'kenalan', 'siap_ditempatkan'];
 
     public function applicant()
     {

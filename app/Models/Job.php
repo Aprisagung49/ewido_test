@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Job extends Model
 {
     use HasFactory, Sluggable;
-    protected $fillable = ['job_name', 'slug', 'departement_id', 'job_type', 'quota', 'job_location', 'status_education', 'age', 'ipk', 'job_status', 'deskripsi'];
+    protected $fillable = ['job_name', 'slug', 'departement_id', 'job_type', 'quota', 'job_location', 'status_education', 'age', 'ipk', 'job_status', 'is_preferred_position', 'deskripsi'];
     protected $casts = ['job_status' => 'boolean'];
 
 

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('applicant_id')->constrained('applicants')->onDelete('cascade');
             $table->text('referensi_kerja')->nullable();
+            $table->string('preferred_position')->nullable();
             $table->string('kenalan', 255)->nullable();
             $table->string('siap_ditempatkan', 10)->default('Tidak');
             $table->timestamps();

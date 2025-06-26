@@ -13,7 +13,7 @@
                             <div class="col-span-4">
                                 <label for="job_name"
                                     class="@error('job_name') is-invalid @enderror block text-sm/6 font-medium text-gray-900">Job
-                                    Position
+                                    Name
                                     <span class="text-red-500">* Wajib Diisi</span></label>
                                 <div class="mt-2">
                                     <input id="job_name" name="job_name" type="text" autocomplete="job_name"
@@ -157,6 +157,9 @@
                                             </div>
                                         </div>
 
+
+
+
                                         {{-- JOB DESCRIPSTION --}}
                                         {{-- <div class="col-span-full">
                                             <x-forms.textarea label="Job Description" name="job_deskripsi"
@@ -220,7 +223,24 @@
                                                     </div>
                                                 </div>
 
-
+                                                <div class="sm:col-span-6">
+                                                    <label for="is_preferred_position"
+                                                        class=" block text-sm/6 font-medium text-gray-900">Posisi
+                                                        Yang Diingikan
+                                                        <span class="text-red-500">Optional</span></label>
+                                                    <label class="block text-sm/6 font-medium text-gray-900">
+                                                        <input type="checkbox" name="is_preferred_position"
+                                                            value="1"
+                                                            {{ old('is_preferred_position', $job->is_preferred_position ?? 0) == 1 ? 'checked' : '' }}
+                                                            class="form-checkbox">
+                                                        <br>
+                                                        <span class="ml-1 text-red-500 text-xs">* Jika Diaktifkan maka
+                                                            akan
+                                                            menampilkan
+                                                            pilihan untuk user memilih bagian/posisi yang
+                                                            diinginkan</span>
+                                                    </label>
+                                                </div>
 
                                                 <div class="sm:col-span-3">
                                                     <label for="job_status"

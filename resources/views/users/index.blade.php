@@ -1,7 +1,7 @@
 <x-users.layout>
     {{-- MAIN TOP CONTENT --}}
     <x-users.panel color="gray">
-        <x-users.section>
+        <x-users.section-about>
             <section class="flex flex-col lg:flex-row items-center gap-8">
                 <div class="lg:w-2/5 text-center lg:text-left">
                     <h1
@@ -21,10 +21,11 @@
                     </div>
                 </div>
 
-                <div class="lg:w-3/5 w-full">
-                    <div class="relative rounded-2xl overflow-hidden col-span-3">
-                        <div class="lg:w-full h-[200px] lg:h-[400px]">
-                            <video class="absolute top-0 left-0 h-[200px] w-[500px] lg:w-full lg:h-[400px] object-cover"
+                <div class="sm:w-4/5 lg:w-3/5 md:w-full">
+                    <div class="relative rounded-2xl md:rounded-4xl overflow-hidden col-span-3">
+                        <div class="lg:w-full h-[200px] lg:h-[400px] md:w-full md:h-[600px]">
+                            <video
+                                class="lg:absolute top-0 left-0 h-[200px] w-[500px] lg:w-full lg:h-[400px] md:aspect-1/2 md:w-full md:h-[600px] object-cover"
                                 autoplay muted loop>
                                 <source src="{{ asset('storage/video/ewindo.mp4') }}" type="video/mp4" />
                             </video>
@@ -32,7 +33,7 @@
                     </div>
                 </div>
             </section>
-        </x-users.section>
+        </x-users.section-about>
     </x-users.panel>
 
     {{-- SECOND MAIN CONTENT --}}
@@ -40,7 +41,7 @@
         <x-users.section>
             <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                 <div class="relative rounded-2xl overflow-hidden shadow-lg">
-                    <div class="swiper swiper-plant">
+                    <div class="swiper swiper-plant h-[200px] lg:w-full h-[300px] lg:h-[500px] md:w-full  md:h-[700px]">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <img src="{{ asset('storage/images/main/plant1.jpg') }}" alt="Image 1"
@@ -53,7 +54,7 @@
                         </div>
                         <div class="swiper-pagination swiper-pagination-plant"></div>
                         <!-- If we need navigation buttons -->
-                        <div class="swiper-button-prev swiper-button-prev-plant"></div>
+                        <div class="swiper-button-prev swiper-button-prev-plant "></div>
                         <div class="swiper-button-next swiper-button-next-plant"></div>
                     </div>
                 </div>
@@ -88,7 +89,7 @@
 
     {{-- VISION AND MISSION --}}
     <x-users.panel color="gray">
-        <x-users.section>
+        <x-users.section-about>
             <x-users.heading>
                 Vision and Mission
             </x-users.heading>
@@ -118,12 +119,12 @@
                     </p>
                 </div>
             </div>
-        </x-users.section>
+        </x-users.section-about>
     </x-users.panel>
 
     {{-- BOARD OF DIRECTOR --}}
     <x-users.panel>
-        <x-users.section>
+        <x-users.section-about>
             <x-users.heading>
                 Board of Director
             </x-users.heading>
@@ -147,12 +148,12 @@
                     <p>Name</p>
                 </div>
             </div>
-        </x-users.section>
+        </x-users.section-about>
     </x-users.panel>
 
     {{-- OUR CUSTOMERS PLANT 1 --}}
     <x-users.panel color="gray">
-        <x-users.section>
+        <x-users.section-about>
             <x-users.heading>
                 Our Customers
             </x-users.heading>
@@ -196,16 +197,13 @@
             <p class="text base text-gray-700 font-semibold leading-7 text-center mt-12">
                 and more...
             </p>
-        </x-users.section>
+        </x-users.section-about>
     </x-users.panel>
 
 
     {{-- OUR CUSTOMERS PLANT 2 --}}
     <x-users.panel color="gray">
-        <x-users.section>
-            <x-users.heading>
-                Our Customers
-            </x-users.heading>
+        <x-users.section-product>
             <x-users.heading-plant>
                 Plant 2
             </x-users.heading-plant>
@@ -246,12 +244,12 @@
             <p class="text base text-gray-700 font-semibold leading-7 text-center mt-12">
                 and more...
             </p>
-        </x-users.section>
+        </x-users.section-product>
     </x-users.panel>
 
     {{-- AWARDS AND ACHIEVEMENTS --}}
     <x-users.panel>
-        <x-users.section>
+        <x-users.section-about>
             <x-users.heading>
                 Awards And Achievements
             </x-users.heading>
@@ -389,12 +387,12 @@
                 <div class="swiper-button-prev swiper-button-prev-awards"></div>
                 <div class="swiper-button-next swiper-button-next-awards"></div>
             </div>
-        </x-users.section>
+        </x-users.section-about>
     </x-users.panel>
 
     {{-- JOIN OUR TEAM --}}
     <x-users.panel color="gray">
-        <x-users.section>
+        <x-users.section-about>
             <div class="max-w-4xl mx-auto p-14 bg-white flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2">
                     <h1 class="text-3xl font-bold mb-4">Join Our Team</h1>
@@ -411,7 +409,7 @@
                     </a>
                 </div>
             </div>
-        </x-users.section>
+        </x-users.section-about>
     </x-users.panel>
 
 </x-users.layout>

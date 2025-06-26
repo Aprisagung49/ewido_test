@@ -64,6 +64,7 @@ class ApplicantController extends Controller
             'keahlian.*' => 'string|max:100',
             'ada_riwayat_penyakit' => 'nullable|boolean',
             'nama_penyakit' => 'nullable|string',
+            'preferred_position'=>'nullable|string',
             'referensi_kerja' => 'required|array',
             'referensi_kerja.*' => 'in:Website Ewindo,Instagram,Facebook,Rekan/Sahabat',
             'kenalan'=> 'nullable|string|max:255',
@@ -185,6 +186,7 @@ if ($request->input('is_ada_pengalaman') === 'ya' && $request->filled('experienc
 
     $applicant->job_information()->create([
         'referensi_kerja'   => $validatedData['referensi_kerja'],
+        'preferred_position'=>$request->preferred_position,
         'kenalan'           => $request->kenalan,
         'siap_ditempatkan'  => $request->siap_ditempatkan,
     ]);

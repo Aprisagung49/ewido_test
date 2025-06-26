@@ -298,6 +298,11 @@
                         <p class="mr-2">:</p>
                         <p>{{ $applicant->job_information->siap_ditempatkan }}</p>
                     </div>
+                    <div class="flex">
+                        <p class="font-medium w-60">Bagian Yang Diharapkan</p>
+                        <p class="mr-2">:</p>
+                        <p>{{ optional($applicant->job_information)->preferred_position }}</p>
+                    </div>
                 </div>
             </div>
         </section>

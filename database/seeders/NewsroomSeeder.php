@@ -13,180 +13,194 @@ class NewsroomSeeder extends Seeder
      */
     public function run(): void
     {
+
+        // EXHIBITION
+        Newsroom::create([
+            'title' => 'GIASS 2017 FINAL DAY',
+            'user_id' => 2,
+            'category_id' => 1,
+            'slug' => 'GIASS-2017-FINAL-DAY',
+            'body' => ''
+        ]);
+        Newsroom::create([
+            'title' => 'GIASS 2017 TENTH DAY',
+            'user_id' => 2,
+            'category_id' => 1,
+            'slug' => 'GIASS-2017-TENTH-DAY',
+            'body' => ''
+        ]);
+        Newsroom::create([
+            'title' => 'GIASS 2017 NINTH DAY',
+            'user_id' => 2,
+            'category_id' => 1,
+            'slug' => 'GIASS-2017-NINTH-DAY',
+            'body' => ''
+        ]);
+        Newsroom::create([
+            'title' => 'GIASS 2017 EIGHTH DAY',
+            'user_id' => 2,
+            'category_id' => 1,
+            'slug' => 'GIASS-2017-EIGHTH-DAY',
+            'body' => ''
+        ]);
+        Newsroom::create([
+            'title' => 'GIASS 2017 SEVENTH DAY',
+            'user_id' => 2,
+            'category_id' => 1,
+            'slug' => 'GIASS-2017-SEVENTH-DAY',
+            'body' => ''
+        ]);
+        Newsroom::create([
+            'title' => 'GIIAS 2017 SIXTH DAY',
+            'user_id' => 2,
+            'category_id' => 1,
+            'slug' => 'GIIAS-2017-SIXTH-DAY',
+            'body' => ''
+        ]);
+        Newsroom::create([
+            'title' => 'GIIAS 2017 FIFTH DAY',
+            'user_id' => 2,
+            'category_id' => 1,
+            'slug' => 'GIIAS-2017-FIFTH-DAY',
+            'body' => ''
+        ]);
+        Newsroom::create([
+            'title' => 'GIIAS 2017 FOURTH DAY',
+            'user_id' => 2,
+            'category_id' => 1,
+            'slug' => 'giias-2017-fourth-day',
+            'body' => ''
+        ]);
+        Newsroom::create([
+            'title' => 'GIIAS 2017 THIRD DAY',
+            'user_id' => 2,
+            'category_id' => 1,
+            'slug' => 'giias-2017-third-day',
+            'body' => ''
+        ]);
+        Newsroom::create([
+            'title' => 'GIIAS 2017 SECOND DAY',
+            'user_id' => 2,
+            'category_id' => 1,
+            'slug' => 'giias-2017-second-day',
+            'body' => ''
+        ]);
+        Newsroom::create([
+            'title' => 'GIIAS 2017 FIRST DAY',
+            'user_id' => 2,
+            'category_id' => 1,
+            'slug' => 'giias-2017-first-day',
+            'body' => ''
+        ]);
+        Newsroom::create([
+            'title' => 'JIEXPO KEMAYORAN 17 - 19 MEI 2017',
+            'user_id' => 2,
+            'category_id' => 1,
+            'slug' => 'jiexpo-kemayoran-17--19-mei-2017',
+            'body' => ''
+        ]);
+
+        // GATHERING
+        Newsroom::create([
+            'title' => 'Customer Gathering di Mandarin Hotel',
+            'user_id' => 2,
+            'category_id' => 2,
+            'slug' => 'Customer_Gathering_di_Mandarin_Hotel',
+            'body' => ''
+        ]);
+        Newsroom::create([
+            'title' => 'Customer Gathering di Hollyday In Cikarang',
+            'user_id' => 2,
+            'category_id' => 2,
+            'slug' => 'Customer-Gathering-di-Hollyday-In-Cikarang',
+            'body' => ''
+        ]);
+        Newsroom::create([
+            'title' => 'Customer Gathering di Hilton Bandung',
+            'user_id' => 2,
+            'category_id' => 2,
+            'slug' => 'Customer-Gathering-di-Hilton-Bandung',
+            'body' => ''
+        ]);
+        
+        // TRAINNING
+        Newsroom::create([
+            'title' => 'TRAINING SGS SESSION 2',
+            'user_id' => 2,
+            'category_id' => 3,
+            'slug' => 'TRAINING_SGS_SESSION2',
+            'body' => ''
+        ]);
+        Newsroom::create([
+            'title' => 'TRAINING SGS SESSION 1',
+            'user_id' => 2,
+            'category_id' => 3,
+            'slug' => 'TRAINING_SGS_SESSION1',
+            'body' => ''
+        ]);
+
+        // CELEBRATION
         Newsroom::create([
             'title' => '79th Indonesian Independence Day',
             'user_id' => 2,
-            'category_id' => 5,
+            'category_id' => 4,
             'slug' => '79-indonesian-independence-day',
-            'body' => 'On August 17, 2024, Indonesia proudly celebrates its 79th Independence Day, marking nearly eight decades of freedom since proclaiming independence in 1945. This year’s theme revolves around “Bersatu untuk Indonesia Maju” (United for an Advanced Indonesia), emphasizing the importance of unity amid diversity to achieve national progress.
-
-                        The celebrations are marked by flag-hoisting ceremonies, traditional competitions like panjat pinang and balap karung, and cultural parades in cities and villages across the archipelago. Communities come together, reinforcing the spirit of gotong royong (mutual cooperation) that has been a core value of Indonesian society.
-
-                        Beyond festivities, this day reminds the younger generation of the sacrifices made by national heroes. It is also a moment for reflection on how far the nation has advanced and the challenges ahead.
-
-                        As Indonesia approaches its 80th milestone, there is a shared hope to continue building a just, prosperous, and sustainable future for all citizens.'
+            'body' => ''
         ]);
+        Newsroom::create([
+            'title' => '45TH EWINDO ANNIVERSARY',
+            'user_id' => 2,
+            'category_id' => 4,
+            'slug' => 'ANNIVERSARY_45TH',
+            'body' => ''
+        ]);
+
+        // VACATION
         Newsroom::create([
             'title' => 'JOGJA TRIP',
             'user_id' => 2,
-            'category_id' => 1,
+            'category_id' => 5,
             'slug' => 'JOGJA_TRIP_1',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
-        ]);
-        Newsroom::create([
-            'title' => 'PANGANDARAN TRIP',
-            'user_id' => 2,
-            'category_id' => 3,
-            'slug' => 'PANGANDARAN_TRIP_1',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
+            'body' => ''
         ]);
         Newsroom::create([
             'title' => 'DUFAN TRIP',
             'user_id' => 2,
-            'category_id' => 3,
+            'category_id' => 5,
             'slug' => 'DUFAN_TRIP_1',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
+            'body' => ''
         ]);
         Newsroom::create([
-            'title' => 'TRAINING SGS SESSION 2',
+            'title' => 'PANGANDARAN TRIP',
             'user_id' => 2,
             'category_id' => 5,
-            'slug' => 'TRAINING_SGS_SESSION2',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
+            'slug' => 'PANGANDARAN_TRIP_1',
+            'body' => ''
         ]);
+
+        // OTHER
         Newsroom::create([
-            'title' => 'TRAINING SGS SESSION 3',
-            'user_id' => 2,
-            'category_id' => 5,
-            'slug' => 'TRAINING_SGS_SESSION3',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
-        ]);
-        Newsroom::create([
-            'title' => 'TRAINING SGS SESSION 4',
-            'user_id' => 2,
-            'category_id' => 5,
-            'slug' => 'TRAINING_SGS_SESSION4',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
-        ]);
-        Newsroom::create([
-            'title' => 'TRAINING SGS SESSION 5',
-            'user_id' => 2,
-            'category_id' => 5,
-            'slug' => 'TRAINING_SGS_SESSION5',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
-        ]);
-        Newsroom::create([
-            'title' => 'TRAINING SGS SESSION 6',
+            'title' => 'MOTORCYCLE TEST DRIVE DAY 2',
             'user_id' => 2,
             'category_id' => 6,
-            'slug' => 'TRAINING_SGS_SESSION6',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
+            'slug' => 'MOTORCYCLE_TEST_DRIVE_DAY2',
+            'body' => ''
         ]);
         Newsroom::create([
-            'title' => 'TRAINING SGS SESSION 7',
+            'title' => 'Motocycle Test Drive Day 1',
             'user_id' => 2,
-            'category_id' => 5,
-            'slug' => 'TRAINING_SGS_SESSION7',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
+            'category_id' => 6,
+            'slug' => 'Motocycle_Test_Drive_Day1',
+            'body' => ''
         ]);
         Newsroom::create([
-            'title' => 'TRAINING SGS SESSION 8',
+            'title' => 'Football Friendly Match With PT. Yasunaga',
             'user_id' => 2,
-            'category_id' => 5,
-            'slug' => 'TRAINING_SGS_SESSION8',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
+            'category_id' => 6,
+            'slug' => 'Football_Friendly_Match_With_Yasunaga',
+            'body' => ''
         ]);
-        Newsroom::create([
-            'title' => 'TRAINING SGS SESSION 9',
-            'user_id' => 2,
-            'category_id' => 5,
-            'slug' => 'TRAINING_SGS_SESSION9',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
-        ]);
-        Newsroom::create([
-            'title' => 'TRAINING SGS SESSION 10',
-            'user_id' => 2,
-            'category_id' => 5,
-            'slug' => 'TRAINING_SGS_SESSION10',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
-        ]);
-        Newsroom::create([
-            'title' => 'TRAINING SGS SESSION 11',
-            'user_id' => 2,
-            'category_id' => 5,
-            'slug' => 'TRAINING_SGS_SESSION11',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
-        ]);
-        Newsroom::create([
-            'title' => 'TRAINING SGS SESSION 12',
-            'user_id' => 2,
-            'category_id' => 5,
-            'slug' => 'TRAINING_SGS_SESSION12',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
-        ]);
-        Newsroom::create([
-            'title' => 'school 1',
-            'user_id' => 2,
-            'category_id' => 3,
-            'slug' => 'SCHOOL1',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
-        ]);
-        Newsroom::create([
-            'title' => 'school 2',
-            'user_id' => 2,
-            'category_id' => 3,
-            'slug' => 'SCHOOL2',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
-        ]);
-        Newsroom::create([
-            'title' => 'school 3',
-            'user_id' => 2,
-            'category_id' => 3,
-            'slug' => 'SCHOOL3',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
-        ]);
-        Newsroom::create([
-            'title' => 'school 4',
-            'user_id' => 2,
-            'category_id' => 3,
-            'slug' => 'SCHOOL4',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
-        ]);
-        Newsroom::create([
-            'title' => 'school 9',
-            'user_id' => 2,
-            'category_id' => 3,
-            'slug' => 'SCHOOL9',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
-        ]);
-        Newsroom::create([
-            'title' => 'school 5',
-            'user_id' => 2,
-            'category_id' => 3,
-            'slug' => 'SCHOOL5',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
-        ]);
-        Newsroom::create([
-            'title' => 'school 6',
-            'user_id' => 2,
-            'category_id' => 3,
-            'slug' => 'SCHOOL6',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
-        ]);
-        Newsroom::create([
-            'title' => 'school 7',
-            'user_id' => 2,
-            'category_id' => 3,
-            'slug' => 'SCHOOL7',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
-        ]);
-        Newsroom::create([
-            'title' => 'school 8',
-            'user_id' => 2,
-            'category_id' => 3,
-            'slug' => 'SCHOOL8',
-            'body' => 'Pada tanggal 8-10 Maret 2025, PT Ewindo mengadakan perjalanan dinas sekaligus refreshing bertajuk "Jogja Trip PT Ewindo" yang diikuti oleh seluruh karyawan dan manajemen. Perjalanan ini bertujuan untuk mempererat kebersamaan tim, meningkatkan semangat kerja, serta memberikan apresiasi atas dedikasi seluruh anggota perusahaan. Perjalanan dimulai dari Jakarta menuju Yogyakarta dengan menggunakan kereta api. Setibanya di Jogja, rombongan langsung menuju Candi Prambanan, salah satu situs warisan dunia yang menjadi ikon sejarah dan budaya Jawa. Di sana, peserta trip disuguhi keindahan arsitektur candi yang megah serta mengikuti tur budaya yang dipandu oleh guide profesional. Hari kedua dilanjutkan dengan explore alam di kawasan Tebing Breksi dan HeHa Sky View, di mana seluruh peserta menikmati pemandangan alam Jogja dari ketinggian sambil berfoto bersama dengan latar belakang city view yang menakjubkan. Pada malam harinya, rombongan mengunjungi kawasan Malioboro untuk berbelanja oleh-oleh khas Jogja serta menikmati kuliner legendaris seperti gudeg, bakpia, dan wedang ronde. Hari ketiga ditutup dengan acara team building dan fun games di Pantai Parangtritis, yang penuh dengan canda tawa dan kekompakan. Tidak hanya sekadar wisata, kegiatan ini juga menjadi momen untuk saling mengenal lebih dalam antar karyawan dan mempererat hubungan antar divisi. Jogja Trip PT Ewindo menjadi pengalaman yang sangat berkesan dan menyenangkan bagi seluruh peserta. Selain mengisi kembali semangat kerja, perjalanan ini juga membuktikan bahwa PT Ewindo tidak hanya fokus pada produktivitas, tetapi juga pada kesejahteraan dan kebahagiaan seluruh karyawannya.'
-        ]);
+        
             
       
         

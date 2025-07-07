@@ -49,28 +49,28 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        $this->call([NewsroomcategorySeeder::class, AdminSeeder::class, UserSeeder::class, NewsroomSeeder::class, DepartementSeeder::class, JobSeeder::class, applicantSeeder::class, EducationSeeder::class, AlamatKtpSeeder::class, AlamatDomisiliSeeder::class, ExperienceSeeder::class, SkillSeeder::class, RiwayatKesehatanSeeder::class, JobInformationSeeder::class, ProductGroupSeeder::class, CertificateSeeder::class, ColorSeeder::class]);
-        Newsroom::factory()->recycle([
-            Newsroom::all(),
-            Newsroomcategory::all(),
-            Departement::all(),
-            Admin::all(),
-            User::all(),
-            Job::all(),
-            applicant::all(),
-            Education::all(),
-            AlamatKtp::all(),
-            AlamatDomisili::all(),
-            Experience::all(),
-            Skill::all(),
-            RiwayatKesehatan::all(),
-            JobInformation::all(),
-            ProductGroup::all(),
-            Certificate::all(),
-            Color::all()
+        $this->call([NewsroomcategorySeeder::class, AdminSeeder::class, UserSeeder::class, NewsroomSeeder::class, DepartementSeeder::class, JobSeeder::class,  ProductGroupSeeder::class, CertificateSeeder::class, ColorSeeder::class]);
+        // Newsroom::create([
+        //     Newsroom::all(),
+        //     Newsroomcategory::all(),
+        //     Departement::all(),
+        //     Admin::all(),
+        //     User::all(),
+        //     Job::all(),
+        //     applicant::all(),
+        //     Education::all(),
+        //     AlamatKtp::all(),
+        //     AlamatDomisili::all(),
+        //     Experience::all(),
+        //     Skill::all(),
+        //     RiwayatKesehatan::all(),
+        //     JobInformation::all(),
+        //     ProductGroup::all(),
+        //     Certificate::all(),
+        //     Color::all()
             
             
 
-        ])->create();
+        // ])->create();
     }
 }

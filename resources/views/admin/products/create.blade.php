@@ -90,7 +90,7 @@
         <div class="col-span-full">
             <x-forms.input label="Rated Voltage" name="rated_voltage" />
         </div>
-        <p class="text-bold">Colour Available</p>
+        {{-- <p class="text-bold">Colour Available</p>
         <div class="grid grid-cols-10 gap-2">
             @foreach ($colors as $color)
                 <label class="flex items-center space-x-2">
@@ -100,7 +100,66 @@
                     <span>{{ $color->name }}</span>
                 </label>
             @endforeach
+        </div> --}}
+        <div x-data="{ kabel: [] }" class="space-y-4">
+            <div class="space-y-2">
+                <template x-for="(warna, index) in kabel" :key="index">
+                    <div class="flex items-center gap-3">
+                        <select x-model="kabel[index]" class="border px-2 py-1 rounded w-40">
+                            <option disabled value="">Pilih Warna</option>
+                            <option value="merah">Merah</option>
+                            <option value="kuning">Kuning</option>
+                            <option value="hitam">Hitam</option>
+                            <option value="biru">Biru</option>
+                            <option value="hijau">Hijau</option>
+                            <option value="putih">Putih</option>
+                            <option value="coklat">Coklat</option>
+                            <option value="abu-abu">Abu-abu</option>
+                        </select>
+
+                        <!-- Preview Box -->
+                        <div :class="'w-6 h-6 rounded border'" :style="'background-color:' + warnaHex(warna)"></div>
+
+                        <!-- Hapus -->
+                        <button type="button" @click="kabel.splice(index, 1)" class="text-red-600 text-sm">✖</button>
+                    </div>
+                </template>
+            </div>
+
+            <!-- Tambah -->
+            <button type="button" @click="kabel.push('')" class="bg-green-500 text-white px-3 py-1 rounded">
+                + Tambah Warna Kabel
+            </button>
+
+            <!-- Hidden -->
+            <input type="hidden" name="warna_kabel" :value="JSON.stringify(kabel)">
+
+            <!-- Optional: Preview urutan -->
+            <div class="text-sm text-gray-600 mt-2" x-show="kabel.length">
+                Kombinasi: <span x-text="kabel.join(' + ')"></span>
+            </div>
         </div>
+
+        <script>
+            function warnaHex(nama) {
+                return {
+                    'merah': '#ff0000',
+                    'kuning': '#ffff00',
+                    'hitam': '#000000',
+                    'biru': '#0000ff',
+                    'hijau': '#00ff00',
+                    'putih': '#ffffff',
+                    'coklat': '#8b4513',
+                    'abu-abu': '#808080'
+                } [nama] || '#cccccc';
+            }
+
+            document.addEventListener('alpine:init', () => {
+                Alpine.store('warnaHex', warnaHex);
+                Alpine.magic('warnaHex', () => warnaHex);
+            });
+        </script>
+
         <div class="col-span-full">
             <x-forms.input label="Application" name="application" />
         </div>

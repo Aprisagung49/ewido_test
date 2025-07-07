@@ -155,6 +155,33 @@
                                                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
                                             </div>
                                         </div>
+
+                                        <div class="col-span-12 lg:col-span-3">
+                                            <label for="ktp_kelurahan"
+                                                class="block text-sm font-medium text-gray-900">
+                                                Kelurahan <span class="text-red-500">*</span>
+                                            </label>
+                                            <div class="mt-2">
+                                                <input type="text" id="ktp_kelurahan"
+                                                    name="alamat_ktp[kelurahan1]" placeholder="Kelurahan"
+                                                    autocomplete="ktp_kelurahan"
+                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-span-12 lg:col-span-3">
+                                            <label for="ktp_kecamatan"
+                                                class="block text-sm font-medium text-gray-900">
+                                                Kecamatan <span class="text-red-500">*</span>
+                                            </label>
+                                            <div class="mt-2">
+                                                <input type="text" id="ktp_kecamatan"
+                                                    name="alamat_ktp[kecamatan1]" placeholder="Kecamatan"
+                                                    autocomplete="ktp_kecamatan"
+                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm">
+                                            </div>
+                                        </div>
+
                                         <div class="col-span-12 lg:col-span-3">
                                             <label for="ktp_kota" class="block text-sm font-medium text-gray-900">
                                                 Kota/Kabupaten <span class="text-red-500">*</span>
@@ -175,31 +202,9 @@
                                                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm">
                                             </div>
                                         </div>
-                                        <div class="col-span-12 lg:col-span-3">
-                                            <label for="ktp_kecamatan"
-                                                class="block text-sm font-medium text-gray-900">
-                                                Kecamatan <span class="text-red-500">*</span>
-                                            </label>
-                                            <div class="mt-2">
-                                                <input type="text" id="ktp_kecamatan"
-                                                    name="alamat_ktp[kecamatan1]" placeholder="Kecamatan"
-                                                    autocomplete="ktp_kecamatan"
-                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm">
-                                            </div>
-                                        </div>
 
-                                        <div class="col-span-12 lg:col-span-3">
-                                            <label for="ktp_kelurahan"
-                                                class="block text-sm font-medium text-gray-900">
-                                                Kelurahan <span class="text-red-500">*</span>
-                                            </label>
-                                            <div class="mt-2">
-                                                <input type="text" id="ktp_kelurahan"
-                                                    name="alamat_ktp[kelurahan1]" placeholder="Kelurahan"
-                                                    autocomplete="ktp_kelurahan"
-                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm">
-                                            </div>
-                                        </div>
+
+
 
                                         <div class="col-span-12">
                                             <div class="flex gap-3">
@@ -238,6 +243,32 @@
                                         </div>
 
                                         <div class="col-span-12 lg:col-span-3">
+                                            <label for="domisili_kelurahan"
+                                                class="block text-sm font-medium text-gray-900">
+                                                Kelurahan <span class="text-red-500">*</span>
+                                            </label>
+                                            <div class="mt-2">
+                                                <input type="text" id="domisili_kelurahan"
+                                                    name="alamat_domisili[kelurahan0]" placeholder="Kelurahan"
+                                                    autocomplete="domisili_kelurahan"
+                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-span-12 lg:col-span-3">
+                                            <label for="domisili_kecamatan"
+                                                class="block text-sm font-medium text-gray-900">
+                                                Kecamatan <span class="text-red-500">*</span>
+                                            </label>
+                                            <div class="mt-2">
+                                                <input type="text" id="domisili_kecamatan"
+                                                    name="alamat_domisili[kecamatan0]" placeholder="Kecamatan"
+                                                    autocomplete="domisili_kecamatan"
+                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-span-12 lg:col-span-3">
                                             <label for="domisili_kota"
                                                 class="block text-sm font-medium text-gray-900">
                                                 Kota <span class="text-red-500">*</span>
@@ -263,31 +294,9 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-span-12 lg:col-span-3">
-                                            <label for="domisili_kecamatan"
-                                                class="block text-sm font-medium text-gray-900">
-                                                Kecamatan <span class="text-red-500">*</span>
-                                            </label>
-                                            <div class="mt-2">
-                                                <input type="text" id="domisili_kecamatan"
-                                                    name="alamat_domisili[kecamatan0]" placeholder="Kecamatan"
-                                                    autocomplete="domisili_kecamatan"
-                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm">
-                                            </div>
-                                        </div>
 
-                                        <div class="col-span-12 lg:col-span-3">
-                                            <label for="domisili_kelurahan"
-                                                class="block text-sm font-medium text-gray-900">
-                                                Kelurahan <span class="text-red-500">*</span>
-                                            </label>
-                                            <div class="mt-2">
-                                                <input type="text" id="domisili_kelurahan"
-                                                    name="alamat_domisili[kelurahan0]" placeholder="Kelurahan"
-                                                    autocomplete="domisili_kelurahan"
-                                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm">
-                                            </div>
-                                        </div>
+
+
 
 
 
@@ -371,7 +380,12 @@
                                                 <select name="education[last_education]" id="last_education" required
                                                     class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
                                                     <option value="">-- Select Pendidikan --</option>
-                                                    <option value="SMA/SMK">SMA/SMK</option>
+                                                    <option value="Paket C">Paket C</option>
+                                                    <option value="SMP">SMP</option>
+                                                    <option value="SMA">SMA</option>
+                                                    <option value="SMK">SMK</option>
+                                                    <option value="D1">D1</option>
+                                                    <option value="D2">D2</option>
                                                     <option value="D3">D3</option>
                                                     <option value="S1">S1</option>
                                                     <option value="S2">S2</option>
@@ -1080,6 +1094,17 @@
                     });
 
                     function attachAddExperienceHandler() {
+                        document.addEventListener('input', function(e) {
+                            if (e.target.classList.contains('format-rupiah')) {
+                                let value = e.target.value.replace(/[^0-9]/g, '');
+                                if (!value) {
+                                    e.target.value = '';
+                                    return;
+                                }
+
+                                e.target.value = value.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+                            }
+                        });
                         document.getElementById('add-experience').addEventListener('click', function() {
                             const wrapper = document.getElementById('experience-wrapper');
                             const newGroup = document.createElement('div');
@@ -1116,10 +1141,11 @@
                                     <select id="tanggal_mulai" name="experience[${experienceIndex}][tanggal_mulai]"
                                                     autocomplete="tanggal_mulai"
                                                     class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
-                                                    <option selected disabled>Pilih</option>
-                                                    <option value="2020">2020</option>
-                                                    <option value="2019">2019</option>
-                                                    <option value="2018">2018</option>
+                                                    <option selected disabled>Pilih Tahun</option>
+                                                    @for ($year = now()->year; $year >= 1978; $year--)
+                                                        <option value="{{ $year }}">{{ $year }}
+                                                        </option>
+                                                    @endfor
                                                 </select>
                                 </div>
                                 <div class="col-span-12 mt-2">
@@ -1127,10 +1153,11 @@
                                    <select id="tanggal_selesai" name="experience[${experienceIndex}][tanggal_selesai]"
                                                     autocomplete="tanggal_selesai"
                                                     class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
-                                                    <option selected disabled>Pilih</option>
-                                                    <option value="2020">2020</option>
-                                                    <option value="2019">2019</option>
-                                                    <option value="2018">2018</option>
+                                                    <option selected disabled>Pilih Tahun</option>
+                                                    @for ($year = now()->year; $year >= 1978; $year--)
+                                                        <option value="{{ $year }}">{{ $year }}
+                                                        </option>
+                                                    @endfor
                                                 </select>
                                 </div>
                                 <div class="col-span-12 mt-2">

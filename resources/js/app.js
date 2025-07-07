@@ -99,17 +99,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 navLinks.forEach((link) =>
                     link.classList.remove(
                         "border-b-4",
-                        "border-yellow-500",
-                        "text-yellow-500"
+                        "border-gold",
+                        "text-gold"
                     )
                 );
                 document
                     .querySelector(`.nav-link[href="#${sectionId}"]`)
-                    .classList.add(
-                        "border-b-4",
-                        "border-yellow-500",
-                        "text-yellow-500"
-                    );
+                    .classList.add("border-b-4", "border-gold", "text-gold");
             }
         });
     }

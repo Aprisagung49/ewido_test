@@ -8,7 +8,7 @@
 
 
             <x-users.heading>Products</x-users.heading>
-            <p class="mt-6 text-base text-gray-700 leading-7 text-center">
+            <p class="mt-6 text-sm lg:text-base text-gray-700 leading-7 mx-5 lg:mx-0  text-justify lg:text-center">
                 PT EWINDO offers a diverse range of products, including bare
                 conductors such as Enameled Round Copper Wires, Annealed and
                 Tin-Annealed Copper Wires, Electric Cables, Automotive Cables, Power
@@ -17,7 +17,7 @@
                 industry standards and certifications, including SII/LMK/SPLN, UL,
                 ULC/UL, CSA, DENTORI, -F- Mark, CEE, and AS Approved.
             </p>
-            <p class="mt-4 text-base text-gray-700 leading-7 text-center">
+            <p class="mt-4 text-sm lg:text-base text-gray-700 leading-7 mx-5  text-justify lg:text-center">
                 We are committed to the principles of customer satisfaction and
                 quality excellence, continuously enhancing our quality management
                 system. Our commitment is reflected in our certifications, which
@@ -65,12 +65,13 @@
                         @endphp
 
                         <a href="{{ route('products.category', $parent->name) }}"
-                            class="relative w-88 h-50 rounded-lg overflow-hidden shadow-lg group">
-                            <div class="aspect-3/2 absolute inset-0 bg-cover bg-center transform transition-transform duration-1800 ease-in-out group-hover:scale-140"
+                            class="relative w-88 h-45 md:w-70 rounded-lg overflow-hidden shadow-lg group">
+                            <div class="mx-5 aspect-3/2 absolute inset-0 bg-cover bg-center transform transition-transform duration-1800 ease-in-out group-hover:scale-140"
                                 style="background-image: url('{{ asset($imagePath) }}');">
                             </div>
                             <div class="absolute inset-0  bg-opacity-10 flex flex-col justify-between p-4">
-                                <h3 class="text-white hover:text-gold text-xl font-semibold">{{ $parent->name }}</h3>
+                                <h3 class="text-white hover:text-gold text-xl md:text-md font-semibold">
+                                    {{ $parent->name }}</h3>
                                 <span
                                     class="inline-block mt-4  self-start px-3 py-1 text-sm font-medium text-white border border-white rounded-md hover:bg-gold hover:text-white transition">
                                     Explore All

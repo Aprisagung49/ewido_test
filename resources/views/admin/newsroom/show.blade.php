@@ -9,7 +9,14 @@
             <header class="mb-4 lg:mb-6 not-format">
                 <h1
                     class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl text-center dark:text-gray-800">
-                    {{ $newsroom->title }}</h1>
+                    {{ $newsroom->title }}
+                    <p class="text-base text-gray-700 dark:text-gray-600"> Published
+                        <time pubdate datetime="{{ $newsroom->created_at->toDateString() }}">
+                            {{ \Carbon\Carbon::parse($newsroom->created_at)->translatedFormat('d F Y') }}
+                        </time>
+                    </p>
+                </h1>
+
             </header>
         </div>
         <div class="flex flex-col items-center gap-4">
@@ -41,7 +48,7 @@
                 {!! $newsroom->body !!}
             </article>
             {{-- Writer Info --}}
-            <div class="flex flex-col gap-4 items-end mt-12">
+            {{-- <div class="flex flex-col gap-4 items-end mt-12">
                 <address class="flex items-end not-italic">
                     <div class="inline-flex items-end mr-32 text-sm text-gray-900 dark:text-white">
                         <img class="mr-4 w-16 h-16 rounded-full"
@@ -50,12 +57,15 @@
                             <a href="#" rel="author"
                                 class="text-xl font-bold text-gray-900 dark:text-gray-800"></a>
                             <p class="text-base text-gray-700 dark:text-gray-600">Administrator</p>
-                            <p class="text-base text-gray-700 dark:text-gray-600"><time pubdate
-                                    datetime="2025-02-04">{{ $newsroom->created_at }}</time></p>
+                            <p class="text-base text-gray-700 dark:text-gray-600">
+                                <time pubdate datetime="{{ $newsroom->created_at->toDateString() }}">
+                                    {{ \Carbon\Carbon::parse($newsroom->created_at)->translatedFormat('d F Y') }}
+                                </time>
+                            </p>
                         </div>
                     </div>
                 </address>
-            </div>
+            </div> --}}
             {{-- Divider --}}
             <div class="mx-auto mt-10 w-3/5 border-t border-gray-300 pt-10"></div>
             {{-- Bottom section --}}

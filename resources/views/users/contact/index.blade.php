@@ -9,7 +9,7 @@
                         <div class="text-left">
                             <div class="container mx-auto">
                                 <div class="max-w-4xl mx-auto text-left">
-                                    <h2 class="text-2xl font-extrabold tracking-wide text-yellow-500 sm:text-4xl uppercase rounded-lg shadow-text"
+                                    <h2 class="text-2xl font-extrabold tracking-wide text-gold sm:text-4xl uppercase rounded-lg shadow-text"
                                         style="text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);">
                                         Contact Us
                                     </h2>
@@ -44,7 +44,8 @@
                                     </svg>
                                 </div>
                                 <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                                    <h3 class="text-base font-semibold text-gray-900" id="modal-title">Berhasil Dikirim
+                                    <h3 class="text-base font-semibold text-gray-900" id="modal-title">Thank you for
+                                        your message!
                                     </h3>
                                     <div class="mt-2">
                                         <p class="text-sm text-gray-500">{{ session('success') }}</p>
@@ -55,7 +56,7 @@
                         <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                             <button onclick="document.querySelector('[aria-labelledby=modal-title]').remove()"
                                 type="button"
-                                class="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-green-500 sm:ml-3 sm:w-auto">Tutup</button>
+                                class="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-green-500 sm:ml-3 sm:w-auto">Close</button>
                         </div>
                     </div>
                 </div>
@@ -71,12 +72,12 @@
 
     <x-users.panel color="gray">
         <x-users.section>
-            <h2 class="font-semibold text-gray-900 text-3xl">Leave A Message</h2>
-            <p class="mt-1 text-sm/6 text-gray-600">For a more accurate and tailored quotation, kindly provide your
+            <h2 class="font-semibold text-gray-900 text-3xl mx-5">Leave A Message</h2>
+            <p class="mt-1 text-sm/6 text-gray-600 mx-5">For a more accurate and tailored quotation, kindly provide your
                 detailed requirements when contacting us.</p>
             <x-forms.form method="POST" action="{{ route('kirim.email') }}">
-                <div class="grid gap-4 mb-4 grid-cols-10 mt-10">
-                    <div class="col-span-2">
+                <div class="mx-5 grid gap-4 mb-4 grid-cols-10 mt-10">
+                    <div class="col-span-4 lg:col-span-2">
                         <x-forms.select label="Title" name="title">
                             <option value="Mr">Mr.</option>
                             <option value="Mrs">Mrs.</option>
@@ -84,10 +85,10 @@
                             <option value="Ms">Ms.</option>
                         </x-forms.select>
                     </div>
-                    <div class="col-span-4">
+                    <div class="col-span-6 lg:col-span-4">
                         <x-forms.input label="First Name" name="first_name" />
                     </div>
-                    <div class="col-span-4">
+                    <div class="col-span-10 lg:col-span-4">
                         <x-forms.input label="Last Name" name="last_name" />
                     </div>
                     <div class="col-span-10">
@@ -96,10 +97,11 @@
                     <div class="col-span-10">
                         <x-forms.input label="Company Name" name="company_name" />
                     </div>
-                    <div class="col-span-5">
-                        <x-forms.input label="Phone Number" name="phone" />
+                    <div class="col-span-10 lg:col-span-5">
+                        <x-forms.input label="Phone Number" name="phone" maxlength="12" inputmode="numeric"
+                            pattern="[0-9]*" />
                     </div>
-                    <div class="col-span-5">
+                    <div class="col-span-10 lg:col-span-5">
                         <x-forms.input label="Country" name="country" />
                     </div>
                     <div class="col-span-10">
@@ -119,7 +121,7 @@
                             </div>
 
                             {{-- PRODUCT --}}
-                            <div id="product-container" class="w-1/2 hidden transition-all">
+                            <div id="product-container" class="w-full lg:w-1/2 hidden transition-all">
                                 <x-forms.select label="Product" name="product">
                                     @foreach ($products as $product)
                                         <option value="{{ $product->type }}">{{ $product->type }}</option>
@@ -168,7 +170,7 @@
     <x-users.panel>
         <x-users.section>
             <x-users.heading>Our Locations</x-users.heading>
-            <div class="max-w-full rounded overflow-hidden shadow-lg mb-8">
+            <div class="max-w-full rounded overflow-hidden shadow-lg mb-8 mx-5">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126749.6605787355!2d107.4980086972656!3d-6.899346999999991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e7e3329fd20d%3A0x9b4d627819303906!2sPT%20Ewindo!5e0!3m2!1sid!2sid!4v1736908737367!5m2!1sid!2sid"
                     width="100%" height="400" style="border: 0" allowfullscreen="" loading="lazy"
@@ -194,7 +196,7 @@
                     </div>
                 </div>
             </div>
-            <div class="max-w-full rounded overflow-hidden shadow-lg">
+            <div class="max-w-full rounded overflow-hidden shadow-lg mx-5">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126734.57124324786!2d107.64736409726561!3d-6.955490500000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68c4fa06ad4a47%3A0x53f1a4efa49afef!2sPT.%20Ewindo!5e0!3m2!1sid!2sid!4v1736908908414!5m2!1sid!2sid"
                     width="100%" height="400" style="border: 0" allowfullscreen="" loading="lazy"

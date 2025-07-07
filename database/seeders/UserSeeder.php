@@ -19,32 +19,32 @@ class UserSeeder extends Seeder
     {
         User::create([
             'admin_id' => 3,
-            'name' => 'Gama Anggadipa Pratama',
-            'email' => 'gama@example.com',
+            'name' => 'Admin IT',
+            'email' => 'adminweb@ewindo.com',
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
             'remember_token' => Str::random(10)
         ]);
         User::create([
             'admin_id' => 1,
-            'name' => 'Apris Agung Wiresa',
-            'email' => 'apris@example.com',
+            'name' => 'IT',
+            'email' => 'superadmin@ewindo.com',
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
             'remember_token' => Str::random(10)
         ]);
         User::create([
             'admin_id' => 4,
-            'name' => 'Pa H.Iman',
-            'email' => 'iman@example.com',
+            'name' => 'HRD',
+            'email' => 'recruitment@ewindo.com',
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
             'remember_token' => Str::random(10)
         ]);
         User::create([
             'admin_id' => 2,
-            'name' => 'Kanaya',
-            'email' => 'kanaya@example.com',
+            'name' => 'Enginnering',
+            'email' => 'producthub@ewindo.com',
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
             'remember_token' => Str::random(10)

@@ -8,14 +8,14 @@
                         class="text-balance text-4xl/12 font-semibold tracking-tight text-gold sm:text-6xl lg:text-4xl uppercase">
                         We Produce Any Cables & Wires that Deliver Electricity
                     </h1>
-                    <p class="mt-8 text-base text-gray-700 leading-7 text-justify">
+                    <p class="mt-8 mx-5 lg:mx-0 text-base text-gray-700 leading-7 text-justify">
                         PT EWINDO is a joint venture between Japan and Indonesia, established
                         on May 10, 1974. Initially focused on producing Enamel Wire and
                         Polyvinyl Formal Wire, we have rapidly expanded our capabilities to
                         manufacture a wide range of products, including magnet wire, electric
                         and automotive cables, power supply cords, and wiring harnesses.
                     </p>
-                    <div class="mt-10 flex items-center gap-x-6">
+                    <div class="mt-10 mx-5 lg:mx-0 flex items-center gap-x-6">
                         <a href="/company" class="text-sm/6 font-semibold text-gray-900">See more <span
                                 aria-hidden="true">→</span></a>
                     </div>
@@ -38,7 +38,7 @@
 
     {{-- SECOND MAIN CONTENT --}}
     <x-users.panel>
-        <x-users.section>
+        <x-users.section-second-main>
             <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                 <div class="relative rounded-2xl overflow-hidden shadow-lg">
                     <div class="swiper swiper-plant h-[200px] lg:w-full h-[300px] lg:h-[500px] md:w-full  md:h-[700px]">
@@ -53,13 +53,12 @@
                             </div>
                         </div>
                         <div class="swiper-pagination swiper-pagination-plant"></div>
-                        <!-- If we need navigation buttons -->
                         <div class="swiper-button-prev swiper-button-prev-plant "></div>
                         <div class="swiper-button-next swiper-button-next-plant"></div>
                     </div>
                 </div>
 
-                <div class="flex flex-col justify-center lg:justify-start">
+                <div class="flex flex-col mx-5 lg:mx-0 justify-center lg:justify-start">
                     <p class="mt-2 text-base text-gray-700 leading-7 text-justify">
                         We are proud to have a team of over 2,800 dedicated employees working
                         across two plants:
@@ -84,12 +83,12 @@
                     </p>
                 </div>
             </section>
-        </x-users.section>
+        </x-users.section-second-main>
     </x-users.panel>
 
     {{-- VISION AND MISSION --}}
     <x-users.panel color="gray">
-        <x-users.section-about>
+        <x-users.section-vision-mission>
             <x-users.heading>
                 Vision and Mission
             </x-users.heading>
@@ -99,7 +98,7 @@
                         Our <br /><span
                             class="text-2xl lg:text-3xl font-bold text-god mb-4 lg:mb-6 text-center lg:text-center">Vision</span>
                     </h2>
-                    <p class="text-base text-gray-700 leading-7 text-center lg:text-center">
+                    <p class="text-base text-justify text-gray-700 leading-7  lg:text-center">
                         To be a leading and distinguished company in Magnet Wire, Electric &
                         Automotive Cable, Power Supply Cord, and Wiring Harness Industry in
                         Indonesia with international standard.
@@ -110,7 +109,7 @@
                         Our <br /><span
                             class="text-2xl lg:text-3xl font-bold text-god mb-4 lg:mb-6 text-center lg:text-center">Mission</span>
                     </h2>
-                    <p class="text-base text-gray-700 leading-7 text-center lg:text-center">
+                    <p class="text-base text-gray-700 leading-7 text-justify lg:text-center">
                         At PT. Ewindo, we are committed to guaranteeing the satisfaction of
                         our customers, employees, and the public by delivering products that
                         prioritize
@@ -119,15 +118,15 @@
                     </p>
                 </div>
             </div>
-        </x-users.section-about>
+        </x-users.section-vision-mission>
     </x-users.panel>
 
     {{-- BOARD OF DIRECTOR --}}
-    <x-users.panel>
-        <x-users.section-about>
-            <x-users.heading>
+    {{-- <x-users.panel>
+        <x-users.section-board-director>
+            <x-users.heading-board-director>
                 Board of Director
-            </x-users.heading>
+            </x-users.heading-board-director>
             <div class="flex justify-center mt-10 space-x-6">
                 <div class="text-center">
                     <img alt="Portrait of COO Patrick Star" class="rounded-full mt-8" height="150"
@@ -148,50 +147,50 @@
                     <p>Name</p>
                 </div>
             </div>
-        </x-users.section-about>
-    </x-users.panel>
+        </x-users.section-board-director>
+    </x-users.panel> --}}
 
     {{-- OUR CUSTOMERS PLANT 1 --}}
     <x-users.panel color="gray">
         <x-users.section-about>
-            <x-users.heading>
+            <x-users.heading-our-costumer>
                 Our Customers
-            </x-users.heading>
+            </x-users.heading-our-costumer>
             <x-users.heading-plant>
                 Plant 1
             </x-users.heading-plant>
             <div
                 class="mx-auto mt-10 grid max-w-lg grid-cols-3 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-3 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
                 <img class="max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/3.png') }}" alt="Logo 1" />
+                    src="{{ asset('storage/images/customers-logo-1/3.png') }}" alt="Logo 1" />
                 <img class="max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/4.png') }}" alt="Logo 2" />
+                    src="{{ asset('storage/images/customers-logo-1/4.png') }}" alt="Logo 2" />
                 <img class="max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/9.png') }}" alt="Logo 3" />
+                    src="{{ asset('storage/images/customers-logo-1/7.png') }}" alt="Logo 3" />
                 <img class="max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/5.png') }}" alt="Logo 3" />
+                    src="{{ asset('storage/images/customers-logo-1/5.png') }}" alt="Logo 3" />
                 <img class="max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/12.png') }}" alt="Logo 3" />
+                    src="{{ asset('storage/images/customers-logo-1/2.png') }}" alt="Logo 3" />
                 <img class="max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/11.png') }}" alt="Logo 3" />
+                    src="{{ asset('storage/images/customers-logo-1/11.png') }}" alt="Logo 3" />
                 <img class="max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/13.png') }}" alt="Logo 1" />
+                    src="{{ asset('storage/images/customers-logo-1/13.png') }}" alt="Logo 1" />
                 <img class="max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/14.png') }}" alt="Logo 2" />
+                    src="{{ asset('storage/images/customers-logo-1/14.png') }}" alt="Logo 2" />
                 <img class="max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/10.png') }}" alt="Logo 3" />
+                    src="{{ asset('storage/images/customers-logo-1/10.png') }}" alt="Logo 3" />
                 <img class="max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/8.png') }}" alt="Logo 3" />
+                    src="{{ asset('storage/images/customers-logo-1/8.png') }}" alt="Logo 3" />
                 <img class="max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/15.png') }}" alt="Logo 3" />
+                    src="{{ asset('storage/images/customers-logo-1/15.png') }}" alt="Logo 3" />
                 <img class="max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/1.png') }}" alt="Logo 3" />
+                    src="{{ asset('storage/images/customers-logo-1/1.png') }}" alt="Logo 3" />
                 <img class="max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/2.png') }}" alt="Logo 3" />
+                    src="{{ asset('storage/images/customers-logo-1/12.png') }}" alt="Logo 3" />
                 <img class="max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/6.png') }}" alt="Logo 3" />
+                    src="{{ asset('storage/images/customers-logo-1/6.png') }}" alt="Logo 3" />
                 <img class="max-h-12 w-full object-contain lg:col-span-1"
-                    src="{{ asset('storage/images/customers-logo/7.png') }}" alt="Logo 3" />
+                    src="{{ asset('storage/images/customers-logo-1/9.png') }}" alt="Logo 3" />
 
             </div>
             <p class="text base text-gray-700 font-semibold leading-7 text-center mt-12">
@@ -203,7 +202,7 @@
 
     {{-- OUR CUSTOMERS PLANT 2 --}}
     <x-users.panel color="gray">
-        <x-users.section-product>
+        <x-users.section-our-costumer>
             <x-users.heading-plant>
                 Plant 2
             </x-users.heading-plant>
@@ -244,15 +243,15 @@
             <p class="text base text-gray-700 font-semibold leading-7 text-center mt-12">
                 and more...
             </p>
-        </x-users.section-product>
+        </x-users.section-our-costumer>
     </x-users.panel>
 
     {{-- AWARDS AND ACHIEVEMENTS --}}
     <x-users.panel>
-        <x-users.section-about>
-            <x-users.heading>
+        <x-users.section-award-achivment>
+            <x-users.heading-award-achivment>
                 Awards And Achievements
-            </x-users.heading>
+            </x-users.heading-award-achivment>
             <div
                 class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20">
             </div>
@@ -261,7 +260,65 @@
                     <div class="swiper-slide">
                         <figure class="mt-2">
                             <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 cursor-pointer">
-                                <p>“2007 Outstanding Performance Award .”</p>
+                                <p>“2013 Best Delivery .”</p>
+                                <p class="font-bold">AHM</p>
+                            </blockquote>
+                        </figure>
+                    </div>
+                    <div class="swiper-slide">
+                        <figure class="mt-2">
+                            <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 mt-4 cursor-pointer">
+                                <p>
+                                    “2014,2015,2016,2017,2018 Best Supplier Award.”
+                                </p>
+                                <p class="font-bold">Panasonic</p>
+                            </blockquote>
+                        </figure>
+                    </div>
+                    <div class="swiper-slide">
+                        <figure class="mt-2">
+                            <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 mt-4 cursor-pointer">
+                                <p>“2019 Best Cost Improvement.”</p>
+                                <p class="font-bold">Mitsuba</p>
+                            </blockquote>
+                        </figure>
+                    </div>
+                    <div class="swiper-slide">
+                        <figure class="mt-2">
+                            <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 mt-4 cursor-pointer">
+                                <p>“2019 Best Vendor Award.”</p>
+                                <p class="font-bold">Yamaha</p>
+                            </blockquote>
+                        </figure>
+                    </div>
+                    <div class="swiper-slide">
+                        <figure class="mt-2">
+                            <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 mt-4 cursor-pointer">
+                                <p>“2021 Best Delivery.”</p>
+                                <p class="font-bold">AHM</p>
+                            </blockquote>
+                        </figure>
+                    </div>
+                    <div class="swiper-slide">
+                        <figure class="mt-2">
+                            <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 mt-4 cursor-pointer">
+                                <p>“2022 Penghargaan Pelanggan Terbaik.”</p>
+                                <p class="font-bold">DHL</p>
+                            </blockquote>
+                        </figure>
+                    </div>
+                    <div class="swiper-slide">
+                        <figure class="mt-2">
+                            <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 mt-4 cursor-pointer">
+                                <p>“2022, 2023 Appreciation of Effort (Delivery Performance).”</p>
+                                <p class="font-bold">Mitsubishi Electric</p>
+                            </blockquote>
+                        </figure>
+                    </div>
+                    <div class="swiper-slide">
+                        <figure class="mt-2">
+                            <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 mt-4 cursor-pointer">
+                                <p>“2022 Best Supplier SEID.”</p>
                                 <p class="font-bold">SHARP</p>
                             </blockquote>
                         </figure>
@@ -270,17 +327,8 @@
                         <figure class="mt-2">
                             <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 mt-4 cursor-pointer">
                                 <p>
-                                    “2011 Best Support of Production Recovery after Japan
-                                    Earthquake.”
+                                    “2023 Class B Supplier.”
                                 </p>
-                                <p class="font-bold">SANKEN</p>
-                            </blockquote>
-                        </figure>
-                    </div>
-                    <div class="swiper-slide">
-                        <figure class="mt-2">
-                            <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 mt-4 cursor-pointer">
-                                <p>“2012 Supplier Appreciation (Best Delivery Supplier).”</p>
                                 <p class="font-bold">AHM</p>
                             </blockquote>
                         </figure>
@@ -288,31 +336,7 @@
                     <div class="swiper-slide">
                         <figure class="mt-2">
                             <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 mt-4 cursor-pointer">
-                                <p>“2013 The Excellence Supplier 2013.”</p>
-                                <p class="font-bold">KOITO</p>
-                            </blockquote>
-                        </figure>
-                    </div>
-                    <div class="swiper-slide">
-                        <figure class="mt-2">
-                            <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 mt-4 cursor-pointer">
-                                <p>“2014 3rd Winner Best Supplier on Fiscal 2013.”</p>
-                                <p class="font-bold">SHARP</p>
-                            </blockquote>
-                        </figure>
-                    </div>
-                    <div class="swiper-slide">
-                        <figure class="mt-2">
-                            <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 mt-4 cursor-pointer">
-                                <p>“2014 Delivery Award Supplier.”</p>
-                                <p class="font-bold">KOITO</p>
-                            </blockquote>
-                        </figure>
-                    </div>
-                    <div class="swiper-slide">
-                        <figure class="mt-2">
-                            <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 mt-4 cursor-pointer">
-                                <p>“2015 Suppliers Award (EPS PLATINUM).”</p>
+                                <p>“2023 Best Supplier REM Part.”</p>
                                 <p class="font-bold">AHM</p>
                             </blockquote>
                         </figure>
@@ -320,49 +344,55 @@
                     <div class="swiper-slide">
                         <figure class="mt-2">
                             <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 mt-4 cursor-pointer">
-                                <p>“2015 Quality Best Supllier 2015.”</p>
-                                <p class="font-bold">PT.INDONESIA KOITO</p>
+                                <p>“2023 Best of the Best (Delivery, Quality, CR).”</p>
+                                <p class="font-bold">INS</p>
                             </blockquote>
                         </figure>
                     </div>
                     <div class="swiper-slide">
                         <figure class="mt-2">
                             <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 mt-4 cursor-pointer">
-                                <p>
-                                    “2016 Appreciation for On Time Delivery (2016 Vendor Award).”
-                                </p>
-                                <p class="font-bold">EPSON</p>
+                                <p>“2023 Best Supplier.”</p>
+                                <p class="font-bold">Panasonic</p>
                             </blockquote>
                         </figure>
                     </div>
                     <div class="swiper-slide">
                         <figure class="mt-2">
                             <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 mt-4 cursor-pointer">
-                                <p>“2018 Support Supplier Performance Award .”</p>
-                                <p class="font-bold"></p>
+                                <p>“2024 Platinum Supplier.”</p>
+                                <p class="font-bold">AHM</p>
                             </blockquote>
                         </figure>
                     </div>
                     <div class="swiper-slide">
                         <figure class="mt-2">
                             <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 mt-4 cursor-pointer">
-                                <p>“2018 The Best Cost Improvement.”</p>
-                                <p class="font-bold">MITSUBA</p>
+                                <p>“2024 Best Supplier REM Part.”</p>
+                                <p class="font-bold">AHM</p>
                             </blockquote>
                         </figure>
                     </div>
                     <div class="swiper-slide">
                         <figure class="mt-2">
                             <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 mt-4 cursor-pointer">
-                                <p>“2018 Best Performance Delivery .”</p>
-                                <p class="font-bold">ASAHI DENSO INDONESIA</p>
+                                <p>“2024 Best Quality.”</p>
+                                <p class="font-bold">INS</p>
                             </blockquote>
                         </figure>
                     </div>
                     <div class="swiper-slide">
                         <figure class="mt-2">
                             <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 mt-4 cursor-pointer">
-                                <p>“Best Quality Performance Supplier 24F.”</p>
+                                <p>“2024 Best Delivery.”</p>
+                                <p class="font-bold">SIIX</p>
+                            </blockquote>
+                        </figure>
+                    </div>
+                    <div class="swiper-slide">
+                        <figure class="mt-2">
+                            <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 mt-4 cursor-pointer">
+                                <p>“2024 Best Quality Performance Supplier.”</p>
                                 <p class="font-bold">SHARP</p>
                             </blockquote>
                         </figure>
@@ -370,16 +400,8 @@
                     <div class="swiper-slide">
                         <figure class="mt-2">
                             <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 mt-4 cursor-pointer">
-                                <p>“2022 The Best Supplier Seid 2022.”</p>
-                                <p class="font-bold">SHARP</p>
-                            </blockquote>
-                        </figure>
-                    </div>
-                    <div class="swiper-slide">
-                        <figure class="mt-2">
-                            <blockquote class="text-center text-xl/8 text-gray-900 sm:text-2xl/9 mt-4 cursor-pointer">
-                                <p>“2023 Appreciation of Effort Delivery Performance.”</p>
-                                <p class="font-bold">MITSUBISHI</p>
+                                <p>“2024 Best Supplier Award.”</p>
+                                <p class="font-bold">Panasonic</p>
                             </blockquote>
                         </figure>
                     </div>
@@ -387,7 +409,7 @@
                 <div class="swiper-button-prev swiper-button-prev-awards"></div>
                 <div class="swiper-button-next swiper-button-next-awards"></div>
             </div>
-        </x-users.section-about>
+        </x-users.section-award-achivment>
     </x-users.panel>
 
     {{-- JOIN OUR TEAM --}}

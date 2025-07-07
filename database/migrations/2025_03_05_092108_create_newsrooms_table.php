@@ -21,7 +21,7 @@ return new class extends Migration
                 table: 'newsroom_categories', indexName: 'newsrooms_category_id'
             );
             $table->string('slug')->unique();
-            $table->text('body');
+            $table->text('body')->nullable();
             $table->json('image')->nullable();
             $table->timestamps();
         });

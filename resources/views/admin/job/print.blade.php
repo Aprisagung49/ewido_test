@@ -118,7 +118,7 @@
         </tr>
         <tr>
             <td>Umur</td>
-            <td>{{ $applicant->umur }}</td>
+            <td>{{ $applicant->umur }} Tahun</td>
         </tr>
         <tr>
             <td>Agama</td>
@@ -138,11 +138,15 @@
         </tr>
         <tr>
             <td>Alamat KTP</td>
-            <td>{{ $applicant->alamatKtp->alamat1 }}</td>
+            <td>{{ $applicant->alamatKtp->alamat1 }}, {{ $applicant->alamatKtp->kelurahan1 }},
+                {{ $applicant->alamatKtp->kecamatan1 }}, {{ $applicant->alamatKtp->kota1 }},
+                {{ $applicant->alamatKtp->provinsi1 }} </td>
         </tr>
         <tr>
             <td>Alamat Domisili</td>
-            <td>{{ $applicant->alamatDomisili->alamat0 }}</td>
+            <td>{{ $applicant->alamatDomisili->alamat0 }}, {{ $applicant->alamatDomisili->kelurahan0 }},
+                {{ $applicant->alamatDomisili->kecamatan0 }}, {{ $applicant->alamatDomisili->kota0 }},
+                {{ $applicant->alamatDomisili->provinsi0 }}</td>
         </tr>
     </table>
 

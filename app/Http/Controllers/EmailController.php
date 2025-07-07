@@ -73,7 +73,7 @@ $success = CustomMailer::send(
         $validated['first_name']      // replyTo nama user
     );
     if ($success) {
-        return back()->with('success', 'Pesan Berhasil Terkirim, Terima Kasih!');
+        return back()->with('success', 'We appreciate you reaching out and will get back to you as soon as possible.');
     } else {
         return back()->with('error', 'Maaf Pesan Gagal Terkirim.');
     }

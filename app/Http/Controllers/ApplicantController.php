@@ -11,6 +11,7 @@ use App\Models\Experience;
 use Illuminate\Http\Request;
 use App\Models\AlamatDomisili;
 use Illuminate\Validation\Rule;
+use App\Http\Requests\StoreApplicantRequest;
 
 class ApplicantController extends Controller
 {
@@ -50,7 +51,7 @@ class ApplicantController extends Controller
     {
         $validatedData = $request->validate([
             'job_id' => 'required',
-            'nik' => 'required|unique:applicants,nik',
+            'nik' => 'required|digits:16|unique:applicants,nik',
             'nama_lengkap' => 'required|max:255',
             'agama' => ['required', Rule::in(['Islam', 'Kristen', 'Protestan', 'Katolik', 'Hindu', 'Budha', 'Konguchu'])],
             'jenis_kelamin' => ['required', Rule::in(['Laki-laki', 'Perempuan'])],
@@ -98,6 +99,8 @@ class ApplicantController extends Controller
         'sertifikasi_lainnya_upload'=> 'nullable|file|max:2048|mimes:jpeg,jpg,png,pdf',
 
         ]);
+
+   
     
         // Coba hanya simpan ke tabel applicants
         $applicant = Applicant::create([

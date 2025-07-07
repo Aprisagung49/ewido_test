@@ -64,6 +64,7 @@ class ProductController extends Controller
 
     $products = $products->latest()->paginate($perPage)->withQueryString();
 
+    // return view('users.products.show-category');
     return view('users.products.show-category', compact(
         'products', 'group', 'parentGroups', 'childGroups'
     ));

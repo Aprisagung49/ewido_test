@@ -5,11 +5,17 @@
 
     <section class="container py-10 dark:text-gray-800">
         <div
-            class="mx-auto w-full max-w-4xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert pl-5">
+            class="mx-auto w-full max-w-4xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert pl-5 lg:pl-0">
             <header class="mb-4 lg:mb-6 not-format">
                 <h1
-                    class="mb-4 text-2xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl text-center dark:text-gray-800">
-                    {{ $newsroom->title }}</h1>
+                    class="mb-4 text-2xl font-extrabold leading-tight text-gold lg:mb-6 lg:text-4xl text-center dark:text-gold">
+                    {{ $newsroom->title }}
+                    <p class="text-xs text-gray-700 dark:text-gray-600"> Published
+                        <time pubdate datetime="{{ $newsroom->created_at->toDateString() }}">
+                            {{ \Carbon\Carbon::parse($newsroom->created_at)->translatedFormat('d F Y') }}
+                        </time>
+                    </p>
+                </h1>
             </header>
         </div>
         <div class="flex flex-col items-center gap-4">
@@ -24,11 +30,11 @@
             <div x-data="{ currentImage: '{{ $firstImage ? asset('storage/' . $firstImage->image_path) : '' }}' }" class="space-y-4 w-4/5">
                 <div>
                     <img :src="currentImage" alt="Main Image"
-                        class="w-full h-[200px] sm:h-[400px] sm:w-[900px] lg:h-[500px] lg:w-[1200px]  rounded-lg shadow-lg object-cover">
+                        class="w-full lg:mx-5 h-[200px] sm:h-[400px] sm:w-[900px] lg:h-[600px] lg:w-[1200px] rounded-lg shadow-lg ">
                 </div>
 
                 {{-- Small Images --}}
-                <div class="flex gap-4 overflow-x-auto max-w-full pb-2">
+                <div class="flex gap-4 lg:mx-12 overflow-x-auto max-w-full pb-2">
                     @foreach ($newsroom->newsroom_images as $image)
                         <img src="{{ asset('storage/' . $image->image_path) }}" alt="Thumbnail"
                             class="w-50 h-[100px] rounded-lg border border-gray-300 cursor-pointer object-cover hover:scale-105 transition"
@@ -41,7 +47,7 @@
                 {!! $newsroom->body !!}
             </article>
             {{-- Writer Info --}}
-            <div class="flex flex-col gap-4 items-end mt-12">
+            {{-- <div class="flex flex-col gap-4 items-end mt-12">
                 <address class="flex items-end not-italic">
                     <div class="inline-flex items-end mr-32 text-sm text-gray-900 dark:text-white">
                         <img class="mr-4 w-16 h-16 rounded-full"
@@ -55,19 +61,19 @@
                         </div>
                     </div>
                 </address>
-            </div>
+            </div> --}}
             {{-- Divider --}}
             <div class="mx-auto mt-10 w-3/5 border-t border-gray-300 pt-10"></div>
             {{-- Bottom section --}}
             <section class="py-4">
                 <div class="text-center mb-6">
                     <h2 class="text-3xl font-bold">Newsroom</h2>
-                    <p class="text-gray-500">The latest news and updates, direct from EWINDO</p>
+                    <p class="text-gray-500 mx-3">The latest news and updates, direct from EWINDO</p>
                 </div>
                 <div class="text-center">
                     <a href="/newsroom">
                         <button
-                            class="bg-gold py-2 px-6 rounded-full hover:bg-yellow-400 text-white font-semibold cursor-pointer">Back
+                            class="bg-gold py-1 px-4 rounded-full hover:bg-yellow-400 text-white font-semibold cursor-pointer">Back
                             to Newsroom Page</button>
                     </a>
                 </div>

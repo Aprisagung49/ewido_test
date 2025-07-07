@@ -99,7 +99,7 @@
                         <div class="flex">
                             <p class="font-medium w-40">Umur</p>
                             <p class="mr-2">:</p>
-                            <p>{{ $applicant->umur }}</p>
+                            <p>{{ $applicant->umur }} Tahun</p>
                         </div>
                         <div class="flex">
                             <p class="font-medium w-40">No HP</p>
@@ -180,21 +180,25 @@
                         <p class="mr-2">:</p>
                         <p>{{ $applicant->alamatDomisili->alamat0 }}</p>
                     </div>
-                    <div class="flex">
-                        <p class="font-medium w-60">Kota</p>
-                        <p class="mr-2">:</p>
-                        <p>{{ $applicant->alamatDomisili->kota0 }}</p>
-                    </div>
-                    <div class="flex">
-                        <p class="font-medium w-60">Kecamatan</p>
-                        <p class="mr-2">:</p>
-                        <p>{{ $applicant->alamatDomisili->kecamatan0 }}</p>
-                    </div>
+
                     <div class="flex">
                         <p class="font-medium w-60">Kelurahan</p>
                         <p class="mr-2">:</p>
                         <p>{{ $applicant->alamatDomisili->kelurahan0 }}</p>
                     </div>
+
+                    <div class="flex">
+                        <p class="font-medium w-60">Kecamatan</p>
+                        <p class="mr-2">:</p>
+                        <p>{{ $applicant->alamatDomisili->kecamatan0 }}</p>
+                    </div>
+
+                    <div class="flex">
+                        <p class="font-medium w-60">Kota/Kabupaten</p>
+                        <p class="mr-2">:</p>
+                        <p>{{ $applicant->alamatDomisili->kota0 }}</p>
+                    </div>
+
                     <div class="flex">
                         <p class="font-medium w-60">Provinsi</p>
                         <p class="mr-2">:</p>
@@ -212,21 +216,25 @@
                         <p class="mr-2">:</p>
                         <p>{{ $applicant->alamatKtp->alamat1 }}</p>
                     </div>
-                    <div class="flex">
-                        <p class="font-medium w-60">Kota</p>
-                        <p class="mr-2">:</p>
-                        <p>{{ $applicant->alamatKtp->kota1 }}</p>
-                    </div>
-                    <div class="flex">
-                        <p class="font-medium w-60">Kecamatan</p>
-                        <p class="mr-2">:</p>
-                        <p>{{ $applicant->alamatKtp->kecamatan1 }}</p>
-                    </div>
+
                     <div class="flex">
                         <p class="font-medium w-60">Kelurahan</p>
                         <p class="mr-2">:</p>
                         <p>{{ $applicant->alamatKtp->kelurahan1 }}</p>
                     </div>
+
+                    <div class="flex">
+                        <p class="font-medium w-60">Kecamatan</p>
+                        <p class="mr-2">:</p>
+                        <p>{{ $applicant->alamatKtp->kecamatan1 }}</p>
+                    </div>
+
+                    <div class="flex">
+                        <p class="font-medium w-60">Kota/Kabupaten</p>
+                        <p class="mr-2">:</p>
+                        <p>{{ $applicant->alamatKtp->kota1 }}</p>
+                    </div>
+
                     <div class="flex">
                         <p class="font-medium w-60">Provinsi</p>
                         <p class="mr-2">:</p>

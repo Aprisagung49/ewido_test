@@ -7,6 +7,7 @@ use App\Models\Newsroom;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\NewsroomImage;
+use Illuminate\Validation\Rule;
 use App\Models\NewsroomCategory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -85,9 +86,10 @@ class NewsroomController extends Controller
         $attrs = $request->validate([
             'category_id' => ['required'],
             'title' => ['required', 'string', 'max:255'],
-            'body' => ['required', 'string']
+            'body' => ['nullable', 'string']
         ]);
 
+        $slug = Str::slug($request->title);
         $attrs['user_id'] = Auth::user()->id;
         $attrs['slug'] = Str::slug($request->title);
 
@@ -96,7 +98,8 @@ class NewsroomController extends Controller
         // Handle multiple image upload
         if ($request->hasFile('files')) {
             foreach ($request->file('files') as $image) {
-                $path = $image->store('newsroom-images', 'public'); // storage/app/public/products
+                $filename = time() . '-' . $image->getClientOriginalName();
+                $path = $image->storeAs("newsroom-images/{$slug}", $filename, 'public');
 
                 NewsroomImage::create([
                     'newsroom_id' => $newsroom->id,
@@ -139,62 +142,51 @@ class NewsroomController extends Controller
     }
     public function update(Request $request, Newsroom $newsroom)
     {
-    $rules = [
+    $validated = $request->validate([
         'title' => 'required|max:255',
         'category_id' => 'required',
+        'body' => 'nullable',
+        'slug' => [
+            'required',
+            Rule::unique('newsrooms')->ignore($newsroom->id),
+        ],
         'files' => 'sometimes|array|max:20',
-        'files.*' => 'image|mimes:jpg,jpeg,png|max:20048',
-        'body' => 'required'
-    ];
+        'files.*' => 'image|mimes:jpg,jpeg,png|max:2048',
+    ]);
 
-    
+    $slug = $validated['slug']; // Pakai untuk folder upload
 
-    if ($request->slug != $newsroom->slug) {
-        $rules['slug'] = 'required|unique:newsrooms';
-    }
+    // Update data utama newsroom
+    $newsroom->update([
+        'title' => $validated['title'],
+        'slug' => $slug,
+        'category_id' => $validated['category_id'],
+        'body' => $validated['body'] ?? '',
+    ]);
 
-    $validatedData = $request->validate($rules);
-
-    // Ambil gambar lama yang masih dipertahankan (yang masih tampil di preview)
-    $remainingOldImages = json_decode($request->input('remaining_old_images', '[]'), true);
-
-    $existingImages = $newsroom->newsroom_images;
+    // Ambil gambar lama yang masih dipertahankan
+    $remainingImages = json_decode($request->input('remaining_old_images', '[]'), true);
 
     // Hapus gambar lama yang tidak termasuk dalam list `remaining_old_images`
-    foreach ($existingImages as $image) {
-        if (!in_array($image->image_path, $remainingOldImages)) {
+    foreach ($newsroom->newsroom_images as $image) {
+        if (!in_array($image->image_path, $remainingImages)) {
             Storage::delete('public/' . $image->image_path);
             $image->delete();
         }
     }
 
-    // Upload file baru jika ada
+    // Upload gambar baru (jika ada)
     if ($request->hasFile('files')) {
         foreach ($request->file('files') as $file) {
-            $path = $file->store('newsroom-images', 'public');
+            $filename = time() . '-' . $file->getClientOriginalName();
+            $path = $file->storeAs("newsroom-images/{$slug}", $filename, 'public');
+
             $newsroom->newsroom_images()->create([
                 'image_path' => $path,
             ]);
         }
-        // dd($newImages);
     }
-    // dd($request->file('files'));
 
-    // dd([
-    //     'remaining' => $remainingOldImages,
-    //     'new' => $newImages,
-    //     'final' => $finalImages
-    // ]);
-    // Update data newsroom
-    $newsroom->update([
-        'title' => $validatedData['title'],
-        'slug' => $validatedData['slug'] ?? $newsroom->slug,
-        'category_id' => $validatedData['category_id'],
-        'body' => $validatedData['body'],
-    ]);
-
-    // dd($newsroom->fresh()->image);
-    
-    return redirect('/admin/newsroom')->with('success', 'Post Has Been Updated!');
+    return redirect('/admin/newsroom')->with('success', 'Post has been updated!');
 }
 }
